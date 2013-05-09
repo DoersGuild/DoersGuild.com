@@ -8,22 +8,57 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Doers' Guild Portfolio</title>
-        <meta name="description" content="Portfolio of Doers' Guild, Your Cross-Platform Development Experts">
+        <title>{{.title}}</title>
+        <meta name="description" content="Doers' Guild, Your Cross-Platform Development Experts">
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-
     </head>
     <body>
         <!--[if lt IE 9]>
         <p class="chromeframe alert alert-error">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        {{template "content" .}}
+        <header class="container-fluid">
+            <div class="row-fluid center doer-font doer-red">
+                <div class="span4">
+                    <ul class="nav nav-tabs border-none inline-block">
+                        <li>
+                            <a href="/"><h1>{{.title}}</h1></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="span8 row-fluid">
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a href="http://blog.doersguild.com/" target="_blank"><h3>Blog</h3></a>
+                        </li>
+                        <li>
+                            <a href="/portfolio"><h3>Portfolio</h3></a>
+                        </li>
+                        <li>
+                            <a href="/about"><h3>About</h3></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <article>
+            {{template "content" .}}
+        </article>
+
+        <footer class="container-fluid doer-font doer-red">
+            <hr/>
+            <ul class="nav nav-tabs margin-0 border-none">
+                <li>
+                    <a href="http://doersguild.com"> &copy; Doers' Guild </a>
+                </li>
+            </ul>
+        </footer>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>
@@ -37,7 +72,7 @@
         <script src="js/main.js"></script>
 
         <script>
-            var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+            var _gaq = [['_setAccount', 'UA-5141372-4'], ['_trackPageview']];
             ( function(d, t) {
                     var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
                     g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
