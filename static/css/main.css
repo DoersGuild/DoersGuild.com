@@ -49,9 +49,9 @@ a.doer-font {
     min-height: 300px;
 }
 .card:hover, .card:focus, .card:active, .card.active {
-    -moz-box-shadow: 0 0 50px #333;
-    -webkit-box-shadow: 0 0 50px #333;
-    box-shadow: 0 0 50px #333;
+    -moz-box-shadow: 0 10px 25px #333;
+    -webkit-box-shadow: 0 10px 25px #333;
+    box-shadow: 0 10px 25px #333;
     z-index: 10;
 }
 a.card, a.card:hover, a.card:active, a.card:focus {
