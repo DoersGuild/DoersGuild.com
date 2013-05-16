@@ -4,6 +4,7 @@ import (
     //"fmt"
     "html/template"
     "net/http"
+    "github.com/gorilla/mux"
 )
 
 // Acommon variable with data for templates
@@ -15,9 +16,12 @@ func init() {
 	// Setup common config vars
 	config["title"] = "Doers' Guild"
 	
-    http.HandleFunc("/", indexHandler)
-    http.HandleFunc("/portfolio", portfolioHandler)
-    http.HandleFunc("/portfolio/([^/]*)/?", portfolioHandler)
+	router:=mux.NewRouter()
+	router.HandleFunc("/", indexHandler)
+	router.HandleFunc("/portfolio", portfolioHandler)
+	router.HandleFunc("/portfolio/{category}", portfolioHandler)
+	router.HandleFunc("/portfolio/{category}/{project}", portfolioHandler)
+	http.Handle("/", router)
 }
 
 func executeSimpleTemplate(w http.ResponseWriter, tmplFile string) {
