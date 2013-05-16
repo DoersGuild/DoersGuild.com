@@ -17,6 +17,7 @@ func init() {
 	
     http.HandleFunc("/", indexHandler)
     http.HandleFunc("/portfolio", portfolioHandler)
+    http.HandleFunc("/portfolio/([^/]*)/?", portfolioHandler)
 }
 
 func executeSimpleTemplate(w http.ResponseWriter, tmplFile string) {
@@ -38,6 +39,5 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 func portfolioHandler(w http.ResponseWriter, r *http.Request) {
 	// The portfolio page
 	config["portfolioItems"] = portfolioItems
-	config["categories"] = categories
 	executeSimpleTemplate(w, "tmpl/content/portfolio.html")
 }

@@ -4,38 +4,46 @@ type Category struct {
 	ID, Name string
 }
 
-var categories = []Category{
-	{"mobileApps", "Mobile Applications"},
-	{"webApps", "Web Applications"},
-	{"browserExtensions", "Browser extensions"},
-	{"plugins", "Plugins"},
-	{"websites", "Websites & Templates"},
-}
-
 type PortfolioItem struct {
+	ID string
     Title string
     ShortDesc string
     Date string
+    Icon string
     Screenshots []string
-    LongDesc string
-    Category string
+    Tags []string
 }
 
-var portfolioItems = []PortfolioItem {
-	{
-		"Hello",
-		"World is wonderful",
-		"Yesterday",
-		[]string{"img","img2"},
-		"World is wonderful, yes indeed",
-		"Stuff",
+var portfolioItems = map[Category]interface{} {
+	Category {"MobileApps", "Mobile Applications"} : []PortfolioItem {
+		{
+			"GeneralKnowitallKnowledge",
+			"General Knowitall Knowledge",
+			"General Knowitall Knowledge is a fun android app for all the quizzing enthusiasts out there. It comes loaded with fun and interesting facts about various things from around the world.",
+			"November, 2012",
+			"/img/logos/mobile/gkk.png",
+			[]string{},
+			[]string{"PhoneGap","Android", "Twitter Bootstrap"},
+		},
+		{
+			"iEntertain",
+			"i-Entertain",
+			"A Mobile Gallery Application that shows it’s users, incredibly funny images from around the world, leaving them fully entertained. It is designed to run as both a website and a native android application and was built with the standard web technologies and packaged with PhoneGap. This application’s UI is fully responsive, so it works extremely well on all modern devices and their various screen sizes.",
+			"September, 2012",
+			"/img/logos/mobile/i-entertain.jpg",
+			[]string{},
+			[]string{"PhoneGap","Android", "jQuery Mobile"},
+		},
 	},
-	{
-		"Hello2",
-		"World is wonderful",
-		"Yesterday",
-		[]string{"img","img2"},
-		"World is wonderful, yes indeed!!!",
-		"stuff",
+	Category {"WebApps", "Web Applications"} : []PortfolioItem {
+		{
+			"IXXOCart",
+			"IXXO Templating framework",
+			"We helped IXXO-cart upgrade their templating framework with site-modules, twitter-bootstrap, JSON-web-services, etc and created several new templates for their various offerings including Multi-Vendor cart, Mobile templates, etc.",
+			"May, 2013",
+			"/img/logos/mobile/ixxo.png",
+			[]string{},
+			[]string{"PHP", "Smarty", "Twitter Bootstrap", "IXXOCart"},
+		},
 	},
 }
