@@ -21,6 +21,7 @@ func init() {
 	router.HandleFunc("/portfolio", portfolioHandler)
 	router.HandleFunc("/portfolio/{category}", portfolioHandler)
 	router.HandleFunc("/portfolio/{category}/{project}", portfolioHandler)
+    router.NotFoundHandler = http.HandlerFunc(notFoundHandler)
 	http.Handle("/", router)
 }
 
@@ -33,6 +34,11 @@ func executeSimpleTemplate(w http.ResponseWriter, tmplFile string) {
     http.Error(w, err.Error(), http.StatusInternalServerError)
   }
   
+}
+
+func notFoundHandler(w http.ResponseWriter, r *http.Request) {
+	// The 404 page
+	executeSimpleTemplate(w, "tmpl/content/404.html")
 }
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
