@@ -4,21 +4,11 @@
         <div class="row-fluid">
             <div class="span3 bs-docs-sidebar">
                 <ul class="nav nav-tabs nav-stacked sidenav affix">
-                    <li class="active">
-                        <a href="#mobileApps"><h4 class="links">Mobile Applications</h4></a>
-                    </li>
-                    <li>
-                        <a href="#webApps"><h4 class="links">Web Applications</h4></a>
-                    </li>
-                    <li>
-                        <a href="#browserExtenstions"><h4 class="links">Browser extensions</h4></a>
-                    </li>
-                    <li>
-                        <a href="#plugins"><h4 class="links">Plugins</h4></a>
-                    </li>
-                    <li>
-                        <a href="#templates"><h4 class="links">Websites/Templates</h4></a>
-                    </li>
+                    {{range .categories}}
+                        <li>
+                            <a href="#{{.ID}}"><h4 class="links">{{.Name}}</h4></a>
+                        </li>
+                    {{end}}
                 </ul>
             </div>
             <div class="span9 img-rounded content">

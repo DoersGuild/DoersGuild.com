@@ -37,5 +37,7 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 
 func portfolioHandler(w http.ResponseWriter, r *http.Request) {
 	// The portfolio page
+	config["portfolioItems"] = portfolioItems
+	config["categories"] = categories
 	executeSimpleTemplate(w, "tmpl/content/portfolio.html")
 }
