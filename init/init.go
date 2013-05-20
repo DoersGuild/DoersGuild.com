@@ -49,6 +49,7 @@ func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	// The home page
+	config["homePageItems"] = homePageItems
 	executeSimpleTemplate(w, r, "tmpl/content/index.html")
 }
 

@@ -1,5 +1,22 @@
 {{define "content"}}
-<div class="container content">
-    Hello
+<div class="container content center">
+    <h2>We help you build applications that run beautifully on all your devices</h2>
+    <h4> </h4>
+    <div class="well">
+        <h3>Here is some of the stuff we've been working on, recently: </h3>
+        <div class="card-wrapper">
+            {{range $Item := .homePageItems}}
+                <a href="/portfolio/{{$Item.CategoryID}}/{{$Item.ID}}" class="card">
+                    <h3 class="card-header " data-length="20">{{$Item.Title}}</h3>
+                    <br />
+                    <div class="center">
+                        <img src="{{$Item.Icon}}" class="logo-size" />
+                    </div>
+                    <br />
+                    <p class="text" data-length="100">{{$Item.ShortDesc}}</p>
+                </a>
+            {{end}}
+        </div>
+    </div>
 </div>
 {{end}}
