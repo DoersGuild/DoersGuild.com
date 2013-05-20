@@ -14,8 +14,13 @@ type PortfolioItem struct {
     Tags []string
 }
 
-var portfolioItems = map[Category]interface{} {
-	Category {"MobileApps", "Mobile Applications"} : []PortfolioItem {
+var portfolioCategories = map[string]Category {
+	"MobileApps" : Category {"MobileApps", "Mobile Applications"},
+	"WebApps" : Category {"WebApps", "Web Applications"},
+}
+
+var portfolioItems = map[string]interface{} {
+	"MobileApps" : []PortfolioItem {
 		{
 			"GeneralKnowitallKnowledge",
 			"General Knowitall Knowledge",
@@ -35,7 +40,7 @@ var portfolioItems = map[Category]interface{} {
 			[]string{"PhoneGap","Android", "jQuery Mobile"},
 		},
 	},
-	Category {"WebApps", "Web Applications"} : []PortfolioItem {
+	"WebApps" : []PortfolioItem {
 		{
 			"IXXOCart",
 			"IXXO Templating framework",
