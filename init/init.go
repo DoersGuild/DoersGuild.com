@@ -62,7 +62,11 @@ func portfolioHandler(w http.ResponseWriter, r *http.Request) {
 func portfolioCategoryHandler(w http.ResponseWriter, r *http.Request) {
 	// The portfolio category listing page
 	vars := mux.Vars(r)
-	category:=vars["category"]
+	category, cat_ok:=vars["category"]
+	if(!cat_ok) {
+		portfolioHandler(w, r)
+		return
+	}
 	config["portfolioItems"] = portfolioItems[category]
 	config["portfolioCategory"] = portfolioCategories[category]
 	executeSimpleTemplate(w, r, "tmpl/content/portfolio_category.html")
