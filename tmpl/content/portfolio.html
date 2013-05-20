@@ -6,7 +6,7 @@
                 <ul class="nav nav-tabs nav-stacked sidenav affix">
                     {{range $Category,$Item:=.portfolioItems}}
                         <li>
-                            <a href="#{{$Category.ID}}"><h4 class="links">{{$Category.Name}}</h4></a>
+                            <a href="#{{$Category.ID}}"><h4 class="title doer-red center">{{$Category.Name}}</h4></a>
                         </li>
                     {{end}}
                 </ul>

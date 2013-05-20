@@ -14,7 +14,11 @@
 
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans|Oleo+Script+Swash+Caps:400,700|PT+Serif' rel='stylesheet' type='text/css'>
+
         <link rel="stylesheet" href="/css/main.css">
+
         <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
@@ -27,20 +31,20 @@
                 <div class="span4">
                     <ul class="nav nav-tabs border-none inline-block">
                         <li>
-                            <a href="/"><h1>{{.title}}</h1></a>
+                            <a href="/"><h1 class="doer-font doer-red">{{.title}}</h1></a>
                         </li>
                     </ul>
                 </div>
                 <div class="span8 row-fluid">
                     <ul class="nav nav-tabs">
                         <li>
-                            <a href="http://blog.doersguild.com/" target="_blank"><h3>Blog</h3></a>
+                            <a href="http://blog.doersguild.com/" target="_blank"><h3 class="doer-font doer-red">Blog</h3></a>
                         </li>
                         <li>
-                            <a href="/portfolio"><h3>Portfolio</h3></a>
+                            <a href="/portfolio"><h3 class="doer-font doer-red">Portfolio</h3></a>
                         </li>
                         <li>
-                            <a href="/about"><h3>About</h3></a>
+                            <a href="/about"><h3 class="doer-font doer-red">About</h3></a>
                         </li>
                     </ul>
                 </div>
@@ -72,8 +76,7 @@
         <script src="/js/main.js"></script>
 
         <script>
-            var _gaq = [['_setAccount', 'UA-5141372-4'], ['_trackPageview']];
-            ( function(d, t) {
+            var _gaq = [['_setAccount', 'UA-5141372-4'], ['_trackPageview']]; ( function(d, t) {
                     var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
                     g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
                     s.parentNode.insertBefore(g, s)

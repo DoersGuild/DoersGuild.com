@@ -3,16 +3,15 @@
  ========================================================================== */
 body {
     background: url(../img/darkgrain.png);
+    font-family: 'PT Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.content {
-    background-color: #FDFDFD;
-    background-color: rgba(253, 253, 253, 0.47);
-    padding: 5px;
+h1, h2, h3, h4, h5, h6, .title {
+    font-family: 'PT Serif', Georgia, serif;
 }
 
 .doer-font {
-    font-family: 'Script MT Bold', 'Niconne', 'Acme', Cursive;
+    font-family: 'Oleo Script Swash Caps', 'Script MT Bold', 'PT Serif', Georgia, cursive;
 }
 
 .doer-red, .doer-red a {
@@ -21,6 +20,20 @@ body {
 a.doer-font {
     /* Add an underline for all links*/
     text-decoration: underline;
+}
+
+.content {
+    background-color: #FDFDFD;
+    background-color: rgba(253, 253, 253, 0.47);
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #eaeaea;
+    -moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 .center {
@@ -63,7 +76,6 @@ a.card, a.card:hover, a.card:active, a.card:focus {
 }
 
 .header-sub {
-    font-family: 'Script MT Bold', 'Niconne', 'Acme', Cursive;
     text-align: center;
     border-bottom: 2px solid #EEE;
 }
@@ -77,17 +89,8 @@ a.card, a.card:hover, a.card:active, a.card:focus {
 .border-none {
     border: none;
 }
-.links {
-    color: #ed1c24;
-    font-family: 'Script MT Bold', 'Niconne', 'Acme', Cursive;
-    text-align: center;
-}
-.demo-links {
-    font-family: 'Script MT Bold', 'Niconne', 'Acme', Cursive;
-}
 .text {
     text-align: justify;
-    font-family: cursive;
 }
 .table-display {
     height: 100px;
