@@ -1,0 +1,29 @@
+{{define "content"}}
+<div class="background">
+    <div class="container content">
+        {{$Category:=.portfolioCategory}}
+        <section id="{{$Category.ID}}">
+            <header>
+                <h3 class="doer-font doer-red center"><a href="/portfolio/">Portfolio</a> <i class="icon-arrow-right margin-5"></i> <a href="/portfolio/{{$Category.ID}}">{{$Category.Name}} :</a></h3>
+                <br />
+            </header>
+            <div class="card-wrapper">
+                {{range $ItemID, $Item := .portfolioItems}}
+                    <a href="/portfolio/{{$Category.ID}}/{{$ItemID}}" class="card">
+                        <h3 class="card-header " data-length="20">{{$Item.Title}}</h3>
+                        <br />
+                        <div class="center">
+                            <img src="{{$Item.Icon}}" class="logo-size" />
+                        </div>
+                        <br />
+                        <p class="text" data-length="100">{{$Item.ShortDesc}}</p>
+                    </a>
+                {{end}}
+            </div>
+        </section>
+        <hr/>
+    </div>
+    <!-- /container -->
+</div>
+
+{{end}}

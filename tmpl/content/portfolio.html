@@ -4,32 +4,32 @@
         <div class="row-fluid">
             <div class="span3 bs-docs-sidebar">
                 <ul class="nav nav-tabs nav-stacked sidenav affix">
-                    {{range $CategoryString,$Category:=.portfolioCategories}}
+                    {{range $CategoryID,$Category:=.portfolioCategories}}
                         <li>
-                            <a href="#{{$Category.ID}}"><h4 class="title doer-red center">{{$Category.Name}}</h4></a>
+                            <a href="#{{$CategoryID}}"><h4 class="title doer-red center">{{$Category.Name}}</h4></a>
                         </li>
                     {{end}}
                 </ul>
             </div>
             <div class="span9 img-rounded content">
                 {{$Categories:=.portfolioCategories}}
-                {{range $CategoryString,$Items:=.portfolioItems}}
-                    {{ $Category := index $Categories $CategoryString }}
-                    <section id="{{$Category.ID}}">
-                        <div>
-                            <a href="#{{$Category.ID}}"><h3 class="doer-font doer-red center">{{$Category.Name}}</h3></a>
+                {{range $CategoryID,$Items:=.portfolioItems}}
+                    {{ $Category := index $Categories $CategoryID }}
+                    <section id="{{$CategoryID}}">
+                        <header>
+                            <a href="/portfolio/{{$CategoryID}}"><h3 class="doer-font doer-red center">{{$Category.Name}}</h3></a>
                             <br />
-                        </div>
+                        </header>
                         <div class="card-wrapper">
-                            {{range $Items}}
-                                <a href="/portfolio/{{$Category.ID}}/{{.ID}}" class="card">
-                                    <h3 class="card-header " data-length="20">{{.Title}}</h3>
+                            {{range $ItemID,$Item := $Items}}
+                                <a href="/portfolio/{{$CategoryID}}/{{$ItemID}}" class="card">
+                                    <h3 class="card-header " data-length="20">{{$Item.Title}}</h3>
                                     <br />
                                     <div class="center">
-                                        <img src="{{.Icon}}" class="logo-size" />
+                                        <img src="{{$Item.Icon}}" class="logo-size" />
                                     </div>
                                     <br />
-                                    <p class="text" data-length="100">{{.ShortDesc}}</p>
+                                    <p class="text" data-length="100">{{$Item.ShortDesc}}</p>
                                 </a>
                             {{end}}
                         </div>

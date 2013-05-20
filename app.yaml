@@ -12,6 +12,9 @@ handlers:
 
 - url: /img
   static_dir: static/img
+  
+- url: /font
+  static_dir: static/font
 
 - url: /favicon.ico
   static_files: static/logo.png
