@@ -62,22 +62,36 @@ func portfolioHandler(w http.ResponseWriter, r *http.Request) {
 func portfolioCategoryHandler(w http.ResponseWriter, r *http.Request) {
 	// The portfolio category listing page
 	vars := mux.Vars(r)
-	category, cat_ok:=vars["category"]
+	category:=vars["category"]
+	config["portfolioItems"] = portfolioItems[category]
+	cat_ok:=false
+	config["portfolioCategory"], cat_ok = portfolioCategories[category]
 	if(!cat_ok) {
-		portfolioHandler(w, r)
+		notFoundHandler(w, r)
 		return
 	}
-	config["portfolioItems"] = portfolioItems[category]
-	config["portfolioCategory"] = portfolioCategories[category]
 	executeSimpleTemplate(w, r, "tmpl/content/portfolio_category.html")
 }
 
 func portfolioDetailsHandler(w http.ResponseWriter, r *http.Request) {
 	// The portfolio details page
 	vars := mux.Vars(r)
+	
 	category:=vars["category"]
+	cat_ok:=false
+	config["portfolioCategory"], cat_ok = portfolioCategories[category]
+	if(!cat_ok) {
+		notFoundHandler(w, r)
+		return
+	}
+	
 	project:=vars["project"]
-	config["portfolioItem"] = portfolioItems[category].(map[string]PortfolioItem)[project]
-	config["portfolioCategory"] = portfolioCategories[category]
+	item_ok := false
+	config["portfolioItem"], item_ok = portfolioItems[category].(map[string]PortfolioItem)[project]
+	if(!item_ok) {
+		notFoundHandler(w, r)
+		return
+	}
+	
 	executeSimpleTemplate(w, r, "tmpl/content/portfolio_details.html")
 }
