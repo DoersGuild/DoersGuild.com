@@ -15,7 +15,7 @@
                 {{range $Category,$Items:=.portfolioItems}}
                     <section id="{{$Category.ID}}">
                         <div>
-                            <h3 class="doer-font doer-red center">{{$Category.Name}}</h3>
+                            <a href="#{{$Category.ID}}"><h3 class="doer-font doer-red center">{{$Category.Name}}</h3></a>
                             <br />
                         </div>
                         <div class="card-wrapper">
