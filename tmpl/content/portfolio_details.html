@@ -13,19 +13,12 @@
                     <a href="/portfolio/{{$Category.ID}}/{{$Item.ID}}">{{$Item.Title}}</a> 
                 </h3>
             </header>
-            <div class="content-well">
-                <h3 class="card-header " data-length="20">{{$Item.Title}}</h3>
-                <br />
-                <div class="center">
-                    <img src="{{$Item.Icon}}" class="logo-size" />
-                </div>
-                <br />
-                <p class="text" data-length="100">{{$Item.ShortDesc}}</p>
+            <div class="content-well"> 
+                {{template "portfolioCard" $Item}} 
             </div>
         </section>
         <hr/>
     </div>
     <!-- /container -->
 </div>
-
 {{end}}

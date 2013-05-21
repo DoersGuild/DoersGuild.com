@@ -2,7 +2,7 @@
 
     $(document).ready(function() {
 
-        $(".card").shorten(300);
+        $(".card-wrapper .card").shorten(300);
         $(".truncate-this").truncate();
         $(".card-wrapper").setupMasonry();
 

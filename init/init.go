@@ -34,7 +34,7 @@ func executeSimpleTemplate(w http.ResponseWriter, r *http.Request, tmplFile stri
 	c.Infof("Requested URL: %v", r.URL)
 	c.Infof("Loading Template: %v", tmplFile)
     
-	var listTmpl = template.Must(template.ParseFiles("tmpl/base.html", tmplFile))
+	var listTmpl = template.Must(template.ParseFiles("tmpl/base.html", "tmpl/blocks.html", tmplFile))
 	  
 	if err := listTmpl.Execute(w, config); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)

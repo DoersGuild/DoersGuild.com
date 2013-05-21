@@ -4,28 +4,21 @@
     <h4>
         We work with 
         <a href="" data-toggle="tooltip" title="JavaScript, CSS3 & HTML5; connecting with virtually any backend via webservices" target="_blank">standard web technologies</a>
-        and build 
+        to build 
         <a href="http://en.wikipedia.org/wiki/Responsive_web_design" data-toggle="tooltip" title="We build with Twitter Bootstrap and use a hybrid of adaptive and fluid layouts, to give your users an optimal experience on every device" target="_blank">responsive</a>
         web-apps &amp; sites, &amp; 
         <a href="http://phonegap.com" data-toggle="tooltip" title="We use PhoneGap to package single page, offline-capable, responsive web-apps as native Android & iOS apps that can be released via their respective stores" target="_blank">hybrid smartphone apps</a>.
     </h4>
     <div class="content-well">
-        <h3>Here is some of the stuff we've been working on, recently: </h3>
+        <h3>Here is some of the stuff we've been working on: </h3>
         <div class="card-wrapper">
-            {{range $Item := .homePageItems}}
-                <a href="/portfolio/{{$Item.CategoryID}}/{{$Item.ID}}" class="card">
-                    <h3 class="card-header " data-length="20">{{$Item.Title}}</h3>
-                    <br />
-                    <div class="center">
-                        <img src="{{$Item.Icon}}" class="logo-size" />
-                    </div>
-                    <br />
-                    <p class="text" data-length="100">{{$Item.ShortDesc}}</p>
-                </a>
-            {{end}}
+            {{range $Item := .homePageItems}} {{template "portfolioCard" $Item}} {{end}}
         </div>
         <br/>
-        <h4>Please glance through our <a href="/portfolio">Portfolio</a> for more.</h4>
+        <h4><a href="/portfolio" class="btn btn-large"><i class="icon-eye-open"></i> SEE MORE</a></h4>
+    </div>
+    <div class="content-well">
+        <h3>So, what's it like to work with a <span class="doer-font doer-red">Doer</span>? Just ask our clients :</h3>
     </div>
 </div>
 {{end}}

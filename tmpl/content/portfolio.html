@@ -21,17 +21,7 @@
                         </header>
                         <div class="content-well">
                             <div class="card-wrapper">
-                                {{range $ItemID,$Item := $Items}}
-                                    <a href="/portfolio/{{$CategoryID}}/{{$ItemID}}" class="card">
-                                        <h3 class="card-header " data-length="20">{{$Item.Title}}</h3>
-                                        <br />
-                                        <div class="center">
-                                            <img src="{{$Item.Icon}}" class="logo-size" />
-                                        </div>
-                                        <br />
-                                        <p class="text" data-length="100">{{$Item.ShortDesc}}</p>
-                                    </a>
-                                {{end}}
+                                {{range $ItemID,$Item := $Items}} {{template "portfolioCard" $Item}} {{end}}
                             </div>
                         </div>
                     </section>
