@@ -18,20 +18,21 @@
                     <section id="{{$CategoryID}}">
                         <header>
                             <a href="/portfolio/{{$CategoryID}}"><h3 class="doer-font doer-red center">{{$Category.Name}}</h3></a>
-                            <br />
                         </header>
-                        <div class="card-wrapper">
-                            {{range $ItemID,$Item := $Items}}
-                                <a href="/portfolio/{{$CategoryID}}/{{$ItemID}}" class="card">
-                                    <h3 class="card-header " data-length="20">{{$Item.Title}}</h3>
-                                    <br />
-                                    <div class="center">
-                                        <img src="{{$Item.Icon}}" class="logo-size" />
-                                    </div>
-                                    <br />
-                                    <p class="text" data-length="100">{{$Item.ShortDesc}}</p>
-                                </a>
-                            {{end}}
+                        <div class="content-well">
+                            <div class="card-wrapper">
+                                {{range $ItemID,$Item := $Items}}
+                                    <a href="/portfolio/{{$CategoryID}}/{{$ItemID}}" class="card">
+                                        <h3 class="card-header " data-length="20">{{$Item.Title}}</h3>
+                                        <br />
+                                        <div class="center">
+                                            <img src="{{$Item.Icon}}" class="logo-size" />
+                                        </div>
+                                        <br />
+                                        <p class="text" data-length="100">{{$Item.ShortDesc}}</p>
+                                    </a>
+                                {{end}}
+                            </div>
                         </div>
                     </section>
                     <hr/>
