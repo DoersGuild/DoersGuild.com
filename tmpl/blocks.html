@@ -3,10 +3,12 @@
     <a href="/portfolio/{{$Item.CategoryID}}/{{$Item.ID}}" class="card"> 
         <h3 class="card-header " data-length="20">{{$Item.Title}}</h3>
         <br />
-        <div class="center">
-            <img src="{{$Item.Icon}}" class="logo-size" />
-        </div>
-        <br />
+        {{if $Item.Icon}}
+            <div class="center">
+                <img src="{{$Item.Icon}}" class="logo-size" />
+            </div>
+            <br />
+        {{end}}
         <p class="text" data-length="100">
             {{$Item.ShortDesc}}
         </p> 

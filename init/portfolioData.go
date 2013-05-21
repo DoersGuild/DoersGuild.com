@@ -12,6 +12,7 @@ type PortfolioItem struct {
     Tags []string
 }
 
+/* All our projects as an array */
 var portfolioItems = map[string]PortfolioItem { 
 	"GeneralKnowitallKnowledge" : {
 		"GeneralKnowitallKnowledge",
@@ -19,7 +20,7 @@ var portfolioItems = map[string]PortfolioItem {
 		"General Knowitall Knowledge is a fun android app for all the quizzing enthusiasts out there. It comes loaded with fun and interesting facts about various things from around the world.",
 		"November, 2012",
 		"MobileApps",
-		map[string]string{"PlayStore" : "http:play.google.com", "Blog":"http://blog.doersguild.com"},
+		map[string]string{"PlayStore" : "http://play.google.com", "Blog":"http://blog.doersguild.com"},
 		"/img/logos/mobile/gkk.png",
 		[]string{},
 		[]string{"PhoneGap","Android", "Twitter Bootstrap"},
@@ -30,7 +31,7 @@ var portfolioItems = map[string]PortfolioItem {
 		"A Mobile Gallery Application that shows it’s users, incredibly funny images from around the world, leaving them fully entertained. It is designed to run as both a website and a native android application and was built with the standard web technologies and packaged with PhoneGap. This application’s UI is fully responsive, so it works extremely well on all modern devices and their various screen sizes.",
 		"September, 2012",
 		"MobileApps",
-		map[string]string{"PlayStore" : "http:play.google.com"},
+		map[string]string{"PlayStore" : "http://play.google.com"},
 		"/img/logos/mobile/i-entertain.jpg",
 		[]string{},
 		[]string{"PhoneGap","Android", "jQuery Mobile"},
@@ -54,6 +55,7 @@ type Category struct {
 	Items []PortfolioItem
 }
 
+/* The categories & the projects under them */
 var portfolioCategories = map[string]Category {
 	"MobileApps" : Category {
 		"MobileApps",

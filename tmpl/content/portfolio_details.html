@@ -18,9 +18,9 @@
                     <div class="span3"> {{template "portfolioCard" $Item}} </div>
                     <div class="span9"> 
                         <ul class="nav nav-list">
-                            <li> <img src="http://bearddesign.in/wp-content/uploads/2013/05/Giftery-Website-8.jpg" class="img-polaroid margin-5" /> </li>
-                            <li> <img src="http://bearddesign.in/wp-content/uploads/2013/05/Giftery-Website-8.jpg" class="img-polaroid margin-5" /> </li>
-                            <li> <img src="http://bearddesign.in/wp-content/uploads/2013/05/Giftery-Website-8.jpg" class="img-polaroid margin-5" /> </li>
+                            {{range $Screenshot:=$Item.Screenshots}}
+                                <li> <img src="{{$Screenshot}}" class="img-polaroid margin-5" /> </li>
+                            {{end}}
                         </ul>
                     </div>
                 </div>
