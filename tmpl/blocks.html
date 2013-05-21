@@ -1,16 +1,26 @@
 {{define "portfolioCard"}} 
     {{$Item:=.}}
-    <a href="/portfolio/{{$Item.CategoryID}}/{{$Item.ID}}" class="card"> 
-        <h3 class="card-header " data-length="20">{{$Item.Title}}</h3>
+    <a href="/portfolio/{{$Item.CategoryID}}/{{$Item.ID}}" class="card"> {{template "portfolioCardContent" $Item}} </a>
+{{end}}
+{{define "portfolioCardContent"}}
+    {{$Item:=.}}
+    <h3 class="card-header " data-length="20">{{$Item.Title}}</h3>
+    <br />
+    {{if $Item.Icon}}
+        <div class="center">
+            <img src="{{$Item.Icon}}" class="logo-size" />
+        </div>
         <br />
-        {{if $Item.Icon}}
-            <div class="center">
-                <img src="{{$Item.Icon}}" class="logo-size" />
-            </div>
-            <br />
-        {{end}}
-        <p class="text" data-length="100">
-            {{$Item.ShortDesc}}
-        </p> 
-    </a>
+    {{end}}
+    <p class="text" data-length="100">
+        {{$Item.ShortDesc}}
+    </p> 
+    {{if $Item.Client.Name}}<h6 class="center">Built for: {{$Item.Client.Name}}</h6>{{end}}
+    {{if $Item.Tags}}
+        <ul class="nav center margin-0">
+            {{range $tag:=$Item.Tags}}
+                <li class="label margin-5">{{$tag}}</li>
+            {{end}}
+        </ul>
+    {{end}}
 {{end}}

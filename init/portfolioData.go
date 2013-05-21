@@ -1,5 +1,15 @@
 package init
 
+type Person struct {
+	ID, Name, URL string
+}
+
+var Clients = map[string]Person {
+	"DoersGuild" : {"DoersGuild", "Doers' Guild", "http://doersguild.com"},
+	"WissamSaleh" : {"WissamSaleh", "Wissam Saleh", "http://i-entertain.mobi"},
+	"IXXOCart" : {"IXXOCart", "IXXO Cart", "http://ixxocart.com"},
+}
+
 type PortfolioItem struct {
 	ID string
     Title string
@@ -10,6 +20,7 @@ type PortfolioItem struct {
     Icon string
     Screenshots []string
     Tags []string
+    Client Person
 }
 
 /* All our projects as an array */
@@ -24,6 +35,7 @@ var portfolioItems = map[string]PortfolioItem {
 		"/img/logos/mobile/gkk.png",
 		[]string{},
 		[]string{"PhoneGap","Android", "Twitter Bootstrap"},
+		Clients["DoersGuild"],
 	},
 	"iEntertain" : {
 		"iEntertain",
@@ -35,6 +47,7 @@ var portfolioItems = map[string]PortfolioItem {
 		"/img/logos/mobile/i-entertain.jpg",
 		[]string{},
 		[]string{"PhoneGap","Android", "jQuery Mobile"},
+		Clients["WissamSaleh"],
 	},
 	"IXXOCart" : {
 		"IXXOCart",
@@ -46,6 +59,7 @@ var portfolioItems = map[string]PortfolioItem {
 		"/img/logos/mobile/ixxo.png",
 		[]string{},
 		[]string{"PHP", "Smarty", "Twitter Bootstrap", "IXXOCart"},
+		Clients["IXXOCart"],
 	},
 }
 
