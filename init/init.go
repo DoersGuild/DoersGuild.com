@@ -55,7 +55,6 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 
 func portfolioHandler(w http.ResponseWriter, r *http.Request) {
 	// The portfolio page
-	config["portfolioItems"] = portfolioItems
 	config["portfolioCategories"] = portfolioCategories
 	executeSimpleTemplate(w, r, "tmpl/content/portfolio.html")
 }
@@ -64,7 +63,6 @@ func portfolioCategoryHandler(w http.ResponseWriter, r *http.Request) {
 	// The portfolio category listing page
 	vars := mux.Vars(r)
 	category:=vars["category"]
-	config["portfolioItems"] = portfolioItems[category]
 	cat_ok:=false
 	config["portfolioCategory"], cat_ok = portfolioCategories[category]
 	if(!cat_ok) {
@@ -88,7 +86,7 @@ func portfolioDetailsHandler(w http.ResponseWriter, r *http.Request) {
 	
 	project:=vars["project"]
 	item_ok := false
-	config["portfolioItem"], item_ok = portfolioItems[category].(map[string]PortfolioItem)[project]
+	config["portfolioItem"], item_ok = portfolioItems[project]
 	if(!item_ok) {
 		notFoundHandler(w, r)
 		return

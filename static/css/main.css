@@ -94,11 +94,12 @@ a.doer-font {
     background: -webkit-gradient(linear, left top, left bottom, from(white), to(#EFEFEF));
     background: -moz-linear-gradient(top, white, #EFEFEF);
     display: inline-block;
-    width: 230px;
-    max-width: 97%;
+    width: 240px;
+    max-width: 100%;
     margin: 5px;
-    min-height: 300px;
+    min-height: 320px;
     word-wrap: break-word;
+    box-sizing: border-box;
 }
 .card:hover, .card:focus, .card:active, .card.active {
     -moz-box-shadow: 0 10px 25px #333;
