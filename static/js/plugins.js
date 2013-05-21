@@ -52,7 +52,7 @@
         // Shorten the selected node to the given height
         $(this).each(function() {
             // For multiple node support
-            var $this = $(this), height;
+            var $this = $(this);
             height = height || $this.attr("data-height") || 240;
             $this.css({
                 "overflow" : "hidden",

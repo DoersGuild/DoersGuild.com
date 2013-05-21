@@ -19,6 +19,34 @@
     </div>
     <div class="content-well">
         <h3>So, what's it like to work with a <span class="doer-font doer-red">Doer</span>? Just ask our clients :</h3>
+        <div class="card-comment-wrapper">
+            {{$portfolioClients := .portfolioClients}}
+            {{$portfolioItems := .portfolioItems}}
+            {{range $Item := .homePageFeedback}}
+                {{$Project := index $portfolioItems $Item.ProjectID}}
+                {{$Client := index $portfolioClients $Item.PersonID}}
+                <div class="inline-block center card-comment">
+                    <div class="img-polaroid img-rounded padding-0">
+                        <div class="popover popover-static top">
+                            {{if $Client.Name}} <div class="arrow"></div> {{end}}
+                            <div class="card-comment-popover-content">
+                                <h3 class="popover-title bold">{{$Project.Title}}</h3>
+                                <div class="popover-content">
+                                    <p>{{$Item.Message}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-comment-user">
+                            {{if $Client.URL}}<a href="{{$Client.URL}}" rel="external" target="_blank" class="btn-group">{{else}}<div class="btn-group">{{end}}
+                                {{if $Client.IconURL}}<span class="btn btn-link padding-3"><img src="{{$Client.IconURL}}" class="img-polaroid img-rounded img-tiny" /></span>{{end}}
+                                {{if $Client.Name}}<span class="btn btn-link padding-3">{{$Client.Name}}</span>{{end}}
+                                {{if $Client.Company}}<span class="btn btn-link padding-3"> - {{$Client.Company}}</span>{{end}}
+                            {{if $Client.URL}}</a>{{else}}</div>{{end}}
+                        </div>
+                    </div>
+                </div>
+            {{end}}
+        </div>
     </div>
 </div>
 {{end}}

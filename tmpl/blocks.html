@@ -15,7 +15,7 @@
     <p class="text" data-length="100">
         {{$Item.ShortDesc}}
     </p> 
-    {{if $Item.Client.Name}}<h6 class="center">Built for: {{$Item.Client.Name}}</h6>{{end}}
+    {{if $Item.Client.Name}}<h6 class="center">Client: {{$Item.Client.Name}}</h6>{{end}}
     {{if $Item.Tags}}
         <ul class="nav center margin-0">
             {{range $tag:=$Item.Tags}}

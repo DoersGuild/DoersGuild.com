@@ -50,6 +50,9 @@ func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	// The home page
 	config["homePageItems"] = homePageItems
+	config["homePageFeedback"] = homePageFeedback
+	config["portfolioItems"] = portfolioItems
+	config["portfolioClients"] = portfolioClients
 	executeSimpleTemplate(w, r, "tmpl/content/index.html")
 }
 

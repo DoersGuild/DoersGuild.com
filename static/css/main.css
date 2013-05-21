@@ -39,7 +39,7 @@ a.doer-font {
 
 .content-well {
     margin: 20px -5px;
-    padding: 19px;
+    padding: 10px;
     background-color: #f5f5f5;
     border: 1px solid #e3e3e3;
     border-right: none;
@@ -54,6 +54,9 @@ a.doer-font {
     margin-left: auto;
     margin-right: auto;
 }
+.bold {
+    font-weight: bold;
+}
 
 .inline-block {
     display: inline;
@@ -65,11 +68,32 @@ a.doer-font {
 .margin-5 {
     margin: 5px;
 }
+.padding-0 {
+    padding: 0px;
+}
+.padding-3 {
+    padding: 3px;
+}
+
 .border-none {
     border: none;
 }
 .text {
     text-align: justify;
+}
+
+/* Fixtable layouts: Better for respoonsiveness; Not so good for data-tables*/
+.table-layout-fixed {
+    table-layout: fixed;
+}
+.table-layout-fixed td, .table-layout-fixed th {
+    word-wrap: break-word;
+    text-align: inherit;
+}
+
+.img-tiny {
+    max-height: 40px;
+    max-width: 40px;
 }
 
 /* Portfolio cards */
@@ -111,6 +135,33 @@ a.doer-font {
 a.card, a.card:hover, a.card:active, a.card:focus {
     color: inherit;
     text-decoration: none;
+}
+
+/* Comment Cards */
+.card-comment-wrapper {
+    padding: 15px 1px;
+    margin: auto;
+}
+.card-comment {
+    margin: 10px;
+    width: 240px;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+.card-comment-popover-content {
+    min-height: 140px;
+}
+.popover-static {
+    position: relative;
+    margin: 15px;
+    display: block;
+    display: inline-block;
+    text-align: inherit;
+}
+
+.card-comment .popover-static.top {
+    margin: 0px;
+    margin-bottom: 12px;
 }
 
 /* Sidebar stuff */
