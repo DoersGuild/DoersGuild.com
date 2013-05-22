@@ -21,17 +21,19 @@
                             {{template "portfolioCardContent" $Item}}
                         </div> 
                         <br/>
-                        <div class="img-polaroid">
-                            <h4 class="card-header">Feedback:</h4>
-                            <ul class="nav nav-list">
-                                {{range $Feedback := $Item.Feedback}}
-                                    <li> 
-                                        {{template "clientNameAndLink" index $Clients $Feedback.PersonID}} 
-                                        <blockquote>{{$Feedback.Message}}</blockquote>
-                                    </li>
-                                {{end}}
-                            </ul>
-                        </div>
+                        {{if $Item.Feedback}}
+                            <div class="img-polaroid">
+                                <h4 class="card-header">Feedback:</h4>
+                                <ul class="nav nav-list">
+                                    {{range $Feedback := $Item.Feedback}}
+                                        <li> 
+                                            {{template "clientNameAndLink" index $Clients $Feedback.PersonID}} 
+                                            <blockquote>{{$Feedback.Message}}</blockquote>
+                                        </li>
+                                    {{end}}
+                                </ul>
+                            </div>
+                        {{end}}
                     </div>
                     <div class="span9"> 
                         <ul class="nav nav-list">
