@@ -168,6 +168,10 @@ a.card, a.card:hover, a.card:active, a.card:focus {
     margin-bottom: 12px;
 }
 
+.nav-tabs-right > li {
+    float: right;
+}
+
 /* Sidebar stuff */
 .sidenav {
     width: 228px;

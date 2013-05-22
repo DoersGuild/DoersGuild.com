@@ -6,8 +6,8 @@ type Person struct {
 
 var portfolioClients = map[string]Person {
 	"DoersGuild" : {"DoersGuild", "Doers' Guild", "Doers' Guild", "http://doersguild.com", ""},
-	"WissamSaleh" : {"WissamSaleh", "Wissam Saleh", "", "http://i-entertain.mobi", ""},
-	"IXXOCart" : {"IXXOCart", "IXXO Cart", "IXXO Cart", "http://ixxocart.com", "/img/logos/mobile/ixxo.png"},
+	"WissamSaleh" : {"WissamSaleh", "Wissam Saleh", "", "http://ientertain.mobi", ""},
+	"IXXOCart" : {"IXXOCart", "IXXO Cart", "IXXO Cart", "http://ixxocart.com", "/img/projects/IXXOCart/logo.png"},
 	"GKK_Rahul" : {"GKK_Rahul", "Rahul", "", "https://play.google.com/store/apps/details?id=com.doersguild.generalknowledge&reviewId=bGc6QU9xcFRPSDZUNEdCRlVLWjBGaF9WbGtaWDNVdFZFcjN2ZkZacXk5OVFpWEFwbkpwVk1HNmRKSlJlTTE5bEEwcS1rVG1sLThRRUlOYmRURU1Ca2F6NGFz", ""},
 }
 
@@ -38,7 +38,7 @@ var portfolioItems = map[string]PortfolioItem {
 		"November, 2012",
 		"MobileApps",
 		map[string]string{"PlayStore" : "http://play.google.com", "Blog":"http://blog.doersguild.com"},
-		"/img/logos/mobile/gkk.png",
+		"/img/projects/GeneralKnowitallKnowledge/logo.png",
 		[]string{},
 		[]string{"PhoneGap","Android", "Twitter Bootstrap"},
 		portfolioClients["DoersGuild"],
@@ -53,7 +53,7 @@ var portfolioItems = map[string]PortfolioItem {
 		"September, 2012",
 		"MobileApps",
 		map[string]string{"PlayStore" : "http://play.google.com"},
-		"/img/logos/mobile/i-entertain.jpg",
+		"/img/projects/iEntertain/logo.jpg",
 		[]string{},
 		[]string{"PhoneGap","Android", "jQuery Mobile"},
 		portfolioClients["WissamSaleh"],
@@ -68,7 +68,7 @@ var portfolioItems = map[string]PortfolioItem {
 		"May, 2013",
 		"WebApps",
 		map[string]string{"MVDemo" : "http://ixxocart.com", "Blog":"http://blog.doersguild.com"},
-		"/img/logos/mobile/ixxo.png",
+		"/img/projects/IXXOCart/logo.png",
 		[]string{},
 		[]string{"PHP", "Smarty", "Twitter Bootstrap", "IXXOCart"},
 		portfolioClients["IXXOCart"],
