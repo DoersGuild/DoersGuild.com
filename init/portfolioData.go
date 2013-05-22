@@ -39,7 +39,7 @@ var portfolioItems = map[string]PortfolioItem {
 		"MobileApps",
 		map[string]string{"PlayStore" : "http://play.google.com", "Blog":"http://blog.doersguild.com"},
 		"/img/projects/GeneralKnowitallKnowledge/logo.png",
-		[]string{"/img/projects/GeneralKnowitallKnowledge/tablet1.png", "/img/projects/GeneralKnowitallKnowledge/mobile1.png"},
+		[]string{"/img/projects/GeneralKnowitallKnowledge/mobile1.png", "/img/projects/GeneralKnowitallKnowledge/tablet1.png"},
 		[]string{"PhoneGap","Android", "Twitter Bootstrap"},
 		portfolioClients["DoersGuild"],
 		[]Feedback{

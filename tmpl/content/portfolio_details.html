@@ -20,8 +20,21 @@
                         <div class="img-polaroid">
                             {{template "portfolioCardContent" $Item}}
                         </div> 
-                        <br/>
+                        {{if $Item.Links}}
+                            <br/>
+                            <div class="img-polaroid">
+                                <h4 class="card-header">Links:</h4>
+                                <ul class="nav nav-list">
+                                    {{range $Name, $Link := $Item.Links}}
+                                        <li> 
+                                            <a href="{{$Link}}" target="_blank" rel="external">{{$Name}}</a>
+                                        </li>
+                                    {{end}}
+                                </ul>
+                            </div>
+                        {{end}}
                         {{if $Item.Feedback}}
+                            <br/>
                             <div class="img-polaroid">
                                 <h4 class="card-header">Feedback:</h4>
                                 <ul class="nav nav-list">
