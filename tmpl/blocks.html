@@ -29,7 +29,7 @@
     {{if $Client.URL}}<a href="{{$Client.URL}}" rel="external" target="_blank" class="btn btn-link">{{else}}<div class="">{{end}}
         <div class="media">
             {{if $Client.IconURL}}<span class=" pull-left"><img src="{{$Client.IconURL}}" class="media-object img-polaroid img-rounded img-tiny" /></span>{{end}}
-            <div class="media-body margin-top-5">
+            <div class="media-body margin-top-5 line-height-36">
                 {{if $Client.Name}}<h5 class="inline-block padding-3 margin-0 media-heading">{{$Client.Name}}{{if $Client.Company}},{{end}}</h5>{{end}}
                 {{if $Client.Company}}<p class="inline-block padding-3">{{$Client.Company}}</p>{{end}}
             </div>

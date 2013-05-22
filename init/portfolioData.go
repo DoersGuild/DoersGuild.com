@@ -10,6 +10,9 @@ var portfolioClients = map[string]Person {
 	"IXXOCart" : {"IXXOCart", "IXXO Cart", "IXXO Cart", "http://ixxocart.com", "/img/projects/IXXOCart/logo.png"},
 	"Tharuni" : {"Tharuni","Tharuni","Tharuni","http://tharuni.org","/img/projects/Tharuni/logo.png"},
 	"GKK_Rahul" : {"GKK_Rahul", "Rahul", "", "https://play.google.com/store/apps/details?id=com.doersguild.generalknowledge&reviewId=bGc6QU9xcFRPSDZUNEdCRlVLWjBGaF9WbGtaWDNVdFZFcjN2ZkZacXk5OVFpWEFwbkpwVk1HNmRKSlJlTTE5bEEwcS1rVG1sLThRRUlOYmRURU1Ca2F6NGFz", ""},
+	"Unitu": {"Unitu","Anish","Unitu","https://www.elance.com/e/baggaanish/", ""},
+	"HihnSight": {"HihnSight","HihnSight","","https://www.elance.com/e/HihnSight/", ""},
+	"MigRyes": {"MigRyes","Mig Ryes","37Signals","http://migreyes.com/", "http://migreyes.com/assets/images/mig.jpg"},
 }
 
 type Feedback struct {
@@ -99,6 +102,51 @@ var portfolioItems = map[string]PortfolioItem {
 		portfolioClients["DoersGuild"],
 		[]Feedback{},
 	},
+	"Unitu": {
+		"Unitu",
+		"Unitu Cross-Browser Compatiability",
+		"We helped fix a lot of cross-browser compatiability issues on Unitu's newest responsive template and ensured that it supported almost every modern platform including IE8.",
+		"February, 2013",
+		"Bugfixes",
+		map[string]string{"Elance" : "https://www.elance.com/j/front-end-developer-needed-make-fixes-current-website/36709339/"},
+		"",
+		[]string{},
+		[]string{"Responsive", "Cross-Browser", "IE8"},
+		portfolioClients["Unitu"],
+		[]Feedback{
+			{"Unitu","Unitu", "Contractor was fantastic! Was an expert in his field and very responsive, kind and patient. Will definitely be working with him again!"},
+		},
+	},
+	"PassHasher": {
+		"PassHasher",
+		"Password Hasher",
+		"Password Hasher is an open-source browser extension for Chrome, Firefox, Safari and IE that makes it easy for you to create a unique, highly secure password for every domain, by hashing your password, combined with the current domain using the PBKDF2 algorithm. It is also available as a web-app.",
+		"November, 2012",
+		"BrowserExtensions",
+		map[string]string{"Password Hasher Web-App":"http://passhasher.com/", "Blog Post":"http://blog.doersguild.com/post/42079891079/beat-the-domino-effect-secure-your-passwords","Elance" : "https://www.elance.com/j/simple-browser-plugin-but-needed-ff-chrome-ie/33109099/"},
+		"/img/projects/PassHasher/logo.png",
+		[]string{"/img/projects/PassHasher/desktop1.png", "/img/projects/PassHasher/desktop2.png", "/img/projects/PassHasher/tablet1.png", "/img/projects/PassHasher/mobile1.png"},
+		[]string{"CrossRider", "Cross-Browser Extension", "Twitter Bootstrap", "Offline Web-App", "Security"},
+		portfolioClients["HihnSight"],
+		[]Feedback{
+			{"PassHasher","HihnSight", "Absolute joy to work with. No communications issues. Delivered better than promised."},
+		},
+	},
+	"ToggleText": {
+		"ToggleText",
+		"ToggleText",
+		"Toggle-Text is a cross-browser extension that lets you hide the text on a page, so that you can better appreciate it’s design.",
+		"May, 2012",
+		"BrowserExtensions",
+		map[string]string{"Chrome Webstore":"https://chrome.google.com/webstore/detail/toggle-text/hfccicooedcnpfdpkdbokgehcnhchfaj", "Blog Post":"http://blog.doersguild.com/post/48191208744/toggle-text-look-at-websites-without-their-text","CrossRider Installation Page" : "http://crossrider.com/install/31274-toggle-text"},
+		"/img/projects/ToggleText/logo.png",
+		[]string{"/img/projects/ToggleText/desktop1.png"},
+		[]string{"CrossRider", "Chrome Extension", "Design"},
+		portfolioClients["DoersGuild"],
+		[]Feedback{
+			{"ToggleText","MigRyes", "Wow, thanks so much. This is super cool. Sharing with the team!"},
+		},
+	},
 }
 
 
@@ -122,6 +170,7 @@ var portfolioCategories = map[string]Category {
 		"Web Applications",
 		[]PortfolioItem {
 			portfolioItems["GoSketch"],
+			portfolioItems["PassHasher"],
 		},
 	},
 	"Websites" : Category {
@@ -132,16 +181,33 @@ var portfolioCategories = map[string]Category {
 			portfolioItems["CheriyalAndPembarthy"],
 		},
 	},
+	"Bugfixes" : Category {
+		"Bugfixes",
+		"Bugfixes and Upgrades",
+		[]PortfolioItem {
+			portfolioItems["Unitu"],
+		},
+	},
+	"BrowserExtensions" : Category {
+		"BrowserExtensions",
+		"Browser Extensions",
+		[]PortfolioItem {
+			portfolioItems["PassHasher"],
+			portfolioItems["ToggleText"],
+		},
+	},
 }
 
 /* Items to be displayed on the home page */
 var homePageItems = []PortfolioItem {
 	portfolioItems["IXXOCart"],
 	portfolioItems["GeneralKnowitallKnowledge"],
-	portfolioItems["iEntertain"],
+	portfolioItems["PassHasher"],
 }
 
 /* Client feedback to be highlighted on the home page */
 var homePageFeedback = []Feedback {
-	portfolioItems["GeneralKnowitallKnowledge"].Feedback[0],
+	portfolioItems["Unitu"].Feedback[0],
+	portfolioItems["PassHasher"].Feedback[0],
+	portfolioItems["ToggleText"].Feedback[0],
 }

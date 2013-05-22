@@ -78,6 +78,10 @@ a.doer-font {
     padding: 3px;
 }
 
+.line-height-36 {
+    line-height: 36px;
+}
+
 .border-none {
     border: none;
 }
