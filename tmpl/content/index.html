@@ -30,22 +30,14 @@
                         <div class="popover popover-static top">
                             {{if $Client.Name}} <div class="arrow"></div> {{end}}
                             <div class="card-comment-popover-content">
-                                <h3 class="popover-title bold">{{$Project.Title}}</h3>
+                                <h3 class="popover-title bold"><a href="/portfolio/{{$Project.CategoryID}}/{{$Project.ID}}">{{$Project.Title}}</a></h3>
                                 <div class="popover-content">
                                     <p>{{$Item.Message}}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="card-comment-user">
-                            {{if $Client.URL}}<a href="{{$Client.URL}}" rel="external" target="_blank" class="btn btn-link">{{else}}<div class="">{{end}}
-                                <div class="media">
-                                    {{if $Client.IconURL}}<span class=" pull-left"><img src="{{$Client.IconURL}}" class="media-object img-polaroid img-rounded img-tiny" /></span>{{end}}
-                                    <div class="media-body margin-top-5">
-                                        {{if $Client.Name}}<h5 class="inline-block padding-3 margin-0 media-heading">{{$Client.Name}}{{if $Client.Company}},{{end}}</h5>{{end}}
-                                        {{if $Client.Company}}<p class="inline-block padding-3">{{$Client.Company}}</p>{{end}}
-                                    </div>
-                                </div>
-                            {{if $Client.URL}}</a>{{else}}</div>{{end}}
+                            {{template "clientNameAndLink" $Client}}
                         </div>
                     </div>
                 </div>

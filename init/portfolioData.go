@@ -112,7 +112,7 @@ var homePageItems = []PortfolioItem {
 
 /* Client feedback to be highlighted on the home page */
 var homePageFeedback = []Feedback {
-	portfolioItems["GeneralKnowitallKnowledge"].Feedback[0],
 	portfolioItems["IXXOCart"].Feedback[0],
+	portfolioItems["GeneralKnowitallKnowledge"].Feedback[0],
 	portfolioItems["iEntertain"].Feedback[0],
 }

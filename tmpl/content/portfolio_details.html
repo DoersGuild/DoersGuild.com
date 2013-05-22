@@ -3,6 +3,7 @@
     <div class="container content center">
         {{$Category:=.portfolioCategory}}
         {{$Item := .portfolioItem}}
+        {{$Clients := .portfolioClients}}
         <section id="{{$Category.ID}}">
             <header>
                 <h3 class="doer-font doer-red center">
@@ -15,7 +16,23 @@
             </header>
             <div class="content-well"> 
                 <div class="row-fluid">
-                    <div class="span3"> {{template "portfolioCardContent" $Item}} </div>
+                    <div class="span3"> 
+                        <div class="img-polaroid">
+                            {{template "portfolioCardContent" $Item}}
+                        </div> 
+                        <br/>
+                        <div class="img-polaroid">
+                            <h4 class="card-header">Feedback:</h4>
+                            <ul class="nav nav-list">
+                                {{range $Feedback := $Item.Feedback}}
+                                    <li> 
+                                        {{template "clientNameAndLink" index $Clients $Feedback.PersonID}} 
+                                        <blockquote>{{$Feedback.Message}}</blockquote>
+                                    </li>
+                                {{end}}
+                            </ul>
+                        </div>
+                    </div>
                     <div class="span9"> 
                         <ul class="nav nav-list">
                             {{range $Screenshot:=$Item.Screenshots}}

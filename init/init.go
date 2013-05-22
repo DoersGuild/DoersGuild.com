@@ -95,5 +95,7 @@ func portfolioDetailsHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	
+	config["portfolioClients"] = portfolioClients
+	
 	executeSimpleTemplate(w, r, "tmpl/content/portfolio_details.html")
 }

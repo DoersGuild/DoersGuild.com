@@ -160,6 +160,7 @@ a.card, a.card:hover, a.card:active, a.card:focus {
     display: block;
     display: inline-block;
     text-align: inherit;
+    z-index: 0;
 }
 
 .card-comment .popover-static.top {
