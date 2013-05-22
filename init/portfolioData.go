@@ -13,6 +13,7 @@ var portfolioClients = map[string]Person {
 	"Unitu": {"Unitu","Anish","Unitu","https://www.elance.com/e/baggaanish/", ""},
 	"HihnSight": {"HihnSight","HihnSight","","https://www.elance.com/e/HihnSight/", ""},
 	"MigRyes": {"MigRyes","Mig Ryes","37Signals","http://migreyes.com/", "http://migreyes.com/assets/images/mig.jpg"},
+	"Rebel316": {"Rebel316","BigPlans","Rebel316","https://www.elance.com/e/bigplans/", ""},
 }
 
 type Feedback struct {
@@ -126,7 +127,7 @@ var portfolioItems = map[string]PortfolioItem {
 		map[string]string{"Password Hasher Web-App":"http://passhasher.com/", "Blog Post":"http://blog.doersguild.com/post/42079891079/beat-the-domino-effect-secure-your-passwords","Elance" : "https://www.elance.com/j/simple-browser-plugin-but-needed-ff-chrome-ie/33109099/"},
 		"/img/projects/PassHasher/logo.png",
 		[]string{"/img/projects/PassHasher/desktop1.png", "/img/projects/PassHasher/desktop2.png", "/img/projects/PassHasher/tablet1.png", "/img/projects/PassHasher/mobile1.png"},
-		[]string{"CrossRider", "Cross-Browser Extension", "Twitter Bootstrap", "Offline Web-App", "Security"},
+		[]string{"CrossRider", "Twitter Bootstrap", "Offline Web-App", "Security"},
 		portfolioClients["HihnSight"],
 		[]Feedback{
 			{"PassHasher","HihnSight", "Absolute joy to work with. No communications issues. Delivered better than promised."},
@@ -145,6 +146,21 @@ var portfolioItems = map[string]PortfolioItem {
 		portfolioClients["DoersGuild"],
 		[]Feedback{
 			{"ToggleText","MigRyes", "Wow, thanks so much. This is super cool. Sharing with the team!"},
+		},
+	},
+	"Rebel316Blog": {
+		"Rebel316Blog",
+		"Rebel316 Blogspot",
+		"We designed a Blogspot theme for Rebel316, keeping in line with their website.",
+		"July, 2012",
+		"Websites",
+		map[string]string{"Live Site":"http://blog.rebel316.com/", "Elance" : "https://www.elance.com/j/create-sites-blog/32049124/"},
+		"/img/projects/Rebel316/desktop1.png",
+		[]string{"/img/projects/Rebel316/desktop1.png"},
+		[]string{"Blogspot"},
+		portfolioClients["Rebel316"],
+		[]Feedback{
+			{"Rebel316Blog", "Rebel316", "Ravi has continually performed incredibly well and exceeded standards for a job perfectly executed! Well done!"},
 		},
 	},
 }
@@ -179,6 +195,7 @@ var portfolioCategories = map[string]Category {
 		[]PortfolioItem {
 			portfolioItems["IXXOCart"],
 			portfolioItems["CheriyalAndPembarthy"],
+			portfolioItems["Rebel316Blog"],
 		},
 	},
 	"Bugfixes" : Category {
@@ -209,5 +226,6 @@ var homePageItems = []PortfolioItem {
 var homePageFeedback = []Feedback {
 	portfolioItems["Unitu"].Feedback[0],
 	portfolioItems["PassHasher"].Feedback[0],
+	portfolioItems["Rebel316Blog"].Feedback[0],
 	portfolioItems["ToggleText"].Feedback[0],
 }

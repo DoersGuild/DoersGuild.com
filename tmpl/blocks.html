@@ -18,7 +18,7 @@
     {{if $Item.Tags}}
         <ul class="nav center margin-0">
             {{range $tag:=$Item.Tags}}
-                <li class="label margin-5">{{$tag}}</li>
+                <li class="label label-inverse margin-5">{{$tag}}</li>
             {{end}}
         </ul>
     {{end}}
@@ -28,7 +28,7 @@
     {{$Client:=.}}
     {{if $Client.URL}}<a href="{{$Client.URL}}" rel="external" target="_blank" class="btn btn-link">{{else}}<div class="">{{end}}
         <div class="media">
-            {{if $Client.IconURL}}<span class=" pull-left"><img src="{{$Client.IconURL}}" class="media-object img-polaroid img-rounded img-tiny" /></span>{{end}}
+            {{if $Client.IconURL}}<div class=" pull-left"><img src="{{$Client.IconURL}}" class="media-object img-polaroid img-rounded img-tiny" /></div>{{end}}
             <div class="media-body margin-top-5 line-height-36">
                 {{if $Client.Name}}<h5 class="inline-block padding-3 margin-0 media-heading">{{$Client.Name}}{{if $Client.Company}},{{end}}</h5>{{end}}
                 {{if $Client.Company}}<p class="inline-block padding-3">{{$Client.Company}}</p>{{end}}

@@ -101,6 +101,7 @@ a.doer-font {
 .img-tiny {
     max-height: 40px;
     max-width: 40px;
+    vertical-align: middle;
 }
 
 /* Portfolio cards */
