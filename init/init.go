@@ -6,6 +6,7 @@ import (
     "net/http"
     "github.com/gorilla/mux"
     "appengine"
+    "strings"
 )
 
 // Acommon variable with data for templates
@@ -15,7 +16,6 @@ func init() {
 	// The main router
 	
 	// Setup common config vars
-	config["title"] = "Doers' Guild"
 	
 	router:=mux.NewRouter()
 	router.HandleFunc("/", indexHandler)
@@ -44,11 +44,13 @@ func executeSimpleTemplate(w http.ResponseWriter, r *http.Request, tmplFile stri
 
 func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 	// The 404 page
+	config["title"] = "Page Not Found"
 	executeSimpleTemplate(w, r, "tmpl/content/404.html")
 }
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	// The home page
+	config["title"] = "Welcome"
 	config["homePageItems"] = homePageItems
 	config["homePageFeedback"] = homePageFeedback
 	config["portfolioItems"] = portfolioItems
@@ -58,6 +60,7 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 
 func portfolioHandler(w http.ResponseWriter, r *http.Request) {
 	// The portfolio page
+	config["title"] = "Our Work"
 	config["portfolioCategories"] = portfolioCategories
 	executeSimpleTemplate(w, r, "tmpl/content/portfolio.html")
 }
@@ -72,6 +75,7 @@ func portfolioCategoryHandler(w http.ResponseWriter, r *http.Request) {
 		notFoundHandler(w, r)
 		return
 	}
+	config["title"] = strings.Join([]string{"Our", portfolioCategories[category].Name}, " ")
 	executeSimpleTemplate(w, r, "tmpl/content/portfolio_category.html")
 }
 
@@ -96,6 +100,8 @@ func portfolioDetailsHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	
 	config["portfolioClients"] = portfolioClients
+	
+	config["title"] = portfolioItems[project].Title
 	
 	executeSimpleTemplate(w, r, "tmpl/content/portfolio_details.html")
 }

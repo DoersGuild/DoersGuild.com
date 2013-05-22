@@ -9,7 +9,8 @@
         $(".card-comment-wrapper").setupMasonry();
 
         $('[data-toggle="tooltip"]').tooltip({
-            placement : "bottom"
+            placement : "bottom",
+            container : "body" // TO use the sans font
         });
 
     });
