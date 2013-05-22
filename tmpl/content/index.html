@@ -26,7 +26,7 @@
                 {{$Project := index $portfolioItems $Item.ProjectID}}
                 {{$Client := index $portfolioClients $Item.PersonID}}
                 <div class="inline-block center card-comment">
-                    <div class="img-polaroid img-rounded padding-0">
+                    <div class=" padding-0">
                         <div class="popover popover-static top">
                             {{if $Client.Name}} <div class="arrow"></div> {{end}}
                             <div class="card-comment-popover-content">
@@ -37,10 +37,14 @@
                             </div>
                         </div>
                         <div class="card-comment-user">
-                            {{if $Client.URL}}<a href="{{$Client.URL}}" rel="external" target="_blank" class="btn-group">{{else}}<div class="btn-group">{{end}}
-                                {{if $Client.IconURL}}<span class="btn btn-link padding-3"><img src="{{$Client.IconURL}}" class="img-polaroid img-rounded img-tiny" /></span>{{end}}
-                                {{if $Client.Name}}<span class="btn btn-link padding-3">{{$Client.Name}}</span>{{end}}
-                                {{if $Client.Company}}<span class="btn btn-link padding-3"> - {{$Client.Company}}</span>{{end}}
+                            {{if $Client.URL}}<a href="{{$Client.URL}}" rel="external" target="_blank" class="btn btn-link">{{else}}<div class="">{{end}}
+                                <div class="media">
+                                    {{if $Client.IconURL}}<span class=" pull-left"><img src="{{$Client.IconURL}}" class="media-object img-polaroid img-rounded img-tiny" /></span>{{end}}
+                                    <div class="media-body margin-top-5">
+                                        {{if $Client.Name}}<h5 class="inline-block padding-3 margin-0 media-heading">{{$Client.Name}}{{if $Client.Company}},{{end}}</h5>{{end}}
+                                        {{if $Client.Company}}<p class="inline-block padding-3">{{$Client.Company}}</p>{{end}}
+                                    </div>
+                                </div>
                             {{if $Client.URL}}</a>{{else}}</div>{{end}}
                         </div>
                     </div>
