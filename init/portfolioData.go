@@ -73,7 +73,7 @@ var portfolioItems = map[string]PortfolioItem {
 		[]string{"PHP", "Smarty", "Twitter Bootstrap", "IXXOCart"},
 		portfolioClients["IXXOCart"],
 		[]Feedback{
-			{"IXXOCart", "IXXOCart", "The best development agency I've ever worked with in the last 20 years.",},
+			{"IXXOCart", "IXXOCart", "The best development agency I've worked with in the last 20 years.",},
 		},
 	},
 }
