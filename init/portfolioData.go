@@ -163,6 +163,23 @@ var portfolioItems = map[string]PortfolioItem {
 			{"Rebel316Blog", "Rebel316", "Ravi has continually performed incredibly well and exceeded standards for a job perfectly executed! Well done!"},
 		},
 	},
+	"DoersWebsite": {
+		"DoersWebsite",
+		"This website",
+		"We designed and handcoded this beautiful, fully responsive website, with Twitter Bootstrap for the frontent and GoLang on the backend.",
+		"May, 2012",
+		"Websites",
+		map[string]string{"Live Site":"http://www.doersguild.com/"},
+		"/img/projects/DoersWebsite/desktop1.png",
+		[]string{
+			"/img/projects/DoersWebsite/desktop1.png", "/img/projects/DoersWebsite/tablet1.png", "/img/projects/DoersWebsite/mobile1.png",
+			"/img/projects/DoersWebsite/desktop2.png", "/img/projects/DoersWebsite/tablet2.png", "/img/projects/DoersWebsite/mobile2.png",
+			"/img/projects/DoersWebsite/desktop3.png", "/img/projects/DoersWebsite/tablet3.png", "/img/projects/DoersWebsite/mobile3.png",
+		},
+		[]string{"Twitter Bootstrap", "Responsive", "GoLang", "FLatUI"},
+		portfolioClients["Rebel316"],
+		[]Feedback{ },
+	},
 }
 
 
@@ -193,6 +210,7 @@ var portfolioCategories = map[string]Category {
 		"Websites",
 		"Websites and Templates",
 		[]PortfolioItem {
+			portfolioItems["DoersWebsite"],
 			portfolioItems["IXXOCart"],
 			portfolioItems["CheriyalAndPembarthy"],
 			portfolioItems["Rebel316Blog"],
