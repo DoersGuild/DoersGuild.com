@@ -220,6 +220,7 @@ var homePageItems = []PortfolioItem {
 	portfolioItems["IXXOCart"],
 	portfolioItems["GeneralKnowitallKnowledge"],
 	portfolioItems["PassHasher"],
+	portfolioItems["CheriyalAndPembarthy"],
 }
 
 /* Client feedback to be highlighted on the home page */
