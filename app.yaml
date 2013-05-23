@@ -9,9 +9,6 @@ handlers:
 
 - url: /js
   static_dir: static/js
-
-- url: /img
-  static_dir: static/img
   
 - url: /font
   static_dir: static/font
@@ -22,3 +19,6 @@ handlers:
   
 - url: /.*
   script: _go_app
+
+skip_files: | 
+  ^static/img/.*$

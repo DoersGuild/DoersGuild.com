@@ -19,11 +19,21 @@ func init() {
 	
 	router:=mux.NewRouter()
 	router.HandleFunc("/", indexHandler)
+	router.HandleFunc("/img/{path:.*}", imageRedirectHandler)
 	router.HandleFunc("/portfolio", portfolioHandler)
 	router.HandleFunc("/portfolio/{category}", portfolioCategoryHandler)
 	router.HandleFunc("/portfolio/{category}/{project}", portfolioDetailsHandler)
     router.NotFoundHandler = http.HandlerFunc(notFoundHandler)
 	http.Handle("/", router)
+}
+
+func imageRedirectHandler(w http.ResponseWriter, r *http.Request) {
+	// Redirect images to the unlimited bandwidth hosting
+	basePath := "http://store.doersguild.com/WebsiteAssets/img"
+	vars := mux.Vars(r)
+	imagePath:=vars["path"]
+	path := strings.Join([]string{basePath, imagePath}, "/")
+	http.Redirect(w, r, path, http.StatusMovedPermanently)
 }
 
 func executeSimpleTemplate(w http.ResponseWriter, r *http.Request, tmplFile string) {
