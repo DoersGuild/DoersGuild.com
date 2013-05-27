@@ -6,12 +6,18 @@ api_version: go1
 handlers:
 - url: /css
   static_dir: static/css
+  http_headers:
+    Vary: Accept-Encoding
 
 - url: /js
   static_dir: static/js
+  http_headers:
+    Vary: Accept-Encoding
   
 - url: /font
   static_dir: static/font
+  http_headers:
+    Vary: Accept-Encoding
 
 - url: /favicon.ico
   static_files: static/logo.png
