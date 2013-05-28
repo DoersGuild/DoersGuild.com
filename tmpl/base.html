@@ -1,3 +1,4 @@
+{{define "mainTemplate"}}
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -40,6 +41,18 @@
                 }, "/js/vendor/bootstrap.min.js", "/js/vendor/jquery.masonry.min.js", "/js/plugins.js", "/js/main.js", {
                     load : ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
                 }]);
+                
+                {{if .useSocialPlugins}}
+                    Modernizr.load([
+                        '//platform.twitter.com/widgets.js',
+                        '//apis.google.com/js/plusone.js', 
+                        '//assets.pinterest.com/js/pinit.js', 
+                        {
+                            test : document.getElementById('facebook-jssdk'),
+                            nope : '//connect.facebook.net/en_US/all.js#xfbml=1'
+                        }
+                    ]);
+                {{end}}
             })();
         </script>
     </head>
@@ -111,3 +124,4 @@
         </footer>
     </body>
 </html>
+{{end}}

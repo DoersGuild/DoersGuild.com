@@ -11,6 +11,7 @@ import (
 
 // Acommon variable with data for templates
 var config = make(map[string]interface{})
+var configFuncs = make(template.FuncMap)
 
 func init() {
 	// The main router
@@ -18,6 +19,9 @@ func init() {
 	// Setup common config vars
 	config["tagline"] = "Your Cross-Platform App Development Partners"
 	config["title"] = config["tagline"]
+	
+	// Setup common template functions
+	configFuncs["URLQueryEscaper"] = template.URLQueryEscaper
 	
 	router:=mux.NewRouter()
 	router.HandleFunc("/", indexHandler)
@@ -45,9 +49,11 @@ func executeSimpleTemplate(w http.ResponseWriter, r *http.Request, tmplFile stri
 	c := appengine.NewContext(r)
 	c.Infof("Requested URL: %v", r.URL)
 	c.Infof("Loading Template: %v", tmplFile)
-    
-	var listTmpl = template.Must(template.ParseFiles("tmpl/base.html", "tmpl/blocks.html", tmplFile))
-	  
+	
+	config["currentURL"] = strings.Join([]string{"http://", r.Host, r.RequestURI}, "")
+	
+	var listTmpl = template.Must(template.New("mainTemplate").Funcs(configFuncs).ParseFiles("tmpl/base.html", "tmpl/blocks.html", tmplFile))
+	
 	if err := listTmpl.Execute(w, config); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
@@ -114,6 +120,8 @@ func portfolioDetailsHandler(w http.ResponseWriter, r *http.Request) {
 	config["portfolioClients"] = portfolioClients
 	
 	config["title"] = portfolioItems[project].Title
+	
+	config["useSocialPlugins"] = true
 	
 	executeSimpleTemplate(w, r, "tmpl/content/portfolio_details.html")
 }
