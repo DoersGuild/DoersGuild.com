@@ -134,9 +134,9 @@ a.doer-font {
     box-sizing: border-box;
 }
 .card:hover, .card:focus, .card:active, .card.active {
-    -moz-box-shadow: 0 5px 15px #333;
-    -webkit-box-shadow: 0 5px 15px #333;
-    box-shadow: 0 5px 15px #333;
+    -moz-box-shadow: 0 3px 7px #333;
+    -webkit-box-shadow: 0 3px 7px #333;
+    box-shadow: 0 3px 7px #333;
     z-index: 10;
     margin-bottom: 10px;
 }

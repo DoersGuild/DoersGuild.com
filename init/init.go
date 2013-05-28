@@ -16,6 +16,7 @@ func init() {
 	// The main router
 	
 	// Setup common config vars
+	config["title"] = "Your Cross-Platform Development Partners"
 	
 	router:=mux.NewRouter()
 	router.HandleFunc("/", indexHandler)
@@ -60,7 +61,7 @@ func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	// The home page
-	config["title"] = "Welcome"
+	// config["title"] = "Welcome"
 	config["homePageItems"] = homePageItems
 	config["homePageFeedback"] = homePageFeedback
 	config["portfolioItems"] = portfolioItems
