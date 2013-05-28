@@ -176,7 +176,7 @@ var portfolioItems = map[string]PortfolioItem {
 			"/img/projects/DoersWebsite/desktop2.png", "/img/projects/DoersWebsite/tablet2.png", "/img/projects/DoersWebsite/mobile2.png",
 			"/img/projects/DoersWebsite/desktop3.png", "/img/projects/DoersWebsite/tablet3.png", "/img/projects/DoersWebsite/mobile3.png",
 		},
-		[]string{"Twitter Bootstrap", "Responsive", "GoLang", "FLatUI"},
+		[]string{"Twitter Bootstrap", "Responsive", "GoLang", "FlatUI"},
 		portfolioClients["Rebel316"],
 		[]Feedback{ },
 	},
