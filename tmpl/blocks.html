@@ -6,6 +6,7 @@
     {{$Item:=.}}
     <div itemscope itemtype="http://schema.org/SoftwareApplication">
         <meta itemprop="author" content="Doers' Guild" />
+        <meta itemprop="softwareApplicationCategory" content="{{$Item.CategoryID}}" />
         <h3 class="card-header " data-length="20" itemprop="name">{{$Item.Title}}</h3>
         <br />
         {{if $Item.Icon}}
@@ -20,7 +21,7 @@
         {{if $Item.Tags}}
             <ul class="nav center margin-0">
                 {{range $tag:=$Item.Tags}}
-                    <li class="label label-inverse margin-5" itemprop="category" content="{{$tag}}">{{$tag}}</li>
+                    <li class="label label-inverse margin-5" itemprop="softwareApplicationSubCategory" content="{{$tag}}">{{$tag}}</li>
                 {{end}}
             </ul>
         {{end}}
