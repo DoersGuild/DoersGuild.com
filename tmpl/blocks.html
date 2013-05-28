@@ -5,6 +5,7 @@
 {{define "portfolioCardContent"}}
     {{$Item:=.}}
     <div itemscope itemtype="http://data-vocabulary.org/Product">
+        <link itemprop="availability" href="http://schema.org/InStock" />
         <h3 class="card-header " data-length="20" itemprop="name">{{$Item.Title}}</h3>
         <br />
         {{if $Item.Icon}}
