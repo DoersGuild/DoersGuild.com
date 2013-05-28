@@ -9,7 +9,7 @@
         <br />
         {{if $Item.Icon}}
             <div class="center">
-                <img src="{{$Item.Icon}}" class="logo-size" itemprop="image" />
+                <img src="{{$Item.Icon}}" class="logo-size" itemprop="image" alt="{{$Item.Title}}" />
             </div>
             <br />
         {{end}}
@@ -31,7 +31,7 @@
     <span itemscope itemtype="http://data-vocabulary.org/Person">
         {{if $Client.URL}}<a href="{{$Client.URL}}" rel="external" target="_blank" class="btn btn-link" itemprop="url">{{else}}<div class="">{{end}}
             <div class="media line-height-36">
-                {{if $Client.IconURL}}<div class=" pull-left"><img src="{{$Client.IconURL}}" class="media-object img-polaroid img-rounded img-tiny" /></div>{{end}}
+                {{if $Client.IconURL}}<div class=" pull-left"><img src="{{$Client.IconURL}}" class="media-object img-polaroid img-rounded img-tiny" alt="{{$Client.Name}}" /></div>{{end}}
                 <div class="media-body margin-top-5">
                     {{if $Client.Name}}<h5 class="inline-block padding-3 margin-0 media-heading" itemprop="name">{{$Client.Name}}{{if $Client.Company}},{{end}}</h5>{{end}}
                     {{if $Client.Company}}<p class="inline-block padding-3" itemprop="affiliation">{{$Client.Company}}</p>{{end}}

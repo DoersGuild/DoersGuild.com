@@ -58,7 +58,7 @@
                     <div class="span9"> 
                         <ul class="nav nav-list">
                             {{range $Screenshot:=$Item.Screenshots}}
-                                <li> <img src="{{$Screenshot}}" class="img-polaroid margin-5" /> </li>
+                                <li> <img src="{{$Screenshot}}" class="img-polaroid margin-5" alt="Screenshot of {{$Item.Title}}" /> </li>
                             {{end}}
                         </ul>
                     </div>
