@@ -26,6 +26,10 @@
 
         <script type="text/javascript">
             (function() {"use strict";
+
+                window._gaq = [['_setAccount', 'UA-5141372-4'], ['_trackPageview']];
+                _gaq.push(['_require', 'inpage_linkid', '//www.google-analytics.com/plugins/ga/inpage_linkid.js']);
+
                 Modernizr.load([{
                     load : '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
                     complete : function() {
@@ -33,7 +37,9 @@
                             Modernizr.load('/js/vendor/jquery-1.9.1.min.js');
                         }
                     }
-                }, "/js/vendor/bootstrap.min.js", "/js/vendor/jquery.masonry.min.js", "/js/plugins.js", "/js/main.js"]);
+                }, "/js/vendor/bootstrap.min.js", "/js/vendor/jquery.masonry.min.js", "/js/plugins.js", "/js/main.js", {
+                    load : ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+                }]);
             })();
         </script>
     </head>
@@ -103,15 +109,5 @@
                 </li>
             </ul>
         </footer>
-
-        <script>
-            var _gaq = [['_setAccount', 'UA-5141372-4'], ['_trackPageview']];
-            _gaq.push(['_require', 'inpage_linkid', '//www.google-analytics.com/plugins/ga/inpage_linkid.js']);
-            ( function(d, t) {
-                    var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-                    g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-                    s.parentNode.insertBefore(g, s)
-                }(document, 'script'));
-        </script>
     </body>
 </html>
