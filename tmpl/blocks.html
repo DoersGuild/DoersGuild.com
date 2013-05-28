@@ -4,8 +4,8 @@
 {{end}}
 {{define "portfolioCardContent"}}
     {{$Item:=.}}
-    <div itemscope itemtype="http://data-vocabulary.org/Product">
-        <link itemprop="availability" href="http://schema.org/InStock" />
+    <div itemscope itemtype="http://data-vocabulary.org/SoftwareApplication">
+        <meta itemprop="author" content="Doers' Guild" />
         <h3 class="card-header " data-length="20" itemprop="name">{{$Item.Title}}</h3>
         <br />
         {{if $Item.Icon}}
@@ -36,6 +36,8 @@
                 <div class="media-body margin-top-5">
                     {{if $Client.Name}}<h5 class="inline-block padding-3 margin-0 media-heading" itemprop="name">{{$Client.Name}}{{if $Client.Company}},{{end}}</h5>{{end}}
                     {{if $Client.Company}}<p class="inline-block padding-3" itemprop="affiliation">{{$Client.Company}}</p>{{end}}
+                    <meta itemprop="organization" content="{{$Client.Company}}" />
+                    <meta itemprop="role" content="Representative" />
                 </div>
             </div>
         {{if $Client.URL}}</a>{{else}}</div>{{end}}
