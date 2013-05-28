@@ -100,6 +100,7 @@ func portfolioCategoryHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	config["title"] = strings.Join([]string{"Our", portfolioCategories[category].Name}, " ")
+	config["metaDescription"] = portfolioCategories[category].Desc
 	executeSimpleTemplate(w, r, "tmpl/content/portfolio_category.html")
 }
 
@@ -126,6 +127,8 @@ func portfolioDetailsHandler(w http.ResponseWriter, r *http.Request) {
 	config["portfolioClients"] = portfolioClients
 	
 	config["title"] = portfolioItems[project].Title
+	config["metaImage"] = portfolioItems[project].Icon
+	config["metaDescription"] = portfolioItems[project].ShortDesc
 	
 	config["useSocialPlugins"] = true
 	

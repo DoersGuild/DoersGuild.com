@@ -235,7 +235,7 @@ var portfolioCategories = map[string]Category {
 			portfolioItems["PassHasher"],
 			portfolioItems["ToggleText"],
 		},
-		"Want to empower your users with a browser extension? Want to upgrade their experience on a particular website? Or help them find your business & your affiliates faster on Google? We can build you an easy to maintain browser extension for most of the popular deskop browsers out there!",
+		"Want to empower your users with a browser extension? Want to upgrade their experience on a particular website? Or help them find your business & your affiliates faster on Google? We can build you an easy to use browser extension for most of the popular deskop browsers out there!",
 	},
 }
 
