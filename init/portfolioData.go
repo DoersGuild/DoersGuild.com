@@ -186,6 +186,7 @@ var portfolioItems = map[string]PortfolioItem {
 type Category struct {
 	ID, Name string
 	Items []PortfolioItem
+	Desc string
 }
 
 /* The categories & the projects under them */
@@ -197,6 +198,7 @@ var portfolioCategories = map[string]Category {
 			portfolioItems["GeneralKnowitallKnowledge"],
 			portfolioItems["iEntertain"],
 		},
+		"Want to build an app which you can release on Android, iPhone and Blackberry, all at once? Want an app that'll look great and work well no matter what kind of a screen the user is using? We can build you a hybrid app that'll combine the ease of developing web-apps with the performance of native-smartphone-apps to give your users an equally great experience, no matter what device they use.",
 	},
 	"WebApps" : Category {
 		"WebApps",
@@ -205,6 +207,7 @@ var portfolioCategories = map[string]Category {
 			portfolioItems["GoSketch"],
 			portfolioItems["PassHasher"],
 		},
+		"Got a neat idea in mind? Want to build a scalable service? Looking to engage users, no matter what device they are on?  We'll build you a responsive, scalable web-based application that is designed to run beautifully on every modern device imaginable, interacting asynchronously with the backend through a simple RESTful API and with the power to save data locally when the user is offline, to give your users as smooth an experience as possible.",
 	},
 	"Websites" : Category {
 		"Websites",
@@ -215,6 +218,7 @@ var portfolioCategories = map[string]Category {
 			portfolioItems["CheriyalAndPembarthy"],
 			portfolioItems["Rebel316Blog"],
 		},
+		"Looking to interact better with your users on the various devices out there & improve conversions? Looking to upgrade your clunky old website to something modern and truly cross-platform? Have us build you a website that'll run really well on every modern-device, powered by the best practices in web-development & design.",
 	},
 	"Bugfixes" : Category {
 		"Bugfixes",
@@ -222,6 +226,7 @@ var portfolioCategories = map[string]Category {
 		[]PortfolioItem {
 			portfolioItems["Unitu"],
 		},
+		"Does your app/site need an upgrade? Are you having trouble getting it to work on all the various devices out there? Is there a bug that's been troubling your users? Call us! And we'll take care of it in no time",
 	},
 	"BrowserExtensions" : Category {
 		"BrowserExtensions",
@@ -230,6 +235,7 @@ var portfolioCategories = map[string]Category {
 			portfolioItems["PassHasher"],
 			portfolioItems["ToggleText"],
 		},
+		"Want to empower your users with a browser extension? Want to upgrade their experience on a particular website? Or help them find your business & your affiliates faster on Google? We can build you an easy to maintain browser extension for most of the popular deskop browsers out there!",
 	},
 }
 

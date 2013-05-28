@@ -17,8 +17,12 @@ func init() {
 	// The main router
 	
 	// Setup common config vars
-	config["tagline"] = "Your Cross-Platform App Development Partners"
-	config["title"] = config["tagline"]
+	tagline:="Your Cross-Platform App Development Partners"
+	config["tagline"] = tagline
+	config["title"] = tagline
+	
+	config["metaImage"] = "/favicon.ico"
+	config["metaDescription"] = strings.Join([]string{"Doers' Guild", tagline}, " : ")
 	
 	// Setup common template functions
 	configFuncs["URLQueryEscaper"] = template.URLQueryEscaper
@@ -50,7 +54,9 @@ func executeSimpleTemplate(w http.ResponseWriter, r *http.Request, tmplFile stri
 	c.Infof("Requested URL: %v", r.URL)
 	c.Infof("Loading Template: %v", tmplFile)
 	
-	config["currentURL"] = strings.Join([]string{"http://", r.Host, r.RequestURI}, "")
+	basePath := strings.Join([]string{"http://", r.Host}, "")
+	config["basePath"] = basePath
+	config["currentURL"] = strings.Join([]string{basePath, r.RequestURI}, "")
 	
 	var listTmpl = template.Must(template.New("mainTemplate").Funcs(configFuncs).ParseFiles("tmpl/base.html", "tmpl/blocks.html", tmplFile))
 	

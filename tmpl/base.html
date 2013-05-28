@@ -4,7 +4,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js">
+<html class="no-js" itemscope itemtype="http://schema.org/Organization">
     <!--<![endif]-->
     <head>
         <meta charset="utf-8">
@@ -12,6 +12,10 @@
         <title>Doers' Guild{{if .title}} : {{.title}}{{end}}</title>
         <meta name="description" content="Doers' Guild, {{.tagline}}">
         <meta name="viewport" content="width=device-width">
+        
+        <meta property="og:title" itemprop="name" content="Doers' Guild{{if .title}} : {{.title}}{{end}}"/>
+        <meta property="og:image" itemprop="description" content="{{.basePath}}{{.metaImage}}"/>
+        <meta property="og:description" itemprop="image" content="{{.metaDescription}}"/>
 
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
@@ -97,7 +101,7 @@
                     <a href="/"> &copy; Doers' Guild : {{.tagline}} </a>
                 </li>
                 <li>
-                    <a href="mailto:mail@doersguild.com" title="Email" target="_blank"><i class="icon-envelope"></i></a>
+                    <a href="mailto:mail@doersguild.com" title="Email" target="_blank" itemprop="email"><i class="icon-envelope"></i></a>
                 </li>
                 <li>
                     <a href="https://github.com/DoersGuild" title="Github" rel="publisher"  target="_blank"><i class="icon-github"></i></a>
