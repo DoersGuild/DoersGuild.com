@@ -132,11 +132,16 @@ a.doer-font {
     min-height: 320px;
     word-wrap: break-word;
     box-sizing: border-box;
+    -webkit-transition: -webkit-box-shadow 0.5s linear;
+    -o-transition: -o-box-shadow 0.5s linear;
+    -moz-transition: -moz-box-shadow 0.5s linear;
+    -ms-transition: -ms-box-shadow 0.5s linear;
+    transition: box-shadow 0.5s linear;
 }
 .card:hover, .card:focus, .card:active, .card.active {
-    -moz-box-shadow: 0 3px 7px #333;
-    -webkit-box-shadow: 0 3px 7px #333;
-    box-shadow: 0 3px 7px #333;
+    -moz-box-shadow: 0 2px 9px #333;
+    -webkit-box-shadow: 0 2px 9px #333;
+    box-shadow: 0 2px 9px #333;
     z-index: 10;
     margin-bottom: 10px;
 }
