@@ -4,35 +4,39 @@
 {{end}}
 {{define "portfolioCardContent"}}
     {{$Item:=.}}
-    <h3 class="card-header " data-length="20">{{$Item.Title}}</h3>
-    <br />
-    {{if $Item.Icon}}
-        <div class="center">
-            <img src="{{$Item.Icon}}" class="logo-size" />
-        </div>
+    <div itemscope itemtype="http://data-vocabulary.org/Product">
+        <h3 class="card-header " data-length="20" itemprop="name">{{$Item.Title}}</h3>
         <br />
-    {{end}}
-    <p class="text" data-length="100">
-        {{$Item.ShortDesc}}
-    </p> 
-    {{if $Item.Tags}}
-        <ul class="nav center margin-0">
-            {{range $tag:=$Item.Tags}}
-                <li class="label label-inverse margin-5">{{$tag}}</li>
-            {{end}}
-        </ul>
-    {{end}}
+        {{if $Item.Icon}}
+            <div class="center">
+                <img src="{{$Item.Icon}}" class="logo-size" itemprop="image" />
+            </div>
+            <br />
+        {{end}}
+        <p class="text" data-length="100" itemprop="description">
+            {{$Item.ShortDesc}}
+        </p> 
+        {{if $Item.Tags}}
+            <ul class="nav center margin-0">
+                {{range $tag:=$Item.Tags}}
+                    <li class="label label-inverse margin-5" itemprop="category" content="{{$tag}}">{{$tag}}</li>
+                {{end}}
+            </ul>
+        {{end}}
+    </div>
 {{end}}
 
 {{define "clientNameAndLink"}}
     {{$Client:=.}}
-    {{if $Client.URL}}<a href="{{$Client.URL}}" rel="external" target="_blank" class="btn btn-link">{{else}}<div class="">{{end}}
-        <div class="media line-height-36">
-            {{if $Client.IconURL}}<div class=" pull-left"><img src="{{$Client.IconURL}}" class="media-object img-polaroid img-rounded img-tiny" /></div>{{end}}
-            <div class="media-body margin-top-5">
-                {{if $Client.Name}}<h5 class="inline-block padding-3 margin-0 media-heading">{{$Client.Name}}{{if $Client.Company}},{{end}}</h5>{{end}}
-                {{if $Client.Company}}<p class="inline-block padding-3">{{$Client.Company}}</p>{{end}}
+    <span itemscope itemtype="http://data-vocabulary.org/Person">
+        {{if $Client.URL}}<a href="{{$Client.URL}}" rel="external" target="_blank" class="btn btn-link" itemprop="url">{{else}}<div class="">{{end}}
+            <div class="media line-height-36">
+                {{if $Client.IconURL}}<div class=" pull-left"><img src="{{$Client.IconURL}}" class="media-object img-polaroid img-rounded img-tiny" /></div>{{end}}
+                <div class="media-body margin-top-5">
+                    {{if $Client.Name}}<h5 class="inline-block padding-3 margin-0 media-heading" itemprop="name">{{$Client.Name}}{{if $Client.Company}},{{end}}</h5>{{end}}
+                    {{if $Client.Company}}<p class="inline-block padding-3" itemprop="affiliation">{{$Client.Company}}</p>{{end}}
+                </div>
             </div>
-        </div>
-    {{if $Client.URL}}</a>{{else}}</div>{{end}}
+        {{if $Client.URL}}</a>{{else}}</div>{{end}}
+    </span>
 {{end}}

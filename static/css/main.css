@@ -139,9 +139,9 @@ a.doer-font {
     transition: box-shadow 0.5s linear;
 }
 .card:hover, .card:focus, .card:active, .card.active {
-    -moz-box-shadow: 0 2px 9px #333;
-    -webkit-box-shadow: 0 2px 9px #333;
-    box-shadow: 0 2px 9px #333;
+    -moz-box-shadow: 0 1px 9px #666;
+    -webkit-box-shadow: 0 1px 9px #666;
+    box-shadow: 0 1px 9px #666;
     z-index: 10;
     margin-bottom: 10px;
 }
