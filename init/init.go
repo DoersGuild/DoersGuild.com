@@ -16,7 +16,8 @@ func init() {
 	// The main router
 	
 	// Setup common config vars
-	config["title"] = "Your Cross-Platform Development Partners"
+	config["tagline"] = "Your Cross-Platform App Development Partners"
+	config["title"] = config["tagline"]
 	
 	router:=mux.NewRouter()
 	router.HandleFunc("/", indexHandler)
