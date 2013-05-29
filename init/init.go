@@ -13,20 +13,19 @@ import (
 var config = make(map[string]interface{})
 var configFuncs = make(template.FuncMap)
 
+// Setup common config vars
+var tagline="Your Web-Anywhere Experts"
+config["tagline"] = tagline
+config["title"] = tagline
+
+config["metaImage"] = "/favicon.ico"
+config["metaDescription"] = strings.Join([]string{"Doers' Guild", tagline}, " : ")
+
+// Setup common template functions
+configFuncs["URLQueryEscaper"] = template.URLQueryEscaper
+
 func init() {
 	// The main router
-	
-	// Setup common config vars
-	tagline:="Your Web-Anywhere Experts"
-	config["tagline"] = tagline
-	config["title"] = tagline
-	
-	config["metaImage"] = "/favicon.ico"
-	config["metaDescription"] = strings.Join([]string{"Doers' Guild", tagline}, " : ")
-	
-	// Setup common template functions
-	configFuncs["URLQueryEscaper"] = template.URLQueryEscaper
-	
 	router:=mux.NewRouter()
 	router.HandleFunc("/", indexHandler)
 	router.HandleFunc("/init/{path:.*}", redirectOlderHandler)
