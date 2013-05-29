@@ -13,19 +13,33 @@ import (
 var config = make(map[string]interface{})
 var configFuncs = make(template.FuncMap)
 
-// Setup common config vars
-var tagline="Your Web-Anywhere Experts"
-config["tagline"] = tagline
-config["title"] = tagline
+var site_tagline="Your Web-Anywhere Experts"
+var site_description = strings.Join([]string{"Doers' Guild", site_tagline}, " : ")
+var site_image = "/favicon.ico"
 
-config["metaImage"] = "/favicon.ico"
-config["metaDescription"] = strings.Join([]string{"Doers' Guild", tagline}, " : ")
+func setupConfigDefaults() {
+	// Setup common config vars to their default values
+	
+	// Reset config
+	config = make(map[string]interface{})
+	
+	config["tagline"] = site_tagline
+	config["title"] = site_tagline
+	
+	config["metaImage"] = site_image
+	config["metaDescription"] = site_description
+}
 
-// Setup common template functions
-configFuncs["URLQueryEscaper"] = template.URLQueryEscaper
 
 func init() {
 	// The main router
+	
+	// Setup one-time common config vars
+	setupConfigDefaults()
+	
+	// Setup one-time common template functions
+	configFuncs["URLQueryEscaper"] = template.URLQueryEscaper
+	
 	router:=mux.NewRouter()
 	router.HandleFunc("/", indexHandler)
 	router.HandleFunc("/init/{path:.*}", redirectOlderHandler)
@@ -69,6 +83,9 @@ func executeSimpleTemplate(w http.ResponseWriter, r *http.Request, tmplFile stri
 	if err := listTmpl.Execute(w, config); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
+	
+	// Restore default config
+	setupConfigDefaults()
   
 }
 
@@ -80,7 +97,6 @@ func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	// The home page
-	// config["title"] = "Welcome"
 	config["homePageItems"] = homePageItems
 	config["homePageFeedback"] = homePageFeedback
 	config["portfolioItems"] = portfolioItems
