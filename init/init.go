@@ -29,6 +29,7 @@ func init() {
 	
 	router:=mux.NewRouter()
 	router.HandleFunc("/", indexHandler)
+	router.HandleFunc("/init/{path:.*}", redirectOlderHandler)
 	router.HandleFunc("/img/{path:.*}", imageRedirectHandler)
 	router.HandleFunc("/portfolio", portfolioHandler)
 	router.HandleFunc("/portfolio/{category}", portfolioCategoryHandler)
@@ -44,6 +45,12 @@ func imageRedirectHandler(w http.ResponseWriter, r *http.Request) {
 	imagePath:=vars["path"]
 	path := strings.Join([]string{basePath, imagePath}, "/")
 	http.Redirect(w, r, path, http.StatusMovedPermanently)
+}
+
+func redirectOlderHandler(w http.ResponseWriter, r *http.Request) {
+	// Redirect images to the unlimited bandwidth hostinolder pages to the new home
+	basePath := strings.Join([]string{"http://", r.Host}, "")
+	http.Redirect(w, r, basePath, http.StatusMovedPermanently)
 }
 
 func executeSimpleTemplate(w http.ResponseWriter, r *http.Request, tmplFile string) {

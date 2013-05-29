@@ -198,7 +198,7 @@ var portfolioCategories = map[string]Category {
 			portfolioItems["GeneralKnowitallKnowledge"],
 			portfolioItems["iEntertain"],
 		},
-		"Want to build an app which you can release on Android, iPhone and Blackberry, all at once? Want an app that'll look great and work well no matter what kind of a screen the user is using? We can build you a hybrid app that'll combine the ease of developing web-apps with the performance of native-smartphone-apps to give your users an equally great experience, no matter what device they use.",
+		"Want to build an app that you can release on Android, iPhone and Blackberry, all at once? Want an app that'll look great and work well no matter what kind of a screen the user is using? We can build you a hybrid app that'll combine the ease of developing web-apps with the performance of native-smartphone-apps to give your users an equally great experience, no matter what device they use.",
 	},
 	"WebApps" : Category {
 		"WebApps",
