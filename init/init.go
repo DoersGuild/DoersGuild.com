@@ -17,7 +17,7 @@ func init() {
 	// The main router
 	
 	// Setup common config vars
-	tagline:="Your Cross-Platform App Development Partners"
+	tagline:="Your Web-Anywhere Experts"
 	config["tagline"] = tagline
 	config["title"] = tagline
 	
