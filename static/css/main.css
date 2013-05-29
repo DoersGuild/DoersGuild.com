@@ -107,6 +107,7 @@ a.doer-font {
 /* Portfolio cards */
 .card-wrapper {
     margin: auto; /* Center the cards*/
+    vertical-align: top;
 }
 .card-header {
     text-align: center;
@@ -115,6 +116,7 @@ a.doer-font {
 .card {
     border: 1px solid #B3B3B3;
     background-color: #FFFFFF;
+    vertical-align: top;
     padding: 8px;
     border-radius: 4px;
     -moz-border-radius: 4px;
@@ -154,12 +156,14 @@ a.card, a.card:hover, a.card:active, a.card:focus {
 .card-comment-wrapper {
     padding: 15px 1px;
     margin: auto;
+    vertical-align: top;
 }
 .card-comment {
     margin: 10px;
     width: 240px;
     word-wrap: break-word;
     box-sizing: border-box;
+    vertical-align: top;
 }
 .card-comment-popover-content {
     min-height: 140px;
