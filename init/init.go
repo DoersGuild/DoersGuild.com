@@ -76,7 +76,8 @@ func executeSimpleTemplate(w http.ResponseWriter, r *http.Request, tmplFile stri
 	
 	basePath := strings.Join([]string{"http://", r.Host}, "")
 	config["basePath"] = basePath
-	config["currentURL"] = strings.Join([]string{basePath, r.RequestURI}, "")
+	config["currentPath"] = r.URL.String()
+	config["currentURL"] = strings.Join([]string{basePath, r.URL.String()}, "")
 	
 	var listTmpl = template.Must(template.New("mainTemplate").Funcs(configFuncs).ParseFiles("tmpl/base.html", "tmpl/blocks.html", tmplFile))
 	
