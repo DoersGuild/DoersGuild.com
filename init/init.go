@@ -1,7 +1,7 @@
 package init
 
 import (
-    //"fmt"
+    "fmt"
     "html/template"
     "net/http"
     "github.com/gorilla/mux"
@@ -59,6 +59,7 @@ func init() {
 	router.HandleFunc("/portfolio/{category}", portfolioCategoryHandler)
 	router.HandleFunc("/portfolio/{category}/{project}", portfolioDetailsHandler)
 	router.HandleFunc("/store/checkout/{previousPagePath:.*}", paypalCheckoutHandler)
+	router.HandleFunc("/store/return/{previousPagePath:.*}", paypalReturnHandler)
     router.NotFoundHandler = http.HandlerFunc(notFoundHandler)
 	http.Handle("/", router)
 }
@@ -173,7 +174,7 @@ func portfolioDetailsHandler(w http.ResponseWriter, r *http.Request) {
 
 
 func paypalCheckoutHandler(w http.ResponseWriter, r *http.Request) {
-	// Paypal express checkout page
+	// Paypal express checkout submitter
 
 	vars := mux.Vars(r)
 	
@@ -190,8 +191,8 @@ func paypalCheckoutHandler(w http.ResponseWriter, r *http.Request) {
 	goods[0] = *good
 	
 	basePath := strings.Join([]string{"http://", r.Host}, "")
-	returnURL := strings.Join([]string{basePath, "/", previousPagePath}, "")
-	cancelURL := strings.Join([]string{basePath, "/", previousPagePath}, "")
+	returnURL := strings.Join([]string{basePath, "/store/return/", previousPagePath}, "")
+	cancelURL := strings.Join([]string{basePath, "/store/cancel/", previousPagePath}, "")
 	
 	c.Infof("Paypal Return URL: %v \n", returnURL)
 	
@@ -203,4 +204,32 @@ func paypalCheckoutHandler(w http.ResponseWriter, r *http.Request) {
 	c.Infof("Paypal Checkout URL: %v", response.CheckoutUrl())
 	
 	http.Redirect(w, r, response.CheckoutUrl(), 301)
+}
+
+
+func paypalReturnHandler(w http.ResponseWriter, r *http.Request) {
+	// Paypal express checkout success handler
+
+	vars := mux.Vars(r)
+	
+	previousPagePath := vars["previousPagePath"]
+	
+	c := appengine.NewContext(r)
+	httpClient := urlfetch.Client(c)
+	
+	client := paypal.NewClient(PAYPAL_USERNAME, PAYPAL_PASSWORD, PAYPAL_SECRET, PAYPAL_SANDBOX, httpClient)
+	
+	response, err := client.DoExpressCheckoutSale(r.FormValue("token"), r.FormValue("PayerID"), PAYPAL_CURRENCY, 255)
+	
+	basePath := strings.Join([]string{"http://", r.Host}, "")
+	errorURL := strings.Join([]string{basePath, "/store/error/", previousPagePath}, "")
+	receiptURL := strings.Join([]string{basePath, "/store/receipt/", previousPagePath}, "")
+	
+	if err != nil {
+		// handle error in charging
+		http.Redirect(w, r, errorURL, 301)
+	} else { // success!
+		// ... handle successful charge
+		http.Redirect(w, r, fmt.Sprintf("%s?receipt-id=%s", receiptURL, response.Values["PAYMENTREQUEST_0_TRANSACTIONID"][0]), 301)
+	}
 }
