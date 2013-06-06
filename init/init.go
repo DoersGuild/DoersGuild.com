@@ -5,8 +5,11 @@ import (
     "html/template"
     "net/http"
     "github.com/gorilla/mux"
+    "github.com/DoersGuild/paypal"
     "appengine"
     "strings"
+    
+    "appengine/urlfetch"
 )
 
 // Acommon variable with data for templates
@@ -16,6 +19,14 @@ var configFuncs = make(template.FuncMap)
 var site_tagline="Your Web-Anywhere Experts"
 var site_description = strings.Join([]string{"Doers' Guild", site_tagline}, " : ")
 var site_image = "/favicon.ico"
+
+const (
+	PAYPAL_SANDBOX = true
+	PAYPAL_USERNAME = "sathvik-facilitator_api1.doersguild.com"
+	PAYPAL_PASSWORD = "1370333952"
+	PAYPAL_SECRET = "AiPC9BjkCyDFQXbSkoZcgqH3hpacAbn-CXvfamuR2QddE1dzadDUDG7V"
+	PAYPAL_CURRENCY = "USD"
+)
 
 func setupConfigDefaults() {
 	// Setup common config vars to their default values
@@ -47,6 +58,7 @@ func init() {
 	router.HandleFunc("/portfolio", portfolioHandler)
 	router.HandleFunc("/portfolio/{category}", portfolioCategoryHandler)
 	router.HandleFunc("/portfolio/{category}/{project}", portfolioDetailsHandler)
+	router.HandleFunc("/store/checkout/{previousPagePath:.*}", paypalCheckoutHandler)
     router.NotFoundHandler = http.HandlerFunc(notFoundHandler)
 	http.Handle("/", router)
 }
@@ -156,4 +168,39 @@ func portfolioDetailsHandler(w http.ResponseWriter, r *http.Request) {
 	config["useSocialPlugins"] = true
 	
 	executeSimpleTemplate(w, r, "tmpl/content/portfolio_details.html")
+}
+
+
+
+func paypalCheckoutHandler(w http.ResponseWriter, r *http.Request) {
+	// Paypal express checkout page
+
+	vars := mux.Vars(r)
+	
+	previousPagePath := vars["previousPagePath"]
+	
+	c := appengine.NewContext(r)
+	httpClient := urlfetch.Client(c)
+	
+	client := paypal.NewClient(PAYPAL_USERNAME, PAYPAL_PASSWORD, PAYPAL_SECRET, PAYPAL_SANDBOX, httpClient)
+	
+	goods := make([]paypal.PayPalDigitalGood, 1)
+	good := new(paypal.PayPalDigitalGood)
+	good.Name, good.Amount, good.Quantity = "Test Good", 255, 1
+	goods[0] = *good
+	
+	basePath := strings.Join([]string{"http://", r.Host}, "")
+	returnURL := strings.Join([]string{basePath, "/", previousPagePath}, "")
+	cancelURL := strings.Join([]string{basePath, "/", previousPagePath}, "")
+	
+	c.Infof("Paypal Return URL: %v \n", returnURL)
+	
+	response, err := client.SetExpressCheckoutDigitalGoods(255, PAYPAL_CURRENCY, returnURL, cancelURL, goods)
+
+	c.Infof("Paypal Stuff: %v", response)
+	c.Infof("Paypal Values: %v", response.Values)
+	c.Infof("Paypal Error: %v", err)
+	c.Infof("Paypal Checkout URL: %v", response.CheckoutUrl())
+	
+	http.Redirect(w, r, response.CheckoutUrl(), 301)
 }
