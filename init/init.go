@@ -16,9 +16,11 @@ import (
 var config = make(map[string]interface{})
 var configFuncs = make(template.FuncMap)
 
-var site_tagline="Your Web-Anywhere Experts"
-var site_description = strings.Join([]string{"Doers' Guild", site_tagline}, " : ")
-var site_image = "/favicon.ico"
+const (
+	SITE_TAGLINE="Your Web-Anywhere Experts"
+	SITE_DESCRIPTION = strings.Join([]string{"Doers' Guild", SITE_TAGLINE}, " : ")
+	SITE_IMAGE = "/favicon.ico"
+)
 
 const (
 	PAYPAL_SANDBOX = true
@@ -34,11 +36,11 @@ func setupConfigDefaults() {
 	// Reset config
 	config = make(map[string]interface{})
 	
-	config["tagline"] = site_tagline
-	config["title"] = site_tagline
+	config["tagline"] = SITE_TAGLINE
+	config["title"] = SITE_TAGLINE
 	
-	config["metaImage"] = site_image
-	config["metaDescription"] = site_description
+	config["metaImage"] = SITE_IMAGE
+	config["metaDescription"] = SITE_DESCRIPTION
 }
 
 
