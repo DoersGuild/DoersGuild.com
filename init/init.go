@@ -1,15 +1,11 @@
 package init
 
 import (
-    "fmt"
     "html/template"
     "net/http"
     "github.com/gorilla/mux"
-    "github.com/DoersGuild/paypal"
     "appengine"
     "strings"
-    
-    "appengine/urlfetch"
 )
 
 // Acommon variable with data for templates
@@ -18,16 +14,8 @@ var configFuncs = make(template.FuncMap)
 
 const (
 	SITE_TAGLINE="Your Web-Anywhere Experts"
-	SITE_DESCRIPTION = strings.Join([]string{"Doers' Guild", SITE_TAGLINE}, " : ")
+	SITE_DESCRIPTION = "Doers' Guild : Your Web-Anywhere Experts"
 	SITE_IMAGE = "/favicon.ico"
-)
-
-const (
-	PAYPAL_SANDBOX = true
-	PAYPAL_USERNAME = "sathvik-facilitator_api1.doersguild.com"
-	PAYPAL_PASSWORD = "1370333952"
-	PAYPAL_SECRET = "AiPC9BjkCyDFQXbSkoZcgqH3hpacAbn-CXvfamuR2QddE1dzadDUDG7V"
-	PAYPAL_CURRENCY = "USD"
 )
 
 func setupConfigDefaults() {
@@ -60,8 +48,6 @@ func init() {
 	router.HandleFunc("/portfolio", portfolioHandler)
 	router.HandleFunc("/portfolio/{category}", portfolioCategoryHandler)
 	router.HandleFunc("/portfolio/{category}/{project}", portfolioDetailsHandler)
-	router.HandleFunc("/store/checkout/{previousPagePath:.*}", paypalCheckoutHandler)
-	router.HandleFunc("/store/return/{previousPagePath:.*}", paypalReturnHandler)
     router.NotFoundHandler = http.HandlerFunc(notFoundHandler)
 	http.Handle("/", router)
 }
@@ -171,67 +157,4 @@ func portfolioDetailsHandler(w http.ResponseWriter, r *http.Request) {
 	config["useSocialPlugins"] = true
 	
 	executeSimpleTemplate(w, r, "tmpl/content/portfolio_details.html")
-}
-
-
-
-func paypalCheckoutHandler(w http.ResponseWriter, r *http.Request) {
-	// Paypal express checkout submitter
-
-	vars := mux.Vars(r)
-	
-	previousPagePath := vars["previousPagePath"]
-	
-	c := appengine.NewContext(r)
-	httpClient := urlfetch.Client(c)
-	
-	client := paypal.NewClient(PAYPAL_USERNAME, PAYPAL_PASSWORD, PAYPAL_SECRET, PAYPAL_SANDBOX, httpClient)
-	
-	goods := make([]paypal.PayPalDigitalGood, 1)
-	good := new(paypal.PayPalDigitalGood)
-	good.Name, good.Amount, good.Quantity = "Test Good", 255, 1
-	goods[0] = *good
-	
-	basePath := strings.Join([]string{"http://", r.Host}, "")
-	returnURL := strings.Join([]string{basePath, "/store/return/", previousPagePath}, "")
-	cancelURL := strings.Join([]string{basePath, "/store/cancel/", previousPagePath}, "")
-	
-	c.Infof("Paypal Return URL: %v \n", returnURL)
-	
-	response, err := client.SetExpressCheckoutDigitalGoods(255, PAYPAL_CURRENCY, returnURL, cancelURL, goods)
-
-	c.Infof("Paypal Stuff: %v", response)
-	c.Infof("Paypal Values: %v", response.Values)
-	c.Infof("Paypal Error: %v", err)
-	c.Infof("Paypal Checkout URL: %v", response.CheckoutUrl())
-	
-	http.Redirect(w, r, response.CheckoutUrl(), 301)
-}
-
-
-func paypalReturnHandler(w http.ResponseWriter, r *http.Request) {
-	// Paypal express checkout success handler
-
-	vars := mux.Vars(r)
-	
-	previousPagePath := vars["previousPagePath"]
-	
-	c := appengine.NewContext(r)
-	httpClient := urlfetch.Client(c)
-	
-	client := paypal.NewClient(PAYPAL_USERNAME, PAYPAL_PASSWORD, PAYPAL_SECRET, PAYPAL_SANDBOX, httpClient)
-	
-	response, err := client.DoExpressCheckoutSale(r.FormValue("token"), r.FormValue("PayerID"), PAYPAL_CURRENCY, 255)
-	
-	basePath := strings.Join([]string{"http://", r.Host}, "")
-	errorURL := strings.Join([]string{basePath, "/store/error/", previousPagePath}, "")
-	receiptURL := strings.Join([]string{basePath, "/store/receipt/", previousPagePath}, "")
-	
-	if err != nil {
-		// handle error in charging
-		http.Redirect(w, r, errorURL, 301)
-	} else { // success!
-		// ... handle successful charge
-		http.Redirect(w, r, fmt.Sprintf("%s?receipt-id=%s", receiptURL, response.Values["PAYMENTREQUEST_0_TRANSACTIONID"][0]), 301)
-	}
 }
