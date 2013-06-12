@@ -74,10 +74,16 @@ func executeSimpleTemplate(w http.ResponseWriter, r *http.Request, tmplFile stri
 	c := appengine.NewContext(r)
 	c.Infof("Requested URL: %v", r.URL)
 	c.Infof("Loading Template: %v", tmplFile)
+	c.Infof("HTTPS: %v", r.TLS)
 	
-	basePath := strings.Join([]string{"http://", r.Host}, "")
+	protocol := "https://"
+	if(r.TLS == nil) {
+		// r.TLS is nil when no HTTPS connection is detected
+		protocol = "http://"
+	}
+	basePath := strings.Join([]string{protocol, r.Host}, "")
 	config["basePath"] = basePath
-	config["currentPath"] = r.URL.String()
+	config["currentPath"] = strings.Replace(r.URL.String(), basePath, "", 1)
 	config["currentURL"] = strings.Join([]string{basePath, r.URL.String()}, "")
 	
 	var listTmpl = template.Must(template.New("mainTemplate").Funcs(configFuncs).ParseFiles("tmpl/base.html", "tmpl/blocks.html", tmplFile))
