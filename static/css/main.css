@@ -133,6 +133,8 @@ a.doer-font {
     margin: 5px;
     min-height: 320px;
     word-wrap: break-word;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-transition: -webkit-box-shadow 0.5s linear;
     -o-transition: -o-box-shadow 0.5s linear;
@@ -162,6 +164,8 @@ a.card, a.card:hover, a.card:active, a.card:focus {
     margin: 10px;
     width: 240px;
     word-wrap: break-word;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     vertical-align: top;
 }
