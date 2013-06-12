@@ -37,16 +37,23 @@
 
                 window._gaq = [['_setAccount', 'UA-5141372-4'], ['_trackPageview']];
                 _gaq.push(['_require', 'inpage_linkid', '//www.google-analytics.com/plugins/ga/inpage_linkid.js']);
+                
+                // Set Modernizr.load's timeout period to 2.5 secs instead of the default 10
+                yepnope.errorTimeout = 2500;
 
                 Modernizr.load([{
                     load : '//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js',
                     complete : function() {
                         if (!window.jQuery) {
                             Modernizr.load('/js/vendor/jquery-1.10.1.min.js');
+                            console.log("Modernizr.load: Couldn't fetch jQuery from CDN; Falling back to the local version");
                         }
                     }
                 }, "/js/vendor/bootstrap.min.js", "/js/vendor/jquery.masonry.min.js", "/js/plugins.js", "/js/main.js", {
-                    load : ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+                    load : ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js',
+                    complete: function(){
+                        console.log("Modernizr.load: Done loading base assets");
+                    }
                 }]);
                 
                 {{if .useSocialPlugins}}
@@ -56,7 +63,10 @@
                         '//assets.pinterest.com/js/pinit.js', 
                         {
                             test : document.getElementById('facebook-jssdk'),
-                            nope : '//connect.facebook.net/en_US/all.js#xfbml=1'
+                            nope : '//connect.facebook.net/en_US/all.js#xfbml=1',
+                            complete: function(){
+                                console.log("Modernizr.load: Done loading social assets");
+                            }
                         }
                     ]);
                 {{end}}

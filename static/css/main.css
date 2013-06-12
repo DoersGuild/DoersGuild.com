@@ -5,6 +5,7 @@ body {
     background: url(../img/darkgrain.png);
     font-family: 'PT Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
+    text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6, .title {
@@ -121,6 +122,8 @@ a.doer-font {
 .card-wrapper {
     margin: auto; /* Center the cards*/
     vertical-align: top;
+    display: block;
+    display: inline-block;
 }
 .card-header {
     text-align: center;

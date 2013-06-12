@@ -1,21 +1,21 @@
 // Avoid `console` errors in browsers that lack a console.
-( function() {
-        var method;
-        var noop = function noop() {
-        };
-        var methods = ['assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error', 'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log', 'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd', 'timeStamp', 'trace', 'warn'];
-        var length = methods.length;
-        var console = (window.console = window.console || {});
+(function() {
+    var method;
+    var noop = function noop() {
+    };
+    var methods = ['assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error', 'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log', 'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd', 'timeStamp', 'trace', 'warn'];
+    var length = methods.length;
+    var console = (window.console = window.console || {});
 
-        while (length--) {
-            method = methods[length];
+    while (length--) {
+        method = methods[length];
 
-            // Only stub undefined methods.
-            if (!console[method]) {
-                console[method] = noop;
-            }
+        // Only stub undefined methods.
+        if (!console[method]) {
+            console[method] = noop;
         }
-    }());
+    }
+})();
 
 // Place any jQuery/helper plugins in here.
 
@@ -28,7 +28,7 @@
 
     function truncate(length) {
         // Truncate the text inside the selected node
-        $(this).each(function() {
+        return $(this).each(function() {
             // For multiple node support
             var $this = $(this), text, newLength, shortenedText;
             text = $this.text();
@@ -50,7 +50,7 @@
 
     function shorten(height) {
         // Shorten the selected node to the given height
-        $(this).each(function() {
+        return $(this).each(function() {
             // For multiple node support
             var $this = $(this);
             height = height || $this.attr("data-height") || 240;
@@ -81,7 +81,7 @@
 /* Masonry Helper */
 (function($) {"use strict";
     function setupMasonry() {
-        $(this).each(function() {
+        return $(this).each(function() {
             var $this = $(this);
             try {
                 $this.masonry('destroy');
@@ -90,7 +90,7 @@
             }
             $this.addClass("js-masonry").children().addClass("js-masonry-item");
             $this.masonry({
-                itemSelector: '.js-masonry-item',
+                itemSelector : '.js-masonry-item',
                 isFitWidth : true,
                 isAnimated : !(Modernizr && Modernizr.csstransitions),
                 columnWidth : function(containerWidth) {

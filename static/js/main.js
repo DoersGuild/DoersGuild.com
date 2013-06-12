@@ -10,8 +10,11 @@
 
         $('[data-toggle="tooltip"]').tooltip({
             placement : "bottom",
-            container : "body" // TO use the sans font
+            container : "body" // Move to body to use the sans font
         });
+        
+        
+        console.log("Init: JavaScript setup complete");
 
     });
 })(jQuery);
