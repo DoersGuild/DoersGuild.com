@@ -86,9 +86,11 @@ func executeSimpleTemplate(w http.ResponseWriter, r *http.Request, tmplFile stri
 	}
 	basePath := strings.Join([]string{protocol, r.Host}, "")
 	
-	urlPathString := urlPath.String()
+	urlPathString := ""
 	if(urlPathError != nil) {
 		urlPathString = strings.Replace(r.URL.String(), basePath, "", 1)
+	} else {
+		urlPathString = urlPath.String()
 	}
 	
 	config["basePath"] = basePath
