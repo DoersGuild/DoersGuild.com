@@ -74,7 +74,10 @@ func executeSimpleTemplate(w http.ResponseWriter, r *http.Request, tmplFile stri
 	c := appengine.NewContext(r)
 	c.Infof("Requested URL: %v", r.URL)
 	c.Infof("Loading Template: %v", tmplFile)
-	c.Infof("HTTPS: %v", r.TLS)
+	
+	currentMuxRoute := mux.CurrentRoute(r)
+	urlPath, urlPathError := currentMuxRoute.URLPath()
+	c.Infof("Mux URL path: %v", urlPath)
 	
 	protocol := "https://"
 	if(r.TLS == nil) {
@@ -82,9 +85,15 @@ func executeSimpleTemplate(w http.ResponseWriter, r *http.Request, tmplFile stri
 		protocol = "http://"
 	}
 	basePath := strings.Join([]string{protocol, r.Host}, "")
+	
+	urlPathString := urlPath.String()
+	if(urlPathError != nil) {
+		urlPathString = strings.Replace(r.URL.String(), basePath, "", 1)
+	}
+	
 	config["basePath"] = basePath
-	config["currentPath"] = strings.Replace(r.URL.String(), basePath, "", 1)
-	config["currentURL"] = strings.Join([]string{basePath, r.URL.String()}, "")
+	config["currentPath"] = urlPathString
+	config["currentURL"] = strings.Join([]string{basePath, urlPathString}, "")
 	
 	var listTmpl = template.Must(template.New("mainTemplate").Funcs(configFuncs).ParseFiles("tmpl/base.html", "tmpl/blocks.html", tmplFile))
 	
