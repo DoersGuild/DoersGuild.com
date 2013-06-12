@@ -88,7 +88,9 @@
             } catch(e) {
                 console.warn("Failed to destroy masonry", $this);
             }
+            $this.addClass("js-masonry").children().addClass("js-masonry-item");
             $this.masonry({
+                itemSelector: '.js-masonry-item',
                 isFitWidth : true,
                 isAnimated : !(Modernizr && Modernizr.csstransitions),
                 columnWidth : function(containerWidth) {
