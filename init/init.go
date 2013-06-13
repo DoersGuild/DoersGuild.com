@@ -87,16 +87,20 @@ func executeSimpleTemplate(w http.ResponseWriter, r *http.Request, tmplFile stri
 	}
 	basePath := strings.Join([]string{protocol, r.Host}, "")
 	
-	currentMuxRoute := mux.CurrentRoute(r)
-	urlPath, urlPathError := currentMuxRoute.URLPath()
-	
 	urlPathString := ""
-	if(urlPathError != nil) {
-		// Remove the host and protocol parts of the URL to get the relative path
-		urlPathString = strings.Replace(r.URL.String(), basePath, "", 1)
+	currentMuxRoute := mux.CurrentRoute(r)
+	if(currentMuxRoute!=nil) {
+		urlPath, urlPathError := currentMuxRoute.URLPath()
+		
+		if(urlPathError != nil) {
+			// Remove the host and protocol parts of the URL to get the relative path
+			urlPathString = strings.Replace(r.URL.String(), basePath, "", 1)
+		} else {
+			urlPathString = urlPath.String()
+			c.Infof("Mux URL path: %v", urlPath)
+		}
 	} else {
-		urlPathString = urlPath.String()
-		c.Infof("Mux URL path: %v", urlPath)
+		urlPathString = strings.Replace(r.URL.String(), basePath, "", 1)
 	}
 	
 	config["basePath"] = basePath
