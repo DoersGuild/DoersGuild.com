@@ -121,6 +121,7 @@ func executeSimpleTemplate(w http.ResponseWriter, r *http.Request, tmplFile stri
 func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 	// The 404 page
 	config["title"] = "Page Not Found"
+	w.WriteHeader(http.StatusNotFound)
 	executeSimpleTemplate(w, r, "tmpl/content/404.html")
 }
 
