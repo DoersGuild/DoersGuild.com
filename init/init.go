@@ -31,6 +31,10 @@ func setupConfigDefaults() {
 	config["metaDescription"] = SITE_DESCRIPTION
 }
 
+func noHTMLEscape(text string) template.HTML {
+	// Return an unsanitized version of the HTML string
+	return template.HTML(text)
+}
 
 func init() {
 	// The main router
@@ -40,6 +44,7 @@ func init() {
 	
 	// Setup one-time common template functions
 	configFuncs["URLQueryEscaper"] = template.URLQueryEscaper
+	configFuncs["noHTMLEscape"] = noHTMLEscape
 	
 	router:=mux.NewRouter()
 	router.HandleFunc("/", indexHandler)
@@ -75,10 +80,6 @@ func executeSimpleTemplate(w http.ResponseWriter, r *http.Request, tmplFile stri
 	c.Infof("Requested URL: %v", r.URL)
 	c.Infof("Loading Template: %v", tmplFile)
 	
-	currentMuxRoute := mux.CurrentRoute(r)
-	urlPath, urlPathError := currentMuxRoute.URLPath()
-	c.Infof("Mux URL path: %v", urlPath)
-	
 	protocol := "https://"
 	if(r.TLS == nil) {
 		// r.TLS is nil when no HTTPS connection is detected
@@ -86,8 +87,13 @@ func executeSimpleTemplate(w http.ResponseWriter, r *http.Request, tmplFile stri
 	}
 	basePath := strings.Join([]string{protocol, r.Host}, "")
 	
+	currentMuxRoute := mux.CurrentRoute(r)
+	urlPath, urlPathError := currentMuxRoute.URLPath()
+	c.Infof("Mux URL path: %v", urlPath)
+	
 	urlPathString := ""
 	if(urlPathError != nil) {
+		// Remove the host and protocol parts of the URL to get the relative path
 		urlPathString = strings.Replace(r.URL.String(), basePath, "", 1)
 	} else {
 		urlPathString = urlPath.String()
