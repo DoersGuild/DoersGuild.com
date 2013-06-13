@@ -66,8 +66,8 @@ var portfolioItems = map[string]PortfolioItem {
 	},
 	"IXXOCart" : {
 		"IXXOCart",
-		"IXXO Templates",
-		"We helped IXXO-cart upgrade their templating framework with site-modules, twitter-bootstrap, JSON-web-services, etc and created several new templates for their various offerings including Multi-Vendor cart, Mobile templates, etc.",
+		"IXXO Cart Templates",
+		"We helped IXXO-Cart upgrade their templating framework with a modular layout, twitter-bootstrap, JSON-web-services, etc and created several new templates for their various offerings including their Multi-Vendor cart, mobile-optimized templates, etc.",
 		"May, 2013",
 		"Websites",
 		map[string]string{"Multi-Vendor Demo" : "http://demo-multi-vendor-sa.ixxocart.com/index.php"},
