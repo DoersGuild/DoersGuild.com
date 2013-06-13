@@ -89,7 +89,6 @@ func executeSimpleTemplate(w http.ResponseWriter, r *http.Request, tmplFile stri
 	
 	currentMuxRoute := mux.CurrentRoute(r)
 	urlPath, urlPathError := currentMuxRoute.URLPath()
-	c.Infof("Mux URL path: %v", urlPath)
 	
 	urlPathString := ""
 	if(urlPathError != nil) {
@@ -97,6 +96,7 @@ func executeSimpleTemplate(w http.ResponseWriter, r *http.Request, tmplFile stri
 		urlPathString = strings.Replace(r.URL.String(), basePath, "", 1)
 	} else {
 		urlPathString = urlPath.String()
+		c.Infof("Mux URL path: %v", urlPath)
 	}
 	
 	config["basePath"] = basePath
