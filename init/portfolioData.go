@@ -249,8 +249,8 @@ var homePageItems = []PortfolioItem {
 
 /* Client feedback to be highlighted on the home page */
 var homePageFeedback = []Feedback {
-	portfolioItems["Unitu"].Feedback[0],
-	portfolioItems["PassHasher"].Feedback[0],
 	portfolioItems["Rebel316Blog"].Feedback[0],
+	portfolioItems["PassHasher"].Feedback[0],
+	portfolioItems["Unitu"].Feedback[0],
 	portfolioItems["ToggleText"].Feedback[0],
 }
