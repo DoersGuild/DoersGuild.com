@@ -63,6 +63,16 @@ func imageRedirectHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	imagePath:=vars["path"]
 	path := strings.Join([]string{basePath, imagePath}, "/")
+	// Log stats
+	c := appengine.NewContext(r)
+	c.Infof("Redirecting to image: %v", path)
+	// Pass along the resolution cookie, if exists
+	resolutionCookie, resErr := r.Cookie("resolution")
+	if resErr == nil {
+		http.SetCookie(w, resolutionCookie)
+		path = strings.Join([]string{path, resolutionCookie.String()}, "?")
+		c.Infof("Setting resolution Cookie: %v", resolutionCookie.String())
+	}
 	http.Redirect(w, r, path, http.StatusMovedPermanently)
 }
 
