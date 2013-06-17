@@ -38,13 +38,24 @@
                 // Add a continuation symbol if text was clipped
                 shortenedText = shortenedText + "...";
             }
-            $this.text(shortenedText).hover(function() {
+
+            var expand = function() {
                 // Show the full length text
                 $this.text(text);
-            }, function() {
+            };
+            var compress = function() {
                 // Show the shortened text
                 $this.text(shortenedText);
-            });
+            };
+            var toggle = function() {
+                // Toggle the text
+                if ($this.text() === shortenedText) {
+                    expand.apply(this, arguments);
+                } else {
+                    compress.apply(this, arguments);
+                }
+            };
+            $this.text(shortenedText).hover(expand, compress).focus(expand).blur(compress).on("tap", toggle);
         });
     }
 
@@ -54,22 +65,36 @@
             // For multiple node support
             var $this = $(this);
             height = height || $this.attr("data-height") || 240;
-            $this.css({
-                "overflow" : "hidden",
-                "height" : height
-            }).hover(function() {
-                // Allow the element to expand to full height
-                $this.css({
-                    "overflow" : "visible",
-                    "height" : "auto"
-                });
-            }, function() {
+
+            var compress = function() {
                 // Shorten the element again
                 $this.css({
                     "overflow" : "hidden",
                     "height" : height
                 });
-            });
+            };
+
+            var expand = function() {
+                // Allow the element to expand to full height
+                $this.css({
+                    "overflow" : "visible",
+                    "height" : "auto"
+                });
+            };
+
+            var toggle = function() {
+                // Toggle the height
+                if ($this.css("height") === "auto") {
+                    compress.apply(this, arguments);
+                } else {
+                    expand.apply(this, arguments);
+                }
+            };
+
+            $this.css({
+                "overflow" : "hidden",
+                "height" : height
+            }).hover(expand, compress).focus(expand).blur(compress).on("tap", toggle);
         });
     }
 
