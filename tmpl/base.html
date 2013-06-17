@@ -35,7 +35,7 @@
             (function() {"use strict";
 
                 // Set a cookie for adaptive-images
-                document.cookie = 'resolution=' + Math.max(screen.width, screen.height) + '; path=/';
+                document.cookie = 'resolution=' + Math.max(screen.width, screen.height) + ("devicePixelRatio" in window ? "," + devicePixelRatio : ",1") + '; path=/';
 
                 window._gaq = [['_setAccount', 'UA-5141372-4'], ['_trackPageview']];
                 _gaq.push(['_require', 'inpage_linkid', '//www.google-analytics.com/plugins/ga/inpage_linkid.js']);
