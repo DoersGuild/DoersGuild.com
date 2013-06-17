@@ -17,4 +17,5 @@
         console.log("Init: JavaScript setup complete");
 
     });
+    
 })(jQuery);
