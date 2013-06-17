@@ -3,7 +3,7 @@
     $(document).ready(function() {
 
         $(".card-wrapper .card").shorten(300);
-        $(".card-comment-wrapper .card-comment-popover-content").shorten(140);
+        $(".card-comment-wrapper .card-comment-popover-content").shorten(144);
         $(".truncate-this").truncate();
         $(".card-wrapper").setupMasonry();
         $(".card-comment-wrapper").setupMasonry();

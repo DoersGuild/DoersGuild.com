@@ -124,6 +124,11 @@ a.doer-font {
     vertical-align: top;
     display: block;
     display: inline-block;
+    -webkit-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -ms-transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
 .card-header {
     text-align: center;
@@ -184,11 +189,16 @@ a.card, a.card:hover, a.card:active, a.card:focus {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     vertical-align: top;
+    -webkit-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -ms-transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
-.card-comment-popover-content {
-    min-height: 140px;
+.card-comment:hover, .card-comment:active, .card-comment:focus {
+    z-index: 10;
+    background-color: rgba(0,0,0,0.03);
 }
-
 .card-comment a, .card-comment a:hover, .card-comment a:active, .card-comment a:focus {
     text-decoration: none;
 }
@@ -205,6 +215,9 @@ a.card, a.card:hover, a.card:active, a.card:focus {
 .card-comment .popover-static.top {
     margin: 0px;
     margin-bottom: 12px;
+}
+.card-comment .popover-content {
+    min-height: 120px;
 }
 
 .nav-tabs-right > li {

@@ -35,8 +35,8 @@
             <div class="media line-height-36">
                 {{if $Client.IconURL}}<div class=" pull-left"><img src="{{$Client.IconURL}}" class="media-object img-polaroid img-rounded img-tiny" alt="{{$Client.Name}}" /></div>{{end}}
                 <div class="media-body margin-top-5">
-                    {{if $Client.Name}}<h5 class="inline-block padding-3 margin-0 media-heading" itemprop="name">{{$Client.Name}}{{if $Client.Company}},{{end}}</h5>{{end}}
-                    {{if $Client.Company}}<p class="inline-block padding-3" itemprop="affiliation">{{$Client.Company}}</p>{{end}}
+                    <h5 class="inline-block padding-3 margin-0 media-heading" itemprop="name">{{$Client.Name}}{{if $Client.Company}},{{end}}&nbsp;</h5>
+                    <p class="inline-block padding-3" itemprop="affiliation">{{$Client.Company}}&nbsp;</p>
                     <meta itemprop="organization" content="{{$Client.Company}}" />
                     <meta itemprop="role" content="Representative" />
                 </div>
