@@ -197,7 +197,7 @@ a.card, a.card:hover, a.card:active, a.card:focus {
 }
 .card-comment:hover, .card-comment:active, .card-comment:focus {
     z-index: 10;
-    background-color: rgba(0,0,0,0.03);
+    background-color: rgba(255, 255, 255, 0.4);
 }
 .card-comment a, .card-comment a:hover, .card-comment a:active, .card-comment a:focus {
     text-decoration: none;
