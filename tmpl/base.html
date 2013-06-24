@@ -10,9 +10,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>{{if .title}}{{.title}} : {{end}}Doers' Guild</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <link rel="canonical" href="http://www.doersguild.com{{.currentPath}}" />
-        
+
         <meta property="og:brand" itemprop="brand" content="Doers' Guild"/>
         <meta property="og:logo" itemprop="logo" content="{{.basePath}}/favicon.ico"/>
         <meta property="og:title" itemprop="name" content="{{if .title}}{{.title}} : {{end}}Doers' Guild"/>
@@ -39,7 +39,7 @@
 
                 window._gaq = [['_setAccount', 'UA-5141372-4'], ['_trackPageview']];
                 _gaq.push(['_require', 'inpage_linkid', '//www.google-analytics.com/plugins/ga/inpage_linkid.js']);
-                
+
                 // Set Modernizr.load's timeout period to 2.5 secs instead of the default 10
                 yepnope.errorTimeout = 2500;
 
@@ -57,12 +57,12 @@
                         console.log("Modernizr.load: Done loading base assets");
                     }
                 }]);
-                
+
                 {{if .useSocialPlugins}}
                     Modernizr.load([
                         '//platform.twitter.com/widgets.js',
-                        '//apis.google.com/js/plusone.js', 
-                        '//assets.pinterest.com/js/pinit.js', 
+                        '//apis.google.com/js/plusone.js',
+                        '//assets.pinterest.com/js/pinit.js',
                         {
                             test : document.getElementById('facebook-jssdk'),
                             nope : '//connect.facebook.net/en_US/all.js#xfbml=1',
@@ -134,7 +134,7 @@
                     <a href="https://twitter.com/DoersGuild" title="Twitter" rel="publisher"  target="_blank"><i class="icon-twitter"></i></a>
                 </li>
                 <li>
-                    <a href="https://plus.google.com/109701554729681057139" title="Google Plus" rel="publisher" target="_blank"><i class="icon-google-plus"></i></a>
+                    <a href="https://plus.google.com/109701554729681057139?rel=author" title="Google Plus" rel="publisher" target="_blank"><i class="icon-google-plus"></i></a>
                 </li>
                 <li>
                     <a href="http://www.linkedin.com/company/doers'-guild" title="LinkedIn" rel="publisher"  target="_blank"><i class="icon-linkedin"></i></a>
