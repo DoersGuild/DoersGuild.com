@@ -15,7 +15,7 @@ handlers:
   static_dir: static/js
   http_headers:
     Vary: Accept-Encoding
-  
+
 - url: /font
   static_dir: static/font
   http_headers:
@@ -24,7 +24,7 @@ handlers:
 - url: /favicon.ico
   static_files: static/logo.png
   upload: static/logo.png
-  
+
 - url: /.*
   script: _go_app
 
@@ -34,6 +34,7 @@ skip_files: |
  (app\.yml)|
  (index\.yaml)|
  (index\.yml)|
+ (tumblr\.html)|
  (#.*#)|
  (.*~)|
  (.*\.py[co])|
