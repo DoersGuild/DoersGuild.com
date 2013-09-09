@@ -1,3 +1,33 @@
+/* Overrides for twbsV3 */
+h1, h2, h3, h4, h5, h6 {
+    margin: 10px 0;
+    font-weight: bold;
+    line-height: 20px;
+    color: inherit;
+    text-rendering: optimizelegibility;
+}
+
+h1, h2, h3 {
+    line-height: 40px;
+}
+
+img {
+    width: auto\9;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+.label-inverse, .badge-inverse {
+    background-color: #333;
+}
+
+div.img-thumbnail {
+    display: block;
+}
+
 /* ==========================================================================
  Author's custom styles
  ========================================================================== */
@@ -11,10 +41,12 @@ body {
 h1, h2, h3, h4, h5, h6, .title {
     font-family: 'PT Serif', Georgia, serif;
 }
+
 ::-moz-selection {
     background: #c12e28;
     color: #fff;
 }
+
 ::selection {
     background: #c12e28;
     color: #fff;
@@ -25,6 +57,7 @@ h1, h2, h3, h4, h5, h6, .title {
     margin-left: auto;
     margin-right: auto;
 }
+
 .bold {
     font-weight: bold;
 }
@@ -33,18 +66,23 @@ h1, h2, h3, h4, h5, h6, .title {
     display: inline;
     display: inline-block;
 }
+
 .margin-0 {
     margin: 0
 }
+
 .margin-5 {
     margin: 5px;
 }
+
 .margin-top-5 {
     margin-top: 5px;
 }
+
 .padding-0 {
     padding: 0px;
 }
+
 .padding-3 {
     padding: 3px;
 }
@@ -56,6 +94,7 @@ h1, h2, h3, h4, h5, h6, .title {
 .border-none {
     border: none;
 }
+
 .text {
     text-align: justify;
 }
@@ -64,6 +103,7 @@ h1, h2, h3, h4, h5, h6, .title {
 .table-layout-fixed {
     table-layout: fixed;
 }
+
 .table-layout-fixed td, .table-layout-fixed th {
     word-wrap: break-word;
     text-align: inherit;
@@ -82,6 +122,7 @@ h1, h2, h3, h4, h5, h6, .title {
 .doer-red, .doer-red a {
     color: #ED1C24;
 }
+
 a.doer-font {
     /* Add an underline for all links*/
     text-decoration: underline;
@@ -133,10 +174,12 @@ a.doer-font {
     display: block;
     display: inline-block;
 }
+
 .card-header {
     text-align: center;
     border-bottom: 2px solid #EEE;
 }
+
 .card {
     border: 1px solid #B3B3B3;
     background-color: #FFFFFF;
@@ -166,6 +209,7 @@ a.doer-font {
     -ms-transition: -ms-box-shadow 0.5s linear;
     transition: box-shadow 0.5s linear;
 }
+
 .card:hover, .card:focus, .card:active, .card.active {
     -moz-box-shadow: 0 1px 9px #666;
     -webkit-box-shadow: 0 1px 9px #666;
@@ -173,6 +217,7 @@ a.doer-font {
     z-index: 10;
     margin-bottom: 10px;
 }
+
 a.card, a.card:hover, a.card:active, a.card:focus {
     color: inherit;
     text-decoration: none;
@@ -184,6 +229,7 @@ a.card, a.card:hover, a.card:active, a.card:focus {
     margin: auto;
     vertical-align: top;
 }
+
 .card-comment {
     margin: 10px;
     width: 240px;
@@ -198,10 +244,12 @@ a.card, a.card:hover, a.card:active, a.card:focus {
     -ms-transition: all 0.1s linear;
     transition: all 0.1s linear;
 }
+
 .card-comment:hover, .card-comment:active, .card-comment:focus {
     z-index: 10;
     background-color: rgba(255, 255, 255, 0.4);
 }
+
 .card-comment a, .card-comment a:hover, .card-comment a:active, .card-comment a:focus {
     text-decoration: none;
 }
@@ -219,6 +267,7 @@ a.card, a.card:hover, a.card:active, a.card:focus {
     margin: 0px;
     margin-bottom: 12px;
 }
+
 .card-comment .popover-content {
     min-height: 120px;
 }
@@ -234,6 +283,7 @@ a.card, a.card:hover, a.card:active, a.card:focus {
     padding: 0;
     background-color: #fff;
 }
+
 .sidenav > li > a {
     display: block;
     width: 190px \9;
@@ -241,6 +291,7 @@ a.card, a.card:hover, a.card:active, a.card:focus {
     padding: 8px 14px;
     border: 1px solid #e5e5e5;
 }
+
 .sidenav > .active > a {
     position: relative;
     z-index: 2;
@@ -248,17 +299,21 @@ a.card, a.card:hover, a.card:active, a.card:focus {
     border: 0;
     text-shadow: 0 1px 0 rgba(0,0,0,.15);
 }
+
 .sidenav > li > a:hover {
     background-color: #f5f5f5;
 }
+
 .sidenav.affix {
     top: 90px;
 }
+
 .sidenav.affix-bottom {
     position: absolute;
     top: auto;
     bottom: 270px;
 }
+
 /*--------
  Responsive
  -------------------------------------------------- */

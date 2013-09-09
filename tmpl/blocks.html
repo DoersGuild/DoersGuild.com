@@ -1,4 +1,4 @@
-{{define "portfolioCard"}} 
+{{define "portfolioCard"}}
     {{$Item:=.}}
     <a href="/portfolio/{{$Item.CategoryID}}/{{$Item.ID}}" class="card"> {{template "portfolioCardContent" $Item}} </a>
 {{end}}
@@ -17,9 +17,9 @@
         {{end}}
         <p class="text" data-length="100" itemprop="description">
             {{$Item.ShortDesc}}
-        </p> 
+        </p>
         {{if $Item.Tags}}
-            <ul class="nav center margin-0">
+            <ul class="list-inline center margin-0">
                 {{range $tag:=$Item.Tags}}
                     <li class="label label-inverse margin-5" itemprop="softwareApplicationSubCategory" content="{{$tag}}">{{$tag}}</li>
                 {{end}}
@@ -33,7 +33,7 @@
     <span itemscope itemtype="http://data-vocabulary.org/Person">
         {{if $Client.URL}}<a href="{{$Client.URL}}" rel="external" target="_blank" class="btn btn-link" itemprop="url">{{else}}<div class="">{{end}}
             <div class="media line-height-36">
-                {{if $Client.IconURL}}<div class=" pull-left"><img src="{{$Client.IconURL}}" class="media-object img-polaroid img-rounded img-tiny" alt="{{$Client.Name}}" /></div>{{end}}
+                {{if $Client.IconURL}}<div class=" pull-left"><img src="{{$Client.IconURL}}" class="media-object img-thumbnail img-rounded img-tiny" alt="{{$Client.Name}}" /></div>{{end}}
                 <div class="media-body margin-top-5">
                     <h5 class="inline-block padding-3 margin-0 media-heading" itemprop="name">{{$Client.Name}}{{if $Client.Company}},{{end}}&nbsp;</h5>
                     <p class="inline-block padding-3" itemprop="affiliation">{{$Client.Company}}&nbsp;</p>

@@ -8,53 +8,53 @@
         <section id="{{$Category.ID}}">
             <header>
                 <h3 class="doer-font doer-red center">
-                    <a href="/portfolio" class="inline-block">Portfolio</a> 
-                    <i class="icon-arrow-right margin-5"></i> 
-                    <a href="/portfolio/{{$Category.ID}}" class="inline-block">{{$Category.Name}}</a> 
-                    <i class="icon-arrow-right margin-5"></i> 
+                    <a href="/portfolio" class="inline-block">Portfolio</a>
+                    <i class="icon-arrow-right margin-5"></i>
+                    <a href="/portfolio/{{$Category.ID}}" class="inline-block">{{$Category.Name}}</a>
+                    <i class="icon-arrow-right margin-5"></i>
                     <a href="/portfolio/{{$Category.ID}}/{{$Item.ID}}" class="inline-block">{{$Item.Title}} :</a>
                 </h3>
             </header>
-            <div class="content-well"> 
-                <div class="row-fluid">
-                    <div class="span3"> 
-                        <div class="img-polaroid">
+            <div class="content-well">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="img-thumbnail">
                             {{template "portfolioCardContent" $Item}}
-                        </div> 
+                        </div>
                         <br/>
-                        <div class="img-polaroid">
+                        <div class="img-thumbnail">
                             <h5 class="center">
                                 Isn't this just lovely? Tell us what you think, at <a href="mailto:mail@doersguild.com?subject=I'd%20love%20to%20work%20with%20you%20guys!" target="_blank">mail@doersguild.com</a>
                             </h5>
                         </div>
-                        <div class="img-polaroid">
+                        <div class="img-thumbnail">
                             <h4 class="center">
                                 Or tell the world :
                             </h4>
-                            <ul class="nav nav-list row-fluid text-left">
-                                <li class="span6">
+                            <ul class="list-inline clearfix text-left">
+                                <li class="col-md-6">
                                     <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true" data-action="recommend"></div>
                                 </li>
-                                <li class="span6">
+                                <li class="col-md-6">
                                     <div class="g-plusone" data-size="medium"></div>
                                 </li>
                             </ul>
-                            <ul class="nav nav-list row-fluid text-left">
-                                <li class="span6">
+                            <ul class="list-inline clearfix text-left">
+                                <li class="col-md-6">
                                     <a href="https://twitter.com/share" class="twitter-share-button" data-via="DoersGuild" data-related="DoersGuild" data-hashtags="great-job">Tweet</a>
                                 </li>
-                                <li class="span6">
+                                <li class="col-md-6">
                                     <a href="//pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" ><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
                                 </li>
                             </ul>
                         </div>
                         {{if $Item.Links}}
                             <br/>
-                            <div class="img-polaroid">
+                            <div class="img-thumbnail">
                                 <h4 class="card-header">Links:</h4>
                                 <ul class="nav nav-list">
                                     {{range $Name, $Link := $Item.Links}}
-                                        <li> 
+                                        <li>
                                             <a href="{{$Link}}" target="_blank" rel="external">{{$Name}}</a>
                                         </li>
                                     {{end}}
@@ -63,12 +63,12 @@
                         {{end}}
                         {{if $Item.Feedback}}
                             <br/>
-                            <div class="img-polaroid">
+                            <div class="img-thumbnail">
                                 <h4 class="card-header">Feedback:</h4>
                                 <ul class="nav nav-list">
                                     {{range $Feedback := $Item.Feedback}}
-                                        <li> 
-                                            {{template "clientNameAndLink" index $Clients $Feedback.PersonID}} 
+                                        <li>
+                                            {{template "clientNameAndLink" index $Clients $Feedback.PersonID}}
                                             <blockquote>{{$Feedback.Message}}</blockquote>
                                         </li>
                                     {{end}}
@@ -77,10 +77,10 @@
                         {{end}}
                         <br/>
                     </div>
-                    <div class="span9"> 
+                    <div class="col-md-9">
                         <ul class="nav nav-list">
                             {{range $Screenshot:=$Item.Screenshots}}
-                                <li> <img src="{{$Screenshot}}" class="img-polaroid margin-5" alt="Screenshot of {{$Item.Title}}" /> </li>
+                                <li> <img src="{{$Screenshot}}" class="img-thumbnail margin-5" alt="Screenshot of {{$Item.Title}}" /> </li>
                             {{end}}
                         </ul>
                     </div>
