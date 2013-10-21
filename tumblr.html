@@ -302,7 +302,7 @@ Support: support@pixelunion.net
     <!-- Imports from the main site -->
 
             <link rel="stylesheet" href="http://www.doersguild.com/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://www.doersguild.com/css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="http://www.doersguild.com/css/bootstrap-theme.min.css">
 
         <link rel="stylesheet" href="http://www.doersguild.com/css/font-awesome.min.css">
         <!--[if lt IE 7]><link rel='stylesheet' href=http://www.doersguild.com'/css/font-awesome-ie7.min.css'><![endif]-->
@@ -619,15 +619,16 @@ Support: support@pixelunion.net
 <!-- Begin MailChimp Signup Form -->
 <div id="mc_embed_signup" class="content">
     <h2>Subscribe to <span class="doer-font doer-red">The Doers' Blog</span>: </h2>
-<form action="http://doersguild.us7.list-manage.com/subscribe/post?u=920d878866b1fa26b32d2d6b2&amp;id=f3dd827ec5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="content-well form-inline" target="_blank" novalidate>
-<div class="mc-field-group control-group">
+<form action="http://doersguild.us7.list-manage.com/subscribe/post?u=920d878866b1fa26b32d2d6b2&amp;id=f3dd827ec5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="content-well form-horizontal" target="_blank" novalidate><div class="row">
+    <div class="col-md-offset-1 col-md-10">
+<div class="mc-field-group form-group">
     <label for="mce-EMAIL" class="control-label bold">Email </label>
-    <div class="controls"><input type="email" value="" name="EMAIL" class="required email input-large" id="mce-EMAIL"></div>
+    <input type="email" value="" name="EMAIL" class="required email input-large form-control" id="mce-EMAIL">
 </div>
     <div id="mce-responses" class="clear">
         <div class="response" id="mce-error-response" style="display:none"></div>
         <div class="response" id="mce-success-response" style="display:none"></div>
-    </div>  <div class="clear control-group"><span class="controls"><button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button btn"><i class="icon-check"></i> Subscribe</button></span></div>
+    </div>  <div class="clear form-group"><span class="controls"><button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-default btn-lg"><i class="icon-check"></i> Subscribe</button></span></div></div></div>
 </form>
 <p>You'll get these posts delivered to your inbox as soon as we publish them</p>
 </div>
@@ -994,7 +995,7 @@ var clicky_site_id = {text:GetClicky Site ID};
      //Append Link to body
      $('body:first').append(newsletter_link);
      var options = {
-       errorClass: 'mce_inline_error',
+       errorClass: 'help-text alert alert-danger',
        errorElement: 'div',
        onkeyup: function(){},
        onfocusout:function(){},
