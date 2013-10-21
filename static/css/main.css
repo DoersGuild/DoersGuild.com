@@ -28,6 +28,15 @@ div.img-thumbnail {
     display: block;
 }
 
+.container-fluid {
+    padding: 0 20px;
+    width: 100%;
+}
+
+.container-fluid > .row {
+    max-width: 100%;
+}
+
 /* ==========================================================================
  Author's custom styles
  ========================================================================== */
@@ -126,6 +135,11 @@ h1, h2, h3, h4, h5, h6, .title {
 a.doer-font {
     /* Add an underline for all links*/
     text-decoration: underline;
+}
+
+.header-container {
+    padding: 0 20px;
+    margin-bottom: 20px;
 }
 
 .content {
