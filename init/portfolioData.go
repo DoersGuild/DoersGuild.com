@@ -12,7 +12,7 @@ var portfolioClients = map[string]Person {
 	"GKK_Rahul" : {"GKK_Rahul", "Rahul", "", "https://play.google.com/store/apps/details?id=com.doersguild.generalknowledge&reviewId=bGc6QU9xcFRPSDZUNEdCRlVLWjBGaF9WbGtaWDNVdFZFcjN2ZkZacXk5OVFpWEFwbkpwVk1HNmRKSlJlTTE5bEEwcS1rVG1sLThRRUlOYmRURU1Ca2F6NGFz", ""},
 	"Unitu": {"Unitu","Anish","Unitu","https://www.elance.com/e/baggaanish/", ""},
 	"HihnSight": {"HihnSight","HihnSight","","https://www.elance.com/e/HihnSight/", ""},
-	"MigRyes": {"MigRyes","Mig Ryes","37Signals","http://migreyes.com/", "http://migreyes.com/assets/images/mig.jpg"},
+	"MigRyes": {"MigRyes","Mig Ryes","37Signals","http://migreyes.com/", "https://pbs.twimg.com/profile_images/1188121881/Mig-likes-you_bigger.jpg"},
 	"Rebel316": {"Rebel316","BigPlans","Rebel316","https://www.elance.com/e/bigplans/", ""},
 }
 
