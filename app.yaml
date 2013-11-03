@@ -22,8 +22,8 @@ handlers:
     Vary: Accept-Encoding
 
 - url: /favicon.ico
-  static_files: static/logo.png
-  upload: static/logo.png
+  static_files: static/favicon.ico
+  upload: static/favicon.ico
 
 - url: /.*
   script: _go_app
