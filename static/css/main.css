@@ -37,6 +37,11 @@ div.img-thumbnail {
     max-width: 100%;
 }
 
+.affix {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
 /* ==========================================================================
  Author's custom styles
  ========================================================================== */
