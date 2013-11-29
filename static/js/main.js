@@ -1,6 +1,6 @@
 (function($) {"use strict";
 
-    $(document).ready(function() {
+    $(function() {
 
         $(".card-wrapper .card").shorten(300);
         $(".card-comment-wrapper .card-comment-popover-content").shorten(144);
@@ -12,10 +12,19 @@
             placement : "bottom",
             container : "body" // Move to body to use the sans font
         });
-        
-        
+
+        $("img").error(function() {
+            console.log("Failed to load image", this);
+            var $this = $(this), $parent = $this.parent();
+            if ($parent.children.length === 1) {
+                $parent.hide();
+            } else {
+                $this.hide();
+            }
+        });
+
         console.log("Init: JavaScript setup complete");
 
     });
-    
+
 })(jQuery);
