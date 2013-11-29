@@ -14,7 +14,7 @@ var portfolioClients = map[string]Person {
 	"HihnSight": {"HihnSight","HihnSight","","https://www.elance.com/e/HihnSight/", ""},
 	"MigRyes": {"MigRyes","Mig Ryes","37Signals","http://migreyes.com/", ""},
 	"Rebel316": {"Rebel316","BigPlans","Rebel316","https://www.elance.com/e/bigplans/", ""},
-	"TouchPoint": {"TouchPoint", "MeDine", "Touch-Point", "http://medine.in/", ""},
+	"TouchPoint": {"TouchPoint", "MeDine", "TouchPoint Data Sciences Pvt. Ltd", "http://medine.in/", ""},
 }
 
 type Feedback struct {
@@ -240,6 +240,11 @@ var portfolioCategories = map[string]Category {
 	},
 }
 
+var itemCount = len(portfolioItems)
+var maxItems = 4
+var currentItemCount = 0
+var currentFeedbackCount = 0
+
 /* Items to be displayed on the home page */
 var homePageItems = []PortfolioItem {
 	portfolioItems["IXXOCart"],
@@ -247,6 +252,7 @@ var homePageItems = []PortfolioItem {
 	portfolioItems["PassHasher"],
 	portfolioItems["CheriyalAndPembarthy"],
 }
+
 
 /* Client feedback to be highlighted on the home page */
 var homePageFeedback = []Feedback {

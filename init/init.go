@@ -6,6 +6,7 @@ import (
     "github.com/gorilla/mux"
     "appengine"
     "strings"
+    "math/rand"
 )
 
 // Acommon variable with data for templates
@@ -38,6 +39,55 @@ func noHTMLEscape(text string) template.HTML {
 
 func init() {
 	// The main router
+	
+	
+	// Randomize stuff for display (Runs once each time the app starts)
+	
+	// New random home page entries
+	homePageItems = []PortfolioItem {}
+	homePageItemKeys := []string {}
+	currentItemCount = 0
+	for currentItemCount < maxItems {
+		for key,value := range portfolioItems {
+		    i := rand.Intn(100)
+		    j := rand.Intn(100)
+		    if(i < j && currentItemCount < maxItems) {
+		    	exists := false
+		    	for _,item := range homePageItemKeys {
+		    		exists = exists || (item == key)
+		    	}
+		    	if(!exists) {
+			    	homePageItems = append(homePageItems, value)
+			    	homePageItemKeys = append(homePageItemKeys, key)
+			    	currentItemCount += 1;
+		    	}
+		    }
+		}
+	}
+	// New random home page feedback entries
+	currentFeedbackCount = 0
+	homePageFeedback = []Feedback {}
+	homePageFeedbackKeys := []string {}
+	for currentFeedbackCount < maxItems {
+		for key,value := range portfolioItems {
+		    i := rand.Intn(100)
+		    j := rand.Intn(100)
+		    feedback := value.Feedback
+		    feedbackCount := len(feedback)
+		    if(feedbackCount>0 && i < j && currentFeedbackCount < maxItems) {
+		    	selected := feedback[rand.Intn(feedbackCount)]
+		    	exists := false
+		    	for _,item := range homePageFeedbackKeys {
+		    		exists = exists || (item == key)
+		    	}
+		    	if(!exists) {
+			    	homePageFeedback = append(homePageFeedback, selected)
+			    	homePageFeedbackKeys = append(homePageFeedbackKeys, key)
+			    	currentFeedbackCount += 1;
+		    	}
+		    }
+		}
+	}
 	
 	// Setup one-time common config vars
 	setupConfigDefaults()
