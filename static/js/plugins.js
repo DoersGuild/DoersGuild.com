@@ -26,8 +26,15 @@
  */
 (function($) {"use strict";
 
+    window.cachedIsMobile = undefined;
     function isMobile() {
-        return $(window).width() < 480;
+        if (window.cachedIsMobile === undefined) {
+            window.cachedIsMobile = $(window).width() < 480;
+        }
+        $(window).on("resize", function() {
+            window.cachedIsMobile = undefined;
+        });
+        return window.cachedIsMobile;
     }
 
     function truncate(length) {
