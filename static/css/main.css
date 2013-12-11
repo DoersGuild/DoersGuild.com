@@ -114,6 +114,10 @@ h1, h2, h3, h4, h5, h6, .title {
     text-align: justify;
 }
 
+.line-height-33 {
+    line-height: 33px;
+}
+
 /* Fixtable layouts: Better for respoonsiveness; Not so good for data-tables*/
 .table-layout-fixed {
     table-layout: fixed;
