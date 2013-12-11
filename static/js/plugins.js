@@ -26,6 +26,10 @@
  */
 (function($) {"use strict";
 
+    function isMobile() {
+        return $(window).width() < 480;
+    }
+
     function truncate(length) {
         // Truncate the text inside the selected node
         return $(this).each(function() {
@@ -59,12 +63,11 @@
         });
     }
 
-    function shorten(height) {
+    function shorten(height, notOnMobile) {
         // Shorten the selected node to the given height
         return $(this).each(function() {
             // For multiple node support
             var $this = $(this);
-            height = height || $this.attr("data-height") || 240;
 
             var compress = function() {
                 // Shorten the element again
@@ -91,10 +94,23 @@
                 }
             };
 
-            $this.css({
-                "overflow" : "hidden",
-                "height" : height
-            }).hover(expand, compress).focus(expand).blur(compress).on("tap", toggle);
+            var setup = function() {
+                var disable = notOnMobile && isMobile();
+                height = height || $this.attr("data-height") || 240;
+                if (!disable) {
+                    $this.css({
+                        "overflow" : "hidden",
+                        "height" : height
+                    }).on('mouseenter.shorten', expand).on('mouseleave.shorten', compress).on('focus.shorten', expand).on('blur.shorten', compress).on("tap", toggle);
+                } else {
+                    expand();
+                    $this.off(".shorten");
+                }
+            };
+
+            setup();
+            $(window).on("resize", setup);
+
         });
     }
 
