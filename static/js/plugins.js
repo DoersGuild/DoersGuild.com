@@ -123,9 +123,52 @@
         });
     }
 
+    function hoverScroll(options) {
+        // Scroll to element if the user hovers for the given period
+        options = $.extend({
+            wait: 800,
+            scrollPeriod: 800,
+            offsetMargin: 20
+        }, options || {});
+        return $(this).each(function () {
+            // For multiple node support
+            var $this = $(this),
+                delayTimeout = false;
+
+            function scrollToThis() {
+                // Scroll to element
+                $('html, body').animate({
+                    scrollTop: $this.offset().top - options.offsetMargin
+                }, {
+                    duration: options.scrollPeriod,
+                    complete: function () {
+                        clearTimeout(delayTimeout);
+                        delayTimeout = false;
+                    }
+                });
+            }
+
+            var setup = function () {
+                $this.on("mouseenter.hoverScroll", function () {
+                    console.log("mouseenter.hoverScroll", $this);
+                    if (delayTimeout === false) {
+                        delayTimeout = setTimeout(scrollToThis, options.wait);
+                    }
+                }).on("mouseleave.hoverScroll", function () {
+                    console.log("mouseleave.hoverScroll", $this);
+                    clearTimeout(delayTimeout);
+                    delayTimeout = false;
+                });
+            };
+
+            setup();
+
+        });
+    }
 
     $.fn.truncate = truncate;
     $.fn.shorten = shorten;
+    $.fn.hoverScroll = hoverScroll;
 })(jQuery);
 
 /* Masonry Helper */

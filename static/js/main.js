@@ -23,7 +23,7 @@
                 overflow: 'visible',
                 'white-space': 'normal'
             });
-        }).shorten(300, true);
+        }).shorten(300, true).hoverScroll();
         $(".card-comment-wrapper .card-comment-popover-content").on('compressed.shorten', function () {
             // Truncate heading
             var $this = $(this);
@@ -38,7 +38,7 @@
                 overflow: 'visible',
                 'white-space': 'normal'
             });
-        }).shorten(154, true);
+        }).shorten(154, true).hoverScroll();
         $(".truncate-this").truncate();
         $(".card-wrapper").setupMasonry();
         $(".card-comment-wrapper").setupMasonry();
