@@ -38,7 +38,7 @@
                 overflow: 'visible',
                 'white-space': 'normal'
             });
-        }).shorten(144, true);
+        }).shorten(154, true);
         $(".truncate-this").truncate();
         $(".card-wrapper").setupMasonry();
         $(".card-comment-wrapper").setupMasonry();
