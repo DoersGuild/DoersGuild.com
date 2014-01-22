@@ -8,12 +8,10 @@
         <meta itemprop="author" content="Doers' Guild" />
         <meta itemprop="softwareApplicationCategory" content="{{$Item.CategoryID}}" />
         <h3 class="card-header " data-length="20" itemprop="name">{{$Item.Title}}</h3>
-        <br />
         {{if $Item.Icon}}
-            <div class="center card-icon">
+            <table class="table card-icon-wrapper"><tr><td class="center card-icon">
                 <img src="{{$Item.Icon}}" class="logo-size" itemprop="image" alt="{{$Item.Title}}" />
-                <br />
-            </div>
+            </td></tr></table>
         {{end}}
         <p class="text" data-length="100" itemprop="description">
             {{$Item.ShortDesc}}
