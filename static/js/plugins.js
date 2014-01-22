@@ -126,10 +126,11 @@
     function hoverScroll(options) {
         // Scroll to element if the user hovers for the given period
         options = $.extend({
-            wait: 800,
+            wait: 750,
             scrollPeriod: 380,
             offsetMargin: 20
         }, options || {});
+        var $containers = $('html, body');
         return $(this).each(function () {
             // For multiple node support
             var $this = $(this),
@@ -137,7 +138,7 @@
 
             function scrollToThis() {
                 // Scroll to element
-                $('html, body').animate({
+                $containers.animate({
                     scrollTop: $this.offset().top - options.offsetMargin
                 }, {
                     duration: options.scrollPeriod,
@@ -145,6 +146,8 @@
                         clearTimeout(delayTimeout);
                         delayTimeout = false;
                     }
+                }).on("scroll.hoverScroll mousedown.hoverScroll DOMMouseScroll.hoverScroll mousewheel.hoverScroll keyup.hoverScroll", function () {
+                    $containers.stop();
                 });
             }
 
