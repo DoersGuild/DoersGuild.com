@@ -297,6 +297,10 @@ a.card:focus {
 .card-comment .popover-static.top {
     margin: 0px;
     margin-bottom: 12px;
+    max-width: 100%;
+}
+.card-comment .popover-title {
+    text-overflow: ellipsis;
 }
 .card-comment .popover-content {
     min-height: 120px;
