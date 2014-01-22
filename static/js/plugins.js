@@ -127,7 +127,7 @@
         // Scroll to element if the user hovers for the given period
         options = $.extend({
             wait: 800,
-            scrollPeriod: 800,
+            scrollPeriod: 380,
             offsetMargin: 20
         }, options || {});
         return $(this).each(function () {
