@@ -167,7 +167,7 @@ var portfolioItems = map[string]PortfolioItem {
     "DoersWebsite": {
         "DoersWebsite",
         "This website",
-        "We designed and handcoded this beautiful, fully responsive website, with Twitter Bootstrap for the frontent and GoLang on the backend.",
+        "We designed and handcoded this beautiful, fully responsive website, with Twitter Bootstrap for the frontend and GoLang on the backend.",
         "May, 2012",
         "Websites",
         map[string]string{"Live Site":"http://www.doersguild.com/"},
