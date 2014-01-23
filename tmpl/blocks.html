@@ -1,6 +1,6 @@
 {{define "portfolioCard"}}
     {{$Item:=.}}
-    <a href="/portfolio/{{$Item.CategoryID}}/{{$Item.ID}}" class="card" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.95)), to(rgba(255, 255, 255, 0.99)))), url('{{$Item.Icon}}');background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.99)), url('{{$Item.Icon}}');background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.99)), url('{{$Item.Icon}}');"> {{template "portfolioCardContent" $Item}} </a>
+    <a href="/portfolio/{{$Item.CategoryID}}/{{$Item.ID}}" class="card" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.95)), to(rgba(255, 255, 255, 0.99)))), url('{{$Item.Icon}}?target_width=240');background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.99)), url('{{$Item.Icon}}?target_width=240');background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.99)), url('{{$Item.Icon}}?target_width=240');"> {{template "portfolioCardContent" $Item}} </a>
 {{end}}
 {{define "portfolioCardContent"}}
     {{$Item:=.}}
@@ -10,7 +10,7 @@
         <h3 class="card-header " data-length="20" itemprop="name">{{$Item.Title}}</h3>
         {{if $Item.Icon}}
             <table class="table card-icon-wrapper"><tr><td class="center card-icon">
-                <img src="{{$Item.Icon}}" class="logo-size" itemprop="image" alt="{{$Item.Title}}" />
+                <img src="{{$Item.Icon}}?target_width=240" class="logo-size" itemprop="image" alt="{{$Item.Title}}" />
             </td></tr></table>
         {{end}}
         <p class="text" data-length="100" itemprop="description">

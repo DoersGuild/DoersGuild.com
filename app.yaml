@@ -42,4 +42,5 @@ skip_files: |
  (\..*)|
  (static/img/.*)|
  (static/psd/.*)|
+ (store.doersguild.com/.*)|
  )$
