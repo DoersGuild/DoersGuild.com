@@ -240,9 +240,10 @@ a.card:focus {
 }
 .card .card-icon {
     /* display: none; */
-    padding: 5px 0;
+    padding: 8px 0;
     background-color: #f5f5f5;
-    background-color: rgba(245, 245, 245, 0.5);
+    background-color: rgba(245, 245, 245, 0.7);
+    background-image: url(../img/darkgrain.png);
     border: 1px solid #e3e3e3;
     border: 1px solid rgba(227, 227, 227, 0.5);
     border-right: none;
