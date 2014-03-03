@@ -23,7 +23,7 @@
                 overflow: 'visible',
                 'white-space': 'normal'
             });
-        }).shorten(300, true).hoverScroll();
+        }).shorten(300, true).hoverScroll(true);
         $(".card-comment-wrapper .card-comment-popover-content").on('compressed.shorten', function () {
             // Truncate heading
             var $this = $(this);
@@ -38,10 +38,10 @@
                 overflow: 'visible',
                 'white-space': 'normal'
             });
-        }).shorten(154, true).hoverScroll();
-        $(".truncate-this").truncate();
-        $(".card-wrapper").setupMasonry();
-        $(".card-comment-wrapper").setupMasonry();
+        }).shorten(154, true).hoverScroll(true);
+        $(".truncate-this").truncate(null, true);
+        $(".card-wrapper").setupMasonry(true);
+        $(".card-comment-wrapper").setupMasonry(true);
 
         $('[data-toggle="tooltip"]').tooltip({
             placement: "bottom",

@@ -31,8 +31,12 @@
         return Modernizr.touch;
     }
 
-    function truncate(length) {
+    function truncate(length, notOnTouch) {
         // Truncate the text inside the selected node
+        if (notOnTouch && isTouch()) {
+            /* jshint validthis: true */
+            return this;
+        }
         /* jshint validthis: true */
         return $(this).each(function () {
             // For multiple node support
@@ -68,6 +72,10 @@
 
     function shorten(height, notOnTouch) {
         // Shorten the selected node to the given height
+        if (notOnTouch && isTouch()) {
+            /* jshint validthis: true */
+            return this;
+        }
         /* jshint validthis: true */
         return $(this).each(function () {
             // For multiple node support
@@ -118,8 +126,12 @@
         });
     }
 
-    function hoverScroll(options) {
+    function hoverScroll(options, notOnTouch) {
         // Scroll to element if the user hovers for the given period
+        if (notOnTouch && isTouch()) {
+            /* jshint validthis: true */
+            return this;
+        }
         options = $.extend({
             wait: 750,
             scrollPeriod: 380,
@@ -169,8 +181,8 @@
     $.fn.shorten = shorten;
     $.fn.hoverScroll = hoverScroll;
 
-    function setupMasonry() {
-        if (isTouch()) {
+    function setupMasonry(notOnTouch) {
+        if (notOnTouch && isTouch()) {
             /* jshint validthis: true */
             return this;
         }
