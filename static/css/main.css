@@ -353,6 +353,28 @@ a.card:focus {
     top: auto;
     bottom: 270px;
 }
+/* This parent can be any width and height */
+
+.center-child {
+    text-align: center;
+}
+/* The ghost, nudged to maintain perfect centering */
+
+.center-child:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+    /* Adjusts for spacing */
+}
+/* The element to be centered, can
+   also be of any width and height */
+
+.center-child>* {
+    display: inline-block;
+    vertical-align: middle;
+}
 /*--------
  Responsive
  -------------------------------------------------- */

@@ -9,9 +9,9 @@
         <meta itemprop="softwareApplicationCategory" content="{{$Item.CategoryID}}" />
         <h3 class="card-header " data-length="20" itemprop="name">{{$Item.Title}}</h3>
         {{if $Item.Icon}}
-            <table class="table card-icon-wrapper"><tr><td class="center card-icon">
+            <div class="center-child card-icon">
                 <img src="{{$Item.Icon}}?target_width=240" class="logo-size" itemprop="image" alt="{{$Item.Title}}" />
-            </td></tr></table>
+            </div>
         {{end}}
         <p class="text" data-length="100" itemprop="description">
             {{$Item.ShortDesc}}

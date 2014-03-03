@@ -40,6 +40,7 @@
 
     function truncate(length) {
         // Truncate the text inside the selected node
+        /* jshint validthis: true */
         return $(this).each(function () {
             // For multiple node support
             var $this = $(this),
@@ -74,6 +75,7 @@
 
     function shorten(height, notOnMobile) {
         // Shorten the selected node to the given height
+        /* jshint validthis: true */
         return $(this).each(function () {
             // For multiple node support
             var $this = $(this);
@@ -131,6 +133,7 @@
             offsetMargin: 20
         }, options || {});
         var $containers = $('html, body');
+        /* jshint validthis: true */
         return $(this).each(function () {
             // For multiple node support
             var $this = $(this),
@@ -172,13 +175,12 @@
     $.fn.truncate = truncate;
     $.fn.shorten = shorten;
     $.fn.hoverScroll = hoverScroll;
-})(jQuery);
-
-/* Masonry Helper */
-(function ($) {
-    "use strict";
 
     function setupMasonry() {
+        if (isMobile()) {
+            /* jshint validthis: true */
+            return this;
+        }
         return $(this).each(function () {
             var $this = $(this);
             try {
