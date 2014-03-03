@@ -1,29 +1,19 @@
 /* Overrides for twbsV3 */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/*
+h1,h2,h3,h4,h5,h6 {
     margin: 10px 0;
     font-weight: bold;
     line-height: 20px;
     color: inherit;
     text-rendering: optimizelegibility;
 }
-h1,
-h2,
-h3 {
+h1,h2,h3 {
     line-height: 40px;
-}
+}*/
+
 img {
-    width: auto\9;
-    height: auto;
     max-width: 100%;
-    vertical-align: middle;
-    border: 0;
-    -ms-interpolation-mode: bicubic;
 }
 .label-inverse,
 .badge-inverse {
@@ -43,6 +33,11 @@ div.img-thumbnail {
     -webkit-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
     backface-visibility: hidden;
+}
+#back-to-top.snippet {
+    -webkit-box-sizing: initial;
+    -moz-box-sizing: initial;
+    box-sizing: initial;
 }
 /* ==========================================================================
  Author's custom styles
@@ -288,8 +283,8 @@ a.card:focus {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     vertical-align: top;
-    -webkit-transition: all 0.1s linear;
-    transition: all 0.1s linear;
+    /*-webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;*/
 }
 .card-comment:hover,
 .card-comment:active,

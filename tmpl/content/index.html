@@ -1,16 +1,16 @@
 {{define "content"}}
 <div class="container content center">
-    <h2>We help you build applications that run beautifully on all your devices</h2>
+    <h2>We build applications that run beautifully on all your users' devices</h2>
     <h4>
         We work with
-        <a href="http://getbootstrap.com/" data-toggle="tooltip" title="JavaScript, CSS3 & HTML5; connecting with virtually any backend via webservices" target="_blank" rel="external">standard web technologies</a>
+        <a href="http://getbootstrap.com/" data-toggle="tooltip" title="JavaScript, CSS3 & HTML5; connecting with virtually any backend via RESTful APIs. (We usually use the PHP based laravel framework for the backend)" target="_blank" rel="external">standard web technologies</a>
         to build
-        <a href="http://stackoverflow.com/a/15063110/937891" data-toggle="tooltip" title="We build with Twitter Bootstrap and use a hybrid of adaptive and fluid layouts, to give your users an optimal experience on every device" target="_blank" rel="external">responsive</a>
-        web-apps &amp; sites, &amp;
-        <a href="http://phonegap.com" data-toggle="tooltip" title="We use PhoneGap to package single page, offline-capable, responsive web-apps as native Android & iOS apps that can be released via their respective stores" target="_blank" rel="external">hybrid smartphone apps</a>.
+        <a href="https://en.wikipedia.org/wiki/Responsive_web_design" data-toggle="tooltip" title="We work to ensure your users have the same great experience on every device & browser" target="_blank" rel="external">responsive</a>
+        web &amp;
+        <a href="http://phonegap.com" data-toggle="tooltip" title="We work with Cordova to package offline-capable, responsive web-apps as native Android & iOS apps that you can publish on their respective stores" target="_blank" rel="external">hybrid-smartphone</a> apps &amp; websites.
     </h4>
     <div class="content-well">
-        <h3>Here is some of the stuff we've been working on: </h3>
+        <h3>Here are some of the things we worked on: </h3>
         <div class="card-wrapper">
             {{range $Item := .homePageItems}} {{template "portfolioCard" $Item}} {{end}}
         </div>
@@ -18,10 +18,10 @@
         <h4><a href="/portfolio" class="btn btn-default btn-lg"><i class="icon-eye-open"></i> SEE MORE</a></h4>
     </div>
     <h4>
-        Want to work with us or just say hi? Drop a line at <a href="mailto:mail@doersguild.com" target="_blank">mail@doersguild.com</a>
+        Let us show you how we can take your app to the next level: <a href="mailto:mail@doersguild.com" target="_blank">mail@doersguild.com</a>
     </h4>
     <div class="content-well">
-        <h3>So, what's it like to work with a <span class="doer-font doer-red">Doer</span>? Just ask our clients :</h3>
+        <h3>So, what's it like to work with a <span class="doer-font doer-red">Doer</span>? Just ask them :</h3>
         <div class="card-comment-wrapper">
             {{$portfolioClients := .portfolioClients}}
             {{$portfolioItems := .portfolioItems}}
@@ -33,7 +33,7 @@
                         <div class="popover popover-static top">
                             {{if $Client.Name}} <div class="arrow"></div> {{end}}
                             <div class="card-comment-popover-content">
-                                <h3 class="popover-title bold"><a href="/portfolio/{{$Project.CategoryID}}/{{$Project.ID}}">{{$Project.Title}}</a></h3>
+                                <h3 class="popover-title"><a href="/portfolio/{{$Project.CategoryID}}/{{$Project.ID}}">{{$Project.Title}}</a></h3>
                                 <div class="popover-content">
                                     <p>{{$Item.Message}}</p>
                                 </div>

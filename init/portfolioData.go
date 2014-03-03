@@ -199,7 +199,7 @@ var portfolioCategories = map[string]Category {
             portfolioItems["GeneralKnowitallKnowledge"],
             portfolioItems["iEntertain"],
         },
-        "Want to build an app that you can release on Android, iPhone and Blackberry, all at once? Want an app that'll look great and work well no matter what kind of a screen the user is using? We can build you a hybrid app that'll combine the ease of developing web-apps with the performance of native-smartphone-apps to give your users an equally great experience, no matter what device they use.",
+        "Want to build an app that you can release on Android, iPhone and Blackberry, all at once? Want an app that'll look great and work well no matter what kind of a screen the user has? We can build you a hybrid app that'll combine the speed of developing web-apps with the experience of native-smartphone-apps to give your users an equally great experience, no matter what device they use.",
     },
     "WebApps" : Category {
         "WebApps",
@@ -208,7 +208,7 @@ var portfolioCategories = map[string]Category {
             portfolioItems["GoSketch"],
             portfolioItems["PassHasher"],
         },
-        "Got a neat idea in mind? Want to build a scalable service? Looking to engage users, no matter what device they are on?  We'll build you a responsive, scalable web-based application that is designed to run beautifully on every modern device imaginable, interacting asynchronously with the backend through a simple RESTful API and with the power to save data locally when the user is offline, to give your users as smooth an experience as possible.",
+        "Got a neat idea in mind? Want to build a scalable service? Looking to engage users, no matter what device they are on?  We'll build you a responsive, scalable web-based application that is designed to run beautifully on every modern device out there, interacting asynchronously with the backend through a simple RESTful API and with the power to save data locally when the user is offline, to give your users as smooth an experience as possible.",
     },
     "Websites" : Category {
         "Websites",
