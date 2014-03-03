@@ -26,16 +26,9 @@
 (function ($) {
     "use strict";
 
-    window.cachedIsMobile = undefined;
-
-    function isMobile() {
-        if (window.cachedIsMobile === undefined) {
-            window.cachedIsMobile = $(window).width() < 480;
-        }
-        $(window).on("resize", function () {
-            window.cachedIsMobile = undefined;
-        });
-        return window.cachedIsMobile;
+    /* global Modernizr */
+    function isTouch() {
+        return Modernizr.touch;
     }
 
     function truncate(length) {
@@ -73,7 +66,7 @@
         });
     }
 
-    function shorten(height, notOnMobile) {
+    function shorten(height, notOnTouch) {
         // Shorten the selected node to the given height
         /* jshint validthis: true */
         return $(this).each(function () {
@@ -108,7 +101,7 @@
             };
 
             var setup = function () {
-                var disable = notOnMobile && isMobile();
+                var disable = notOnTouch && isTouch();
                 height = height || $this.attr("data-height") || 240;
                 if (!disable) {
                     $this.on('mouseenter.shorten', expand).on('mouseleave.shorten', compress).on('focus.shorten', expand).on('blur.shorten', compress).on("tap", toggle);
@@ -177,7 +170,7 @@
     $.fn.hoverScroll = hoverScroll;
 
     function setupMasonry() {
-        if (isMobile()) {
+        if (isTouch()) {
             /* jshint validthis: true */
             return this;
         }
