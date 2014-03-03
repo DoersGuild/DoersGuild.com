@@ -15,7 +15,7 @@
                 {{$Categories:=.portfolioCategories}}
                 {{range $CategoryID, $Category:=.portfolioCategories}}
                     <section id="{{$CategoryID}}">
-                        <header>
+                        <header class="container">
                             <a href="/portfolio/{{$CategoryID}}"><h3 class="doer-font doer-red center">{{$Category.Name}}</h3></a>
                             <p class="center">{{$Category.Desc}}</p>
                         </header>
