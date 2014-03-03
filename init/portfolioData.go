@@ -55,7 +55,7 @@ var portfolioItems = map[string]PortfolioItem {
     "iEntertain" : {
         "iEntertain",
         "i-Entertain",
-        "A Mobile Gallery Application that shows it’s users, incredibly funny images from around the world, leaving them fully entertained. It is designed to run as both a website and a native android application and was built with the standard web technologies and packaged with PhoneGap. This application’s UI is fully responsive, so it works extremely well on all modern devices and their various screen sizes.",
+        "A Mobile Gallery Application that shows it’s users, incredibly funny images from around the world, leaving them fully entertained. It is designed to run as both a website and a native android application and was built with the standard web technologies and packaged with PhoneGap.",
         "September, 2012",
         "MobileApps",
         map[string]string{"Play Store" : "https://play.google.com/store/apps/details?id=com.WissamSaleh.iEntertain"},
@@ -260,4 +260,13 @@ var homePageFeedback = []Feedback {
     portfolioItems["PassHasher"].Feedback[0],
     portfolioItems["Unitu"].Feedback[0],
     portfolioItems["ToggleText"].Feedback[0],
+}
+
+/* Ordered list of categories on the portfolio page */
+var portfolioPageOrderedCategories = []Category {
+    portfolioCategories["MobileApps"],
+    portfolioCategories["WebApps"],
+    portfolioCategories["Websites"],
+    portfolioCategories["BrowserExtensions"],
+    portfolioCategories["Bugfixes"],
 }

@@ -51,7 +51,7 @@ div.img-thumbnail {
 body {
     background: url(../img/darkgrain.png);
     font-family: 'PT Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
 }
 h1,
@@ -70,6 +70,16 @@ h6,
 ::selection {
     background: #c12e28;
     color: #fff;
+}
+a,
+.btn-link {
+    color: #CA4242;
+}
+a:hover,
+a:focus,
+.btn-link:hover,
+.btn-link:focus {
+    color: #962A2A;
 }
 .center {
     text-align: center;
@@ -105,7 +115,7 @@ h6,
     border: none;
 }
 .text {
-    text-align: justify;
+    text-align: inherit;
 }
 .line-height-33 {
     line-height: 33px;
@@ -130,12 +140,15 @@ h6,
 }
 .doer-red,
 .doer-red a {
-    color: #ED1C24;
+    /* color: #ED1C24; */
+    /* color: #DE2C31; */
+    color: #EA1A1A;
 }
+/* Add an underline for all links
 a.doer-font {
-    /* Add an underline for all links*/
     text-decoration: underline;
-}
+}*/
+
 .header-container {
     padding: 0 20px;
     margin-bottom: 20px;

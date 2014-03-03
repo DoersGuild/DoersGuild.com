@@ -4,19 +4,19 @@
         <div class="row">
             <div class="col-md-3 bs-docs-sidebar">
                 <ul class="nav nav-tabs nav-stacked sidenav affix">
-                    {{range $CategoryID,$Category:=.portfolioCategories}}
+                    {{range $Category:=.portfolioPageOrderedCategories}}
                         <li>
-                            <a href="#{{$CategoryID}}"><h4 class="title center">{{$Category.Name}}</h4></a>
+                            <a href="#{{$Category.ID}}"><h4 class="title center">{{$Category.Name}}</h4></a>
                         </li>
                     {{end}}
                 </ul>
             </div>
             <div class="col-md-9 img-rounded content">
-                {{$Categories:=.portfolioCategories}}
-                {{range $CategoryID, $Category:=.portfolioCategories}}
-                    <section id="{{$CategoryID}}">
+                {{$Categories:=.portfolioPageOrderedCategories}}
+                {{range $Category:=.portfolioPageOrderedCategories}}
+                    <section id="{{$Category.ID}}">
                         <header class="container">
-                            <a href="/portfolio/{{$CategoryID}}"><h3 class="doer-font doer-red center">{{$Category.Name}}</h3></a>
+                            <a href="/portfolio/{{$Category.ID}}"><h3 class="doer-font doer-red center">{{$Category.Name}}</h3></a>
                             <p class="center">{{$Category.Desc}}</p>
                         </header>
                         <div class="content-well">

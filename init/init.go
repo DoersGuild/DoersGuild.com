@@ -203,7 +203,7 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 func portfolioHandler(w http.ResponseWriter, r *http.Request) {
     // The portfolio page
     config["title"] = "Our Work"
-    config["portfolioCategories"] = portfolioCategories
+    config["portfolioPageOrderedCategories"] = portfolioPageOrderedCategories
     executeSimpleTemplate(w, r, "tmpl/content/portfolio.html")
 }
 
