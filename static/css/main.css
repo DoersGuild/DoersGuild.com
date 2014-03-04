@@ -263,6 +263,7 @@ a.card:focus {
     overflow: hidden;
     vertical-align: middle;
     text-align: center;
+    margin: 10px auto;
 }
 .card .card-icon > img {
     vertical-align: middle;
