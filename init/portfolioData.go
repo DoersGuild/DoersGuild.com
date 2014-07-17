@@ -7,6 +7,7 @@ type Person struct {
 var portfolioClients = map[string]Person {
     "DoersGuild" : {"DoersGuild", "Doers' Guild", "Doers' Guild", "http://doersguild.com", ""},
     "WissamSaleh" : {"WissamSaleh", "Wissam Saleh", "", "http://ientertain.mobi", ""},
+	"IanMcLean" : {"IanMcLean", "Ian McLean", "", "https://www.linkedin.com/profile/view?id=13404532",""},
     "IXXOCart" : {"IXXOCart", "IXXO Cart", "IXXO Cart", "http://ixxocart.com", "/img/projects/IXXOCart/logo.png"},
     "Tharuni" : {"Tharuni","Tharuni","Tharuni","http://tharuni.org","/img/projects/Tharuni/logo.png"},
     "GKK_Rahul" : {"GKK_Rahul", "Rahul", "", "https://play.google.com/store/apps/details?id=com.doersguild.generalknowledge&reviewId=bGc6QU9xcFRPSDZUNEdCRlVLWjBGaF9WbGtaWDNVdFZFcjN2ZkZacXk5OVFpWEFwbkpwVk1HNmRKSlJlTTE5bEEwcS1rVG1sLThRRUlOYmRURU1Ca2F6NGFz", ""},
@@ -64,6 +65,21 @@ var portfolioItems = map[string]PortfolioItem {
         []string{"PhoneGap","Android", "jQuery Mobile"},
         portfolioClients["WissamSaleh"],
         []Feedback{},
+    },
+	 "MindOverMedia" : {
+        "MindOverMedia",
+        "Mind Over Media",
+        "An application developed for the United States Holocaust Memorial Museum's Online Exhibit on Nazi Propaganda. This application allows museum visitors to view examples of propaganda and rate them in terms of how dangerous it is. It also allows them to submit pieces of propaganda that they see around them in their day to day lives.",
+        "June, 2012",
+        "MobileApps",
+        map[string]string{"Elance Job Post" : "https://www.elance.com/j/jquery-mobile-application/30994515/"},
+        "/img/projects/MindOverMedia/logo.png",
+        []string{},
+        []string{"PhoneGap","Android", "jQuery Mobile"},
+        portfolioClients["IanMcLean"],
+        []Feedback{
+			{"MindOverMedia", "IanMcLean", "Ravi and his team have done a great job building my mobile application. I'll will definitely continue to use them in the future.",},
+		},
     },
     "IXXOCart" : {
         "IXXOCart",
@@ -198,6 +214,7 @@ var portfolioCategories = map[string]Category {
         []PortfolioItem {
             portfolioItems["GeneralKnowitallKnowledge"],
             portfolioItems["iEntertain"],
+			portfolioItems["MindOverMedia"],
         },
         "Want to build an app that you can release on Android, iPhone and Blackberry, all at once? Want an app that'll look great and work well no matter what kind of a screen the user has? We can build you a hybrid app that'll combine the speed of developing web-apps with the experience of native-smartphone-apps to give your users an equally great experience, no matter what device they use.",
     },
