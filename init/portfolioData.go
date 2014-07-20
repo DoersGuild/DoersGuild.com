@@ -363,6 +363,7 @@ var portfolioCategories = map[string]Category {
         []PortfolioItem {
             portfolioItems["PassHasher"],
             portfolioItems["ToggleText"],
+			portfolioItems["FBTimer"],
         },
         "Want to empower your users with a browser extension? Want to upgrade their experience on a particular website? Or help them find your business & your affiliates faster on Google? We can build you an easy to use browser extension for most of the popular deskop browsers out there!",
     },
