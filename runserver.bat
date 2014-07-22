@@ -1,1 +1,1 @@
-/c/Python27/python.exe ../go_appengine/dev_appserver.py --port=9279 .
+/c/Python/python.exe /c/go_appengine/dev_appserver.py --port=9279 .
