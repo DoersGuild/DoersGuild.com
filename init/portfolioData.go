@@ -275,7 +275,7 @@ var portfolioItems = map[string]PortfolioItem {
     "tasheelatiraq": {
         "tasheelatiraq",
         "tasheelatiraq.com",
-        "Tasheelat Iraq is a website for a honda dealer in Iraq develop in English and Kurdish languages",
+        "Tasheelat Iraq is developed in English and Kurdish languages for a honda dealer in Iraq",
         "May, 2013",
         "Websites",
         map[string]string{"Live Site":"http://tasheelatiraq.com/"},
@@ -309,7 +309,7 @@ var portfolioItems = map[string]PortfolioItem {
         "June, 2012",
         "Plugins",
         map[string]string{"Live Site":"http://rebel316.com/"},
-        "/img/projects/AutoPostingPlugin/desktop1.png",
+        "/img/projects/AutoPostingPlugin/logo.png",
         []string{},
         []string{"CSS3", "WordPress", "HTML", "PHP"},
         portfolioClients["Rebel316"],
