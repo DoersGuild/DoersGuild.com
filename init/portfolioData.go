@@ -168,7 +168,7 @@ var portfolioItems = map[string]PortfolioItem {
         "WebApps",
         map[string]string{"Free Work Exchange" : "http://freeworkexchange.appspot.com"},
         "/img/projects/FreeWorkExchange/tablet1.jpg",
-        []string{"/img/projects/FreeWorkExchange/desktop1.jpg","/img/projects/FreeWorkExchange/tablet2.jpg"},
+        []string{"/img/projects/FreeWorkExchange/freeworkxchange_screenshot.png"},
         []string{"Python", "Web2Py", "GAE", "JavaScript", "CSS3"},
         portfolioClients["DoersGuild"],
         []Feedback{},
