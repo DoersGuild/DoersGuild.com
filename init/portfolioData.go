@@ -7,7 +7,7 @@ type Person struct {
 var portfolioClients = map[string]Person {
     "DoersGuild" : {"DoersGuild", "Doers' Guild", "Doers' Guild", "http://doersguild.com", ""},
     "WissamSaleh" : {"WissamSaleh", "Wissam Saleh", "", "http://ientertain.mobi", ""},
-	"IanMcLean" : {"IanMcLean", "Ian McLean", "", "https://www.linkedin.com/profile/view?id=13404532",""},
+    "IanMcLean" : {"IanMcLean", "Ian McLean", "", "https://www.linkedin.com/profile/view?id=13404532",""},
     "IXXOCart" : {"IXXOCart", "IXXO Cart", "IXXO Cart", "http://ixxocart.com", "/img/projects/IXXOCart/logo.png"},
     "Tharuni" : {"Tharuni","Tharuni","Tharuni","http://tharuni.org","/img/projects/Tharuni/logo.png"},
     "GKK_Rahul" : {"GKK_Rahul", "Rahul", "", "https://play.google.com/store/apps/details?id=com.doersguild.generalknowledge&reviewId=bGc6QU9xcFRPSDZUNEdCRlVLWjBGaF9WbGtaWDNVdFZFcjN2ZkZacXk5OVFpWEFwbkpwVk1HNmRKSlJlTTE5bEEwcS1rVG1sLThRRUlOYmRURU1Ca2F6NGFz", ""},
@@ -62,12 +62,12 @@ var portfolioItems = map[string]PortfolioItem {
         map[string]string{"Play Store" : "https://play.google.com/store/apps/details?id=com.WissamSaleh.iEntertain"},
         "/img/projects/iEntertain/logo.jpg",
         []string{"/img/projects/iEntertain/I-Entertain_mobile11.png", "/img/projects/iEntertain/I-Entertain_mobile22.png",
-		"/img/projects/iEntertain/I-Entertain_mobile33.png", "/img/projects/iEntertain/I-Entertain_mobile44.png"},
+        "/img/projects/iEntertain/I-Entertain_mobile33.png", "/img/projects/iEntertain/I-Entertain_mobile44.png"},
         []string{"PhoneGap","Android", "jQuery Mobile"},
         portfolioClients["WissamSaleh"],
         []Feedback{},
     },
-	"ProGrade" : {
+    "ProGrade" : {
         "ProGrade",
         "Pro Grade",
         "Programmer Competency Calculator, based on the Programmer Competency Matrix from sijinjoseph.com We built it because we were bored and wanted to play around with the latest PhoneGap & CoffeeScript",
@@ -80,7 +80,7 @@ var portfolioItems = map[string]PortfolioItem {
         portfolioClients["DoersGuild"],
         []Feedback{},
     },
-	 "MindOverMedia" : {
+     "MindOverMedia" : {
         "MindOverMedia",
         "Mind Over Media",
         "An application developed for the United States Holocaust Memorial Museum's Online Exhibit on Nazi Propaganda. This application allows museum visitors to view examples of propaganda and rate them in terms of how dangerous it is. It also allows them to submit pieces of propaganda that they see around them in their day to day lives.",
@@ -92,10 +92,10 @@ var portfolioItems = map[string]PortfolioItem {
         []string{"PhoneGap","Android", "jQuery Mobile"},
         portfolioClients["IanMcLean"],
         []Feedback{
-			{"MindOverMedia", "IanMcLean", "Ravi and his team have done a great job building my mobile application. I'll will definitely continue to use them in the future.",},
-		},
+            {"MindOverMedia", "IanMcLean", "Ravi and his team have done a great job building my mobile application. I'll will definitely continue to use them in the future.",},
+        },
     },
-	"MeDine" : {
+    "MeDine" : {
         "MeDine",
         "MeDine",
         "MeDine is a Android application that makes finding and ordering your ideal meal all the more easier with a searchable interactive menu, exclusive offers and recommendations based on your tastes and reviews by those who have already tried a dish. We handled the app’s production for this complete redesign, which brings you a faster and more streamlined new UX with a bunch of new features that are sure to make your restaurant experience even more enjoyable.",
@@ -110,8 +110,8 @@ var portfolioItems = map[string]PortfolioItem {
     },
     "IXXOCart" : {
         "IXXOCart",
-        "IXXO Cart Templates",
-        "We helped IXXO-Cart upgrade their templating framework with a modular layout, twitter-bootstrap, JSON-web-services, etc and created several new templates for their various offerings including their Multi-Vendor cart, mobile-optimized templates, etc.",
+        "IXXO Cart",
+        "We’ve been working with IXXOCart to modernize their cart and make it the most powerful & comprehensive e-commerce software out there. We helped them upgrade major parts of the cart, created several new templates, & modernized and made all their interfaces responsive, across several of their offerings including their flagship multi-vendor software.",
         "May, 2013",
         "Websites",
         map[string]string{"Multi-Vendor Demo" : "http://demo-multi-vendor-sa.ixxocart.com/index.php"},
@@ -147,7 +147,7 @@ var portfolioItems = map[string]PortfolioItem {
         portfolioClients["DoersGuild"],
         []Feedback{},
     },
-	"CodePad": {
+    "CodePad": {
         "CodePad",
         "Code Pad",
         "CodePad is a web-based Real-time Collaborative editor. It allows one to code/write together with other people, from almost any computer connected to the internet. Whatever one of the participants writes is instantly shared with all of their peers, making it very easy to write things collaboratively. It has support for highlighting the syntax of multiple programming languages.",
@@ -160,7 +160,7 @@ var portfolioItems = map[string]PortfolioItem {
         portfolioClients["DoersGuild"],
         []Feedback{},
     },
-	"FreeWorkExchange": {
+    "FreeWorkExchange": {
         "FreeWorkExchange",
         "Free Work Exchange",
         "A StackOverflow-like platform for FreeWork, where people can share work to be done and show-off their solutions to the world. Free-Work is about working freely without an employee/employer relationship. It allows you to work on real-world problems with real people, at your own time and in your own pace.",
@@ -173,10 +173,10 @@ var portfolioItems = map[string]PortfolioItem {
         portfolioClients["DoersGuild"],
         []Feedback{},
     },
-	"Xervmon": {
+    "Xervmon": {
         "Xervmon",
         "Xervmon",
-        "We helped make Xervomon.com fully responsive with Bootstrap, so that it may run on devices of almost any screen size. We also built the new charting feature that is in use throughout the site.",
+        "Xervmon is a cloud asset management solution that helps enterprises manage, monitor, plan and deploy cloud servers, databases, etc. We have been handling most of their UI, building complex interfaces and reusable components that form the fore-front of their offering. We have also been helping them integrate better with various cloud vendors and their monitoring APIs.",
         "September, 2012",
         "WebApps",
         map[string]string{"Xervmon" : "http://xervmon.com"},
@@ -186,7 +186,7 @@ var portfolioItems = map[string]PortfolioItem {
         portfolioClients["DoersGuild"],
         []Feedback{},
     },
-	"Tharunopayam": {
+    "Tharunopayam": {
         "Tharunopayam",
         "Tharunopayam",
         "Tharunopayam is an SMS based helpline, currently targeted at helping adolescent girls, women and the aged in Andhra Pradesh.",
@@ -259,7 +259,7 @@ var portfolioItems = map[string]PortfolioItem {
             {"Rebel316Blog", "Rebel316", "Ravi has continually performed incredibly well and exceeded standards for a job perfectly executed! Well done!"},
         },
     },
-	"Tharuni": {
+    "Tharuni": {
         "Tharuni",
         "Tharuni.org",
         "Tharuni is a non-profit working towards empowerment of adolescent girls, women and the aged. I designed their web-presence, with a fully responsive website that runs virtually everywhere.",
@@ -272,7 +272,7 @@ var portfolioItems = map[string]PortfolioItem {
         portfolioClients["Rebel316"],
         []Feedback{},
     },
-	"tasheelatiraq": {
+    "tasheelatiraq": {
         "tasheelatiraq",
         "tasheelatiraq.com",
         "Tasheelat Iraq is a website for a honda dealer in Iraq develop in English and Kurdish languages",
@@ -302,7 +302,7 @@ var portfolioItems = map[string]PortfolioItem {
         portfolioClients["DoersGuild"],
         []Feedback{},
     },
-	"AutoPostingPlugin": {
+    "AutoPostingPlugin": {
         "AutoPostingPlugin",
         "WordPress Auto Posting Plugin",
         "A WordPress Plugin for automatically posting one article per day and a theme to go with it. This plugin is designed to create search-engine-optimized URLs for the posts. We built this so that Rebel316.com can have a fresh item-of-the-day, posted automatically everyday.",
@@ -332,9 +332,9 @@ var portfolioCategories = map[string]Category {
         []PortfolioItem {
             portfolioItems["GeneralKnowitallKnowledge"],
             portfolioItems["iEntertain"],
-			portfolioItems["MindOverMedia"],
-			portfolioItems["ProGrade"],
-			portfolioItems["MeDine"],
+            portfolioItems["MindOverMedia"],
+            portfolioItems["ProGrade"],
+            portfolioItems["MeDine"],
         },
         "Want to build an app that you can release on Android, iPhone and Blackberry, all at once? Want an app that'll look great and work well no matter what kind of a screen the user has? We can build you a hybrid app that'll combine the speed of developing web-apps with the experience of native-smartphone-apps to give your users an equally great experience, no matter what device they use.",
     },
@@ -344,10 +344,10 @@ var portfolioCategories = map[string]Category {
         []PortfolioItem {
             portfolioItems["GoSketch"],
             portfolioItems["PassHasher"],
-			portfolioItems["CodePad"],
-			portfolioItems["FreeWorkExchange"],
-			portfolioItems["Xervmon"],
-			portfolioItems["Tharunopayam"],
+            portfolioItems["CodePad"],
+            portfolioItems["FreeWorkExchange"],
+            portfolioItems["Xervmon"],
+            portfolioItems["Tharunopayam"],
         },
         "Got a neat idea in mind? Want to build a scalable service? Looking to engage users, no matter what device they are on?  We'll build you a responsive, scalable web-based application that is designed to run beautifully on every modern device out there, interacting asynchronously with the backend through a simple RESTful API and with the power to save data locally when the user is offline, to give your users as smooth an experience as possible.",
     },
@@ -359,8 +359,8 @@ var portfolioCategories = map[string]Category {
             portfolioItems["IXXOCart"],
             portfolioItems["CheriyalAndPembarthy"],
             portfolioItems["Rebel316Blog"],
-			portfolioItems["Tharuni"],
-			portfolioItems["tasheelatiraq"],
+            portfolioItems["Tharuni"],
+            portfolioItems["tasheelatiraq"],
         },
         "Looking to interact better with your users on the various devices out there & improve conversions? Looking to upgrade your clunky old website to something modern and truly cross-platform? Have us build you a website that'll run really well on every modern-device, powered by the best practices in web-development & design.",
     },
@@ -381,7 +381,7 @@ var portfolioCategories = map[string]Category {
         },
         "Want to empower your users with a browser extension? Want to upgrade their experience on a particular website? Or help them find your business & your affiliates faster on Google? We can build you an easy to use browser extension for most of the popular deskop browsers out there!",
     },
-	"Plugins" : Category {
+    "Plugins" : Category {
         "Plugins",
         "Plugins",
         []PortfolioItem {
@@ -420,5 +420,5 @@ var portfolioPageOrderedCategories = []Category {
     portfolioCategories["Websites"],
     portfolioCategories["BrowserExtensions"],
     portfolioCategories["Bugfixes"],
-	portfolioCategories["Plugins"],
+    portfolioCategories["Plugins"],
 }
