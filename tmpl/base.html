@@ -58,9 +58,6 @@
                 // Set a cookie for adaptive-images
                 document.cookie = 'resolution=' + Math.max(screen.width, screen.height) + ("devicePixelRatio" in window ? "," + devicePixelRatio : ",1") + '; path=/';
 
-                window._gaq = [['_setAccount', 'UA-5141372-4'], ['_trackPageview']];
-                _gaq.push(['_require', 'inpage_linkid', '//www.google-analytics.com/plugins/ga/inpage_linkid.js']);
-
                 // Set Modernizr.load's timeout period to 12.5 secs instead of the default 10
                 yepnope.errorTimeout = 12500;
 
@@ -72,8 +69,8 @@
                             console.log("Modernizr.load: Couldn't fetch jQuery from CDN; Falling back to the local version");
                         }
                     }
-                }, "/js/vendor/jquery.mobile-events.min.js", "/js/vendor/bootstrap.min.js", "/js/vendor/jquery.masonry.min.js", "/js/plugins.js", "/js/main.js", {
-                    load : ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js',
+                }, "/js/vendor/jquery.mobile-events.min.js", "/js/vendor/bootstrap.min.js", "/js/vendor/jquery.masonry.min.js", "/js/plugins.js", {
+                    load : "/js/main.js",
                     complete: function(){
                         console.log("Modernizr.load: Done loading base assets");
                     }
