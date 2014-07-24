@@ -3,7 +3,7 @@ version: 2
 runtime: go
 api_version: go1
 
-default_expiration: "1d"
+default_expiration: "7d"
 
 handlers:
 - url: /css
