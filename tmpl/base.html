@@ -58,9 +58,6 @@
                 // Set a cookie for adaptive-images
                 document.cookie = 'resolution=' + Math.max(screen.width, screen.height) + ("devicePixelRatio" in window ? "," + devicePixelRatio : ",1") + '; path=/';
 
-                window._gaq = [['_setAccount', 'UA-5141372-4'], ['_trackPageview']];
-                _gaq.push(['_require', 'inpage_linkid', '//www.google-analytics.com/plugins/ga/inpage_linkid.js']);
-
                 // Set Modernizr.load's timeout period to 12.5 secs instead of the default 10
                 yepnope.errorTimeout = 12500;
 
@@ -72,8 +69,8 @@
                             console.log("Modernizr.load: Couldn't fetch jQuery from CDN; Falling back to the local version");
                         }
                     }
-                }, "/js/vendor/jquery.mobile-events.min.js", "/js/vendor/bootstrap.min.js", "/js/vendor/jquery.masonry.min.js", "/js/plugins.js", "/js/main.js", {
-                    load : ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js',
+                }, "/js/vendor/jquery.mobile-events.min.js", "/js/vendor/bootstrap.min.js", "/js/vendor/jquery.masonry.min.js", "/js/plugins.js", {
+                    load : "/js/main.js",
                     complete: function(){
                         console.log("Modernizr.load: Done loading base assets");
                     }
@@ -164,6 +161,24 @@
                 </li>
             </ul>
         </footer>
+        <!-- Load Google Analytics -->
+        <script type="text/javascript">
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-5141372-4', 'auto');
+            ga('require', 'displayfeatures');
+            ga('send', 'pageview');
+        </script>
     </body>
 </html>
 {{end}}
