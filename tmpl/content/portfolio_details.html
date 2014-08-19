@@ -17,7 +17,11 @@
             </header>
             <div class="content-well">
                 <div class="row">
-                    <div class="col-md-3">
+                    {{if $Item.Screenshots}}
+                        <div class="col-md-3">
+                    {{else}}
+                        <div class="col-md-6 col-md-offset-3">
+                    {{end}}
                         <div class="img-thumbnail">
                             {{template "portfolioCardContent" $Item}}
                         </div>
@@ -77,13 +81,15 @@
                         {{end}}
                         <br/>
                     </div>
-                    <div class="col-md-9">
-                        <ul class="nav nav-list">
-                            {{range $Screenshot:=$Item.Screenshots}}
-                                <li> <img src="{{$Screenshot}}" class="img-thumbnail margin-5" alt="Screenshot of {{$Item.Title}}" /> </li>
-                            {{end}}
-                        </ul>
-                    </div>
+                    {{if $Item.Screenshots}}
+                        <div class="col-md-9">
+                            <ul class="nav nav-list">
+                                {{range $Screenshot:=$Item.Screenshots}}
+                                    <li> <img src="{{$Screenshot}}" class="img-thumbnail margin-5" alt="Screenshot of {{$Item.Title}}" /> </li>
+                                {{end}}
+                            </ul>
+                        </div>
+                    {{end}}
                 </div>
             </div>
         </section>
