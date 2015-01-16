@@ -16,6 +16,11 @@ handlers:
   http_headers:
     Vary: Accept-Encoding
 
+- url: /img
+  static_dir: static/img
+  http_headers:
+    Vary: Accept-Encoding
+
 - url: /font
   static_dir: static/font
   http_headers:

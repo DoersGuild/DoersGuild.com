@@ -99,7 +99,7 @@ func init() {
     router:=mux.NewRouter()
     router.HandleFunc("/", indexHandler)
     router.HandleFunc("/init/{path:.*}", redirectOlderHandler)
-    router.HandleFunc("/img/{path:.*}", imageRedirectHandler)
+    // router.HandleFunc("/img/{path:.*}", imageRedirectHandler)
     router.HandleFunc("/portfolio", portfolioHandler)
     router.HandleFunc("/portfolio/{category}", portfolioCategoryHandler)
     router.HandleFunc("/portfolio/{category}/{project}", portfolioDetailsHandler)
