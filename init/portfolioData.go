@@ -129,7 +129,7 @@ var portfolioItems = map[string]PortfolioItem {
         "January, 2013",
         "Websites",
         map[string]string{"Cheriyal Paintings" : "http://cheriyalpainitngs.com", "Pembarthy Brassware":"http://pembarthybrassware.com"},
-        "http://cheriyalpaintings.com/assets/DSC01542.jpg",
+        "/img/projects/CheriyalAndPembarthy/desktop2.png",
         []string{"/img/projects/CheriyalAndPembarthy/desktop2.png","/img/projects/CheriyalAndPembarthy/desktop1.png","/img/projects/CheriyalAndPembarthy/tablet1.png","/img/projects/CheriyalAndPembarthy/tablet2.png","/img/projects/CheriyalAndPembarthy/mobile1.png","/img/projects/CheriyalAndPembarthy/mobile2.png"},
         []string{"WordPress", "RootsTheme", "Twitter Bootstrap", "EShop"},
         portfolioClients["Tharuni"],
