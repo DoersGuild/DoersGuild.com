@@ -129,12 +129,9 @@
             {{template "content" .}}
         </article>
 
-        <footer class="container doer-font doer-red">
+        <footer class="container text-left">
             <hr/>
-            <ul class="list-inline">
-                <li>
-                    <a href="/"> &copy; Doers' Guild : {{.tagline}} <sup>TM</sup></a>
-                </li>
+            <ul class="list-inline doer-font doer-red text-right">
                 <li>
                     <a href="mailto:mail@doersguild.com" title="Email" data-target="_blank" itemprop="email"><i class="icon-envelope"></i></a>
                 </li>
@@ -159,7 +156,11 @@
                 <li>
                     <a href="http://www.linkedin.com/company/doers'-guild" title="LinkedIn" rel="publisher"  data-target="_blank"><i class="icon-linkedin"></i></a>
                 </li>
+                <li class="pull-left">
+                    <a href="/"> &copy; Doers' Guild : {{.tagline}} <sup>TM</sup></a>
+                </li>
             </ul>
+            <p class="hidden"><small>Doers' Guild (RWD Doers Guild Internet Solutions Pvt. Ltd.) is a software consulting company that helps plan, build and implement software for it's clients from around the world, designed to help them reach their unique business goals.</small></p>
         </footer>
         <!-- Load Google Analytics -->
         <script type="text/javascript">

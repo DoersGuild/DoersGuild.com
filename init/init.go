@@ -15,7 +15,7 @@ var configFuncs = make(template.FuncMap)
 
 const (
     SITE_TAGLINE="Your Web-Anywhere Experts"
-    SITE_DESCRIPTION = "Doers' Guild : Your Web-Anywhere Experts"
+    SITE_DESCRIPTION = "Doers' Guild (RWD Doers Guild Internet Solutions Pvt. Ltd.) is a software consulting company that helps plan, build and implement custom software for it's clients from around the world, designed to help them reach their unique business goals."
     SITE_IMAGE = "/favicon.ico"
 )
 
