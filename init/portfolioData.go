@@ -413,7 +413,7 @@ var portfolioItems = map[string]PortfolioItem {
     "FrenchBob": {
         "FrenchBob",
         "FrenchBob",
-        "FrenchBob is a novel gifting e-commerce platform that helps you select and buy the right gift. We handled the tech aspects of the store.",
+        "FrenchBob is a novel e-commerce gifting platform that helps you select and buy the right gift. We handled the tech aspects of the store.",
         "October, 2014",
         "WebApps",
         map[string]string{"FrenchBob" : "http://FrenchBob.com"},
@@ -455,6 +455,7 @@ var portfolioCategories = map[string]Category {
             portfolioItems["FreeWorkExchange"],
             portfolioItems["Xervmon"],
             portfolioItems["Tharunopayam"],
+            portfolioItems["FrenchBob"],
         },
         "Got a neat idea in mind? Want to build a scalable service? Looking to engage users, no matter what device they are on?  We'll build you a responsive, scalable web-based application that is designed to run beautifully on every modern device out there, interacting asynchronously with the backend through a simple RESTful API and with the power to save data locally when the user is offline, to give your users as smooth an experience as possible.",
     },
