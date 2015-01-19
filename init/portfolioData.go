@@ -17,6 +17,7 @@ var portfolioClients = map[string]Person {
     "Rebel316": {"Rebel316","BigPlans","Rebel316","https://www.elance.com/e/bigplans/", ""},
     "TouchPoint": {"TouchPoint", "MeDine", "TouchPoint Data Sciences Pvt. Ltd", "http://medine.in/", ""},
     "Tasheelat": {"Tasheelat", "Tasheelat", "Tasheelat", "http://TasheelatIraq.com/", ""},
+    "FrenchBob": {"FrenchBob", "FrenchBob", "FrenchBob", "http://FrenchBob.com/", "http://frenchbob.com/modules/frenchbob/css/front/productSuggestionEngine/images/frenchbob.png"},
 }
 
 type Feedback struct {
@@ -45,10 +46,10 @@ var portfolioItems = map[string]PortfolioItem {
         "General Knowitall Knowledge is a fun android app for all the quizzing enthusiasts out there. It comes loaded with fun and interesting facts about various things from around the world.",
         "November, 2012",
         "MobileApps",
-        map[string]string{"Play Store" : "https://play.google.com/store/apps/details?id=com.doersguild.generalknowledge", "Ad-Free Edition":"https://play.google.com/store/apps/details?id=com.doersguild.gkkplus"},
+        map[string]string{"Play Store" : "https://play.google.com/store/apps/details?id=com.doersguild.generalknowledge", "Ad-Free Edition":"https://play.google.com/store/apps/details?id=com.doersguild.gkkplus", "Firefox OS": "https://marketplace.firefox.com/app/general-knowitall-knowledge?src=search"},
         "/img/projects/GeneralKnowitallKnowledge/logo.png",
         []string{"/img/projects/GeneralKnowitallKnowledge/mobile1.png", "/img/projects/GeneralKnowitallKnowledge/tablet1.png"},
-        []string{"PhoneGap","Android", "Twitter Bootstrap"},
+        []string{"PhoneGap", "Android", "Twitter Bootstrap", "Firefox OS"},
         portfolioClients["DoersGuild"],
         []Feedback{
             {"GeneralKnowitallKnowledge", "GKK_Rahul", "Great app, brilliant questions nd i am sure u gonna love it..try it out..already in luv with this app <3 <3",},
@@ -87,7 +88,7 @@ var portfolioItems = map[string]PortfolioItem {
         "An application developed for the United States Holocaust Memorial Museum's Online Exhibit on Nazi Propaganda. This application allows museum visitors to view examples of propaganda and rate them in terms of how dangerous it is. It also allows them to submit pieces of propaganda that they see around them in their day to day lives.",
         "June, 2012",
         "MobileApps",
-        map[string]string{"Elance Job Post" : "https://www.elance.com/j/jquery-mobile-application/30994515/"},
+        map[string]string{"Elance" : "https://www.elance.com/j/jquery-mobile-application/30994515/"},
         "/img/projects/MindOverMedia/logo.jpg",
         []string{"/img/projects/MindOverMedia/mom_loading.png"},
         []string{"PhoneGap", "Android", "jQuery Mobile", "iOS"},
@@ -115,7 +116,7 @@ var portfolioItems = map[string]PortfolioItem {
         "We’ve been working with IXXOCart to modernize their cart and make it the most powerful & comprehensive e-commerce software out there. We helped them upgrade major parts of the cart, created several new templates, & modernized and made all their interfaces responsive, across several of their offerings including their flagship multi-vendor software.",
         "May, 2013",
         "Websites",
-        map[string]string{"Multi-Vendor Demo" : "http://demo-multi-vendor-sa.ixxocart.com/index.php"},
+        map[string]string{"IXXO Cart" : "http://www.ixxocart.com/"},
         "/img/projects/IXXOCart/logo.png",
         []string{"/img/projects/IXXOCart/desktop1.png","/img/projects/IXXOCart/tablet1.png","/img/projects/IXXOCart/desktop2.png"},
         []string{"PHP", "Smarty", "Twitter Bootstrap", "IXXOCart", "NVD3", "jQuery"},
@@ -128,7 +129,7 @@ var portfolioItems = map[string]PortfolioItem {
         "We built responsive e-commerce websites for the artisans of Cheriyal and Pembarthy villages to better educate the world about their artwork and sell it online.",
         "January, 2013",
         "Websites",
-        map[string]string{"Cheriyal Paintings" : "http://cheriyalpainitngs.com", "Pembarthy Brassware":"http://pembarthybrassware.com"},
+        map[string]string{},
         "/img/projects/CheriyalAndPembarthy/desktop2.png",
         []string{"/img/projects/CheriyalAndPembarthy/desktop2.png","/img/projects/CheriyalAndPembarthy/desktop1.png","/img/projects/CheriyalAndPembarthy/tablet1.png","/img/projects/CheriyalAndPembarthy/tablet2.png","/img/projects/CheriyalAndPembarthy/mobile1.png","/img/projects/CheriyalAndPembarthy/mobile2.png"},
         []string{"WordPress", "RootsTheme", "Twitter Bootstrap", "EShop"},
@@ -196,7 +197,7 @@ var portfolioItems = map[string]PortfolioItem {
         map[string]string{"Tharunopayam" : "http://upayam.tharuni.org/"},
         "/img/projects/Tharunopayam/Tharunopayam_logo.jpg",
         []string{"/img/projects/Tharunopayam/Tharunopayam.jpg"},
-        []string{"Android", "Laravel", "jQuery", "Twitter Bootstrap"},
+        []string{"Android", "Laravel", "Google Language tools", "Mandrill", "Twitter Bootstrap"},
         portfolioClients["Tharuni"],
         []Feedback{},
     },
@@ -242,7 +243,7 @@ var portfolioItems = map[string]PortfolioItem {
         []string{"CrossRider", "Chrome Extension", "Design"},
         portfolioClients["DoersGuild"],
         []Feedback{
-            {"ToggleText","MigRyes", "Wow, thanks so much. This is super cool. Sharing with the team!"},
+            {"ToggleText", "MigRyes", "Wow, thanks so much. This is super cool. Sharing with the team!"},
         },
     },
     "Rebel316Blog": {
@@ -251,7 +252,7 @@ var portfolioItems = map[string]PortfolioItem {
         "We designed a Blogspot theme for Rebel316, keeping in line with their website.",
         "July, 2012",
         "Websites",
-        map[string]string{"Live Site":"http://blog.rebel316.com/", "Elance" : "https://www.elance.com/j/create-sites-blog/32049124/"},
+        map[string]string{"Elance" : "https://www.elance.com/j/create-sites-blog/32049124/"},
         "/img/projects/Rebel316/desktop1.png",
         []string{"/img/projects/Rebel316/desktop1.png"},
         []string{"Blogspot"},
@@ -409,6 +410,19 @@ var portfolioItems = map[string]PortfolioItem {
         portfolioClients["DoersGuild"],
         []Feedback{},
     },	
+    "FrenchBob": {
+        "FrenchBob",
+        "FrenchBob",
+        "FrenchBob is a novel gifting e-commerce platform that helps you select and buy the right gift. We handled the tech aspects of the store.",
+        "October, 2014",
+        "WebApps",
+        map[string]string{"FrenchBob" : "http://FrenchBob.com"},
+        "http://frenchbob.com/modules/frenchbob/css/front/productSuggestionEngine/images/frenchbob.png",
+        []string{},
+        []string{"PHP", "PrestaShop", "Twitter Bootstrap"},
+        portfolioClients["FrenchBob"],
+        []Feedback{},
+    },
 }
 
 
